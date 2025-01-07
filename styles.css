@@ -1,27 +1,59 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+/* Estilos Globais */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
 }
 
-header {
-    background-color: #007bff;
-    color: white;
-}
-
-h1, h2, h3 {
-    color: #343a40;
-}
-
-section {
-    background-color: white;
+.neon-header {
+    background-color: #0d0d0d;
     padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #00ffcc;
 }
 
-footer {
-    background-color: #343a40;
-    color: white;
-    padding: 10px 0;
+.neon-text {
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+}
+
+.neon-card {
+    background-color: #262626;
+    border: 1px solid #00ffcc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffcc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+.neon-input {
+    background-color: #333;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+}
+
+.neon-input:focus {
+    background-color: #444;
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+.btn-neon {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-neon:hover {
+    background-color: #00cc99;
+}
+
+.neon-footer {
+    background-color: #0d0d0d;
+    border-top: 2px solid #00ffcc;
+    padding: 10px;
 }
