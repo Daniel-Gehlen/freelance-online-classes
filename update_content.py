@@ -2,12 +2,26 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
+import random
 
 # Configurar tópicos e URLs de referência
 topics = {
     "Análise Musical": "https://en.wikipedia.org/wiki/Musical_analysis",
     "História da Música": "https://en.wikipedia.org/wiki/History_of_music",
-    # Adicione mais tópicos e URLs relevantes aqui
+    "Educação de Jovens e Adultos no Brasil: História e Política": "https://en.wikipedia.org/wiki/Education_in_Brazil#Education_of_young_people_and_adults_in_Brazil",
+    "Educação Musical na Infância": "https://en.wikipedia.org/wiki/Childhood_music_education",
+    "Fundamentos da Música": "https://en.wikipedia.org/wiki/Music_theory",
+    "História da Música Brasileira": "https://en.wikipedia.org/wiki/History_of_Brazilian_music",
+    "Harmonia": "https://en.wikipedia.org/wiki/Harmony_(music)",
+    "Instrumento - Canto": "https://en.wikipedia.org/wiki/Vocal_music",
+    "Instrumento - Violão": "https://en.wikipedia.org/wiki/Guitar",
+    "Materiais Didáticos": "https://en.wikipedia.org/wiki/Teaching_material",
+    "Prática Musical em Conjunto": "https://en.wikipedia.org/wiki/Musical_ensemble",
+    "Práticas de Composição para Educação Musical": "https://en.wikipedia.org/wiki/Composition_(music)",
+    "Práticas Vocais para a Educação Musical": "https://en.wikipedia.org/wiki/Vocal_music_education",
+    "Projetos Sociais e Culturais e Educação Musical": "https://en.wikipedia.org/wiki/Music_education",
+    "Sociologia e Educação Musical": "https://en.wikipedia.org/wiki/Sociology_of_music",
+    "Tecnologias para Educação Musical": "https://en.wikipedia.org/wiki/Music_technology"
 }
 
 # Nome do arquivo HTML que será atualizado
@@ -71,26 +85,40 @@ with open(file_path, "r", encoding="utf-8") as file:
 # Inicializar novo conteúdo agregado
 new_content = ""
 
-# Buscar novos conteúdos para cada tópico
-for topic, url in topics.items():
+# Inicializar o tradutor
+translator = GoogleTranslator(source='en', target='pt')
+
+# Seleção randômica de tópicos
+random_topics = random.sample(list(topics.items()), len(topics))
+
+# Buscar e processar os tópicos selecionados
+for topic_name, url in random_topics:
     try:
         # Obter o conteúdo da página
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
-        paragraphs = soup.find_all("p")[:2]  # Buscar os dois primeiros parágrafos
 
-        # Traduzir e formatar os parágrafos como HTML
+        # Buscar os parágrafos, priorizando o conteúdo relevante
+        paragraphs = soup.find_all("p")
+
+        # Filtrar parágrafos que contêm texto útil (evitar links ou trechos irrelevantes)
+        paragraphs = [p for p in paragraphs if p.get_text().strip() and not p.find("a")]
+
+        # Garantir que encontramos pelo menos dois parágrafos relevantes
+        if len(paragraphs) < 2:
+            continue  # Pula este tópico se não encontrar conteúdo suficiente
+
+        # Traduzir os parágrafos
         translated_paragraphs = []
-        for p in paragraphs:
-            # Traduzir o texto de cada parágrafo
-            translated_text = GoogleTranslator(source='en', target='pt').translate(p.get_text())
+        for p in paragraphs[:2]:  # Pegue apenas os dois primeiros parágrafos
+            translated_text = translator.translate(p.get_text())
             translated_paragraphs.append(f"<p>{translated_text}</p>")
 
         # Adicionar a estrutura do card com título, conteúdo e fonte
         topic_content = (
             f'<section class="card neon-card mb-5">\n'
             f'  <div class="card-body">\n'
-            f'    <h2 class="card-title neon-text">{topic}</h2>\n'
+            f'    <h2 class="card-title neon-text">{topic_name}</h2>\n'
             + "\n".join(translated_paragraphs)
             + f'\n    <p><a href="{url}" target="_blank">Fonte: {url}</a></p>\n'
             f'  </div>\n'
@@ -99,7 +127,7 @@ for topic, url in topics.items():
         new_content += topic_content + "\n"
 
     except Exception as e:
-        print(f"Erro ao buscar conteúdo para {topic}: {e}")
+        print(f"Erro ao buscar conteúdo para {topic_name}: {e}")
 
 # Inserir o novo conteúdo antes do fechamento do <body>
 updated_content = existing_content.replace(
