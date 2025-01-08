@@ -16,6 +16,30 @@ body.dark-theme {
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
 }
 
+.neon-navbar {
+    background-color: #0d0d0d;
+    border-bottom: 2px solid #00ffcc;
+}
+
+.neon-navbar .navbar-brand,
+.neon-navbar .nav-link {
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+}
+
+.neon-navbar .nav-link:hover {
+    color: #00cc99;
+    text-shadow: 0 0 5px #00cc99, 0 0 10px #00cc99;
+}
+
+.neon-navbar .navbar-toggler {
+    border-color: #00ffcc;
+}
+
+.neon-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 .neon-card {
     background-color: #262626;
     border: 1px solid #00ffcc;
