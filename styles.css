@@ -14,6 +14,7 @@ body.dark-theme {
 .neon-text {
     color: #00ffcc;
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+    
 }
 
 .neon-navbar {
@@ -25,6 +26,8 @@ body.dark-theme {
 .neon-navbar .nav-link {
     color: #00ffcc;
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+    align-items: center; /* Centraliza os itens verticalmente */
+
 }
 
 .neon-navbar .nav-link:hover {
@@ -34,10 +37,12 @@ body.dark-theme {
 
 .neon-navbar .navbar-toggler {
     border-color: #00ffcc;
+justify-content: center;
 }
 
 .neon-navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
 }
 
 .neon-card {
@@ -80,4 +85,17 @@ body.dark-theme {
     background-color: #0d0d0d;
     border-top: 2px solid #00ffcc;
     padding: 10px;
+}
+
+.logo-link {
+    position: absolute; /* Posiciona o logo no canto esquerdo */
+    left: 20px; /* Distância da esquerda */
+    top: 20px; /* Distância do topo */
+}
+
+.logo-img {
+    width: 200px; /* Largura pequena para o logo */
+    height: 100px; /* Altura proporcional para manter o formato retangular */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
 }
