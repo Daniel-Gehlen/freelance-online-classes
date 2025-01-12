@@ -40,6 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Filtrar posts por data ao carregar a página
     filterPostsByDate();
+
+    // Adicionar evento de clique para filtrar posts por data
+    document.querySelectorAll('.date-list a').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const date = this.textContent.replace(/\s+/g, '-');
+            window.location.hash = date;
+            filterPostsByDate();
+        });
+    });
 });
 
 // Popup de saída
