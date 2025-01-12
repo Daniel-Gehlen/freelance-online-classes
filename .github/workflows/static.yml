@@ -31,7 +31,14 @@ jobs:
 
       # Passo 4: Executar o script de atualização
       - name: Executar o script de atualização
-        run: python update_content.py
+        id: run-script
+        run: |
+          python update_content.py
+          # Verifica se o conteúdo gerado é igual ao conteúdo atual
+          if git diff --quiet; then
+            echo "Nenhuma alteração detectada. Executando o script novamente para buscar novos conteúdos."
+            python update_content.py
+          fi
 
       # Passo 5: Verificar se há alterações
       - name: Verificar se há alterações
