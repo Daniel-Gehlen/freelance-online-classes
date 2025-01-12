@@ -27,6 +27,10 @@ topics = {
 # Nome do arquivo HTML que será atualizado
 file_path = "teoria-musical-wikipedia.html"
 
+# Função para verificar se o conteúdo já existe no arquivo
+def content_exists(existing_content, new_content):
+    return new_content in existing_content
+
 # Criar um arquivo HTML inicial, caso não exista
 if not os.path.exists(file_path):
     with open(file_path, "w", encoding="utf-8") as file:
@@ -124,18 +128,26 @@ for topic_name, url in random_topics:
             f'  </div>\n'
             f'</section>\n'
         )
-        new_content += topic_content + "\n"
+
+        # Verificar se o conteúdo já existe no arquivo
+        if not content_exists(existing_content, topic_content):
+            new_content += topic_content + "\n"
+        else:
+            print(f"Conteúdo já existe para o tópico: {topic_name}")
 
     except Exception as e:
         print(f"Erro ao buscar conteúdo para {topic_name}: {e}")
 
 # Inserir o novo conteúdo antes do fechamento do <body>
-updated_content = existing_content.replace(
-    "</body>", f"{new_content}\n</body>"
-)
+if new_content:
+    updated_content = existing_content.replace(
+        "</body>", f"{new_content}\n</body>"
+    )
 
-# Salvar o conteúdo atualizado no arquivo
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(updated_content)
+    # Salvar o conteúdo atualizado no arquivo
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(updated_content)
 
-print("Atualização concluída com sucesso!")
+    print("Atualização concluída com sucesso! Novos conteúdos adicionados.")
+else:
+    print("Nenhum novo conteúdo foi adicionado. Todos os tópicos já existem no arquivo.")
