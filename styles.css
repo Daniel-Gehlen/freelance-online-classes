@@ -104,31 +104,38 @@ body.dark-theme {
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
-    background-color: #f4f4f9;
+    width: 100px; /* Largura de uma data */
+    background-color: #0d0d0d; /* Fundo preto */
     padding: 20px;
     overflow-y: auto;
+    z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
 }
 
 .sidebar h2 {
     font-size: 1.5em;
-    color: #28a745;
+    color: #00ffcc;
+    text-align: center;
 }
 
 .sidebar .search-bar {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .sidebar .search-bar input {
-    width: 100%;
+    width: 80px; /* Largura ajustada para caber na sidebar */
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #00ffcc;
     border-radius: 4px;
+    background-color: #0d0d0d; /* Fundo preto */
+    color: #00ffcc; /* Cor do texto contrastante */
+    text-align: center;
 }
 
 .sidebar .date-list {
     list-style-type: none;
     padding: 0;
+    text-align: center;
 }
 
 .sidebar .date-list li {
@@ -137,7 +144,8 @@ body.dark-theme {
 
 .sidebar .date-list li a {
     text-decoration: none;
-    color: #28a745;
+    color: #00ffcc;
+    font-size: 1.2em;
 }
 
 .sidebar .date-list li a:hover {
@@ -145,6 +153,6 @@ body.dark-theme {
 }
 
 .main-content {
-    margin-left: 300px;
+    margin-left: 120px; /* Ajustado para a largura da sidebar */
     padding: 20px;
 }
