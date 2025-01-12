@@ -7,8 +7,10 @@ body.dark-theme {
 
 .neon-header {
     background-color: #0d0d0d;
-    padding: 20px;
+    padding: 20px 20px 20px 240px; /* padding-left: 240px (200px do logo + 40px de margem) */
     border-bottom: 2px solid #00ffcc;
+    position: relative; /* Permite posicionar o logo corretamente */
+
 }
 
 .neon-text {
