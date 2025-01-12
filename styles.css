@@ -49,6 +49,8 @@ body.dark-theme {
     border-radius: 10px;
     box-shadow: 0 0 10px #00ffcc;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 80%; /* Ajusta a largura máxima dos cards */
+    margin: 0 auto 20px auto; /* Centraliza os cards e ajusta a margem inferior */
 }
 
 .neon-card:hover {
@@ -101,9 +103,9 @@ body.dark-theme {
 /* Estilos da Sidebar */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 60px; /* Ajusta o topo para ficar abaixo da navbar */
     left: 0;
-    height: 100%;
+    height: calc(100% - 60px); /* Ajusta a altura para ocupar o restante da página */
     width: 100px; /* Largura de uma data */
     background-color: #0d0d0d; /* Fundo preto */
     padding: 20px;
