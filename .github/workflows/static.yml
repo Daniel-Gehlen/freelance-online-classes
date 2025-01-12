@@ -1,0 +1,69 @@
+name: Automação de Atualização de Conteúdo e Deploy
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Executar semanalmente (domingo à meia-noite)
+  workflow_dispatch: # Permitir execução manual via interface do GitHub
+
+permissions:
+  contents: write  # Permite fazer push no repositório
+
+jobs:
+  update-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Clonar o repositório
+      - name: Clonar o repositório
+        uses: actions/checkout@v3
+
+      # Passo 2: Configurar Python
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      # Passo 3: Instalar dependências
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Passo 4: Executar o script de atualização
+      - name: Executar o script de atualização
+        run: python update_content.py
+
+      # Passo 5: Verificar se há alterações
+      - name: Verificar se há alterações
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      # Passo 6: Commit e Push das alterações (se houver mudanças)
+      - name: Commit e Push das alterações
+        if: steps.changes.outputs.changes == 'true'
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add teoria-musical-wikipedia.html
+          git commit -m "Atualização automática dos conteúdos da Wikipedia"
+          git push origin main
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: update-content  # Depende do job update-content
+    steps:
+      # Passo 1: Clonar o repositório
+      - name: Clonar o repositório
+        uses: actions/checkout@v3
+
+      # Passo 2: Fazer deploy no GitHub Pages
+      - name: Fazer deploy no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # Diretório raiz do site
