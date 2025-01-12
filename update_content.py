@@ -82,6 +82,13 @@ if not os.path.exists(file_path):
 with open(file_path, "r", encoding="utf-8") as file:
     existing_content = file.read()
 
+# Extrair tópicos existentes do arquivo HTML
+soup = BeautifulSoup(existing_content, "html.parser")
+existing_topics = {section.find("h2").get_text() for section in soup.find_all("section", class_="card")}
+
+# Filtrar tópicos já existentes
+available_topics = {key: value for key, value in topics.items() if key not in existing_topics}
+
 # Inicializar novo conteúdo agregado
 new_content = ""
 
@@ -89,7 +96,7 @@ new_content = ""
 translator = GoogleTranslator(source='en', target='pt')
 
 # Seleção randômica de tópicos
-random_topics = random.sample(list(topics.items()), len(topics))
+random_topics = random.sample(list(available_topics.items()), min(len(available_topics), 5))
 
 # Buscar e processar os tópicos selecionados
 for topic_name, url in random_topics:
