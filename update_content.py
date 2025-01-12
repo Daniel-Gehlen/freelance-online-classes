@@ -89,6 +89,11 @@ existing_topics = {section.find("h2").get_text() for section in soup.find_all("s
 # Filtrar tópicos já existentes
 available_topics = {key: value for key, value in topics.items() if key not in existing_topics}
 
+# Verificar se há tópicos disponíveis
+if not available_topics:
+    print("Não há novos tópicos disponíveis para adicionar.")
+    exit()
+
 # Inicializar novo conteúdo agregado
 new_content = ""
 
@@ -113,6 +118,7 @@ for topic_name, url in random_topics:
 
         # Garantir que encontramos pelo menos dois parágrafos relevantes
         if len(paragraphs) < 2:
+            print(f"Não há conteúdo suficiente para o tópico: {topic_name}")
             continue  # Pula este tópico se não encontrar conteúdo suficiente
 
         # Traduzir os parágrafos
@@ -136,13 +142,17 @@ for topic_name, url in random_topics:
     except Exception as e:
         print(f"Erro ao buscar conteúdo para {topic_name}: {e}")
 
-# Inserir o novo conteúdo antes do fechamento do <body>
-updated_content = existing_content.replace(
-    "</body>", f"{new_content}\n</body>"
-)
+# Verificar se há novo conteúdo para adicionar
+if new_content:
+    # Inserir o novo conteúdo antes do fechamento do <body>
+    updated_content = existing_content.replace(
+        "</body>", f"{new_content}\n</body>"
+    )
 
-# Salvar o conteúdo atualizado no arquivo
-with open(file_path, "w", encoding="utf-8") as file:
-    file.write(updated_content)
+    # Salvar o conteúdo atualizado no arquivo
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(updated_content)
 
-print("Atualização concluída com sucesso!")
+    print("Atualização concluída com sucesso!")
+else:
+    print("Nenhum novo conteúdo foi adicionado.")
