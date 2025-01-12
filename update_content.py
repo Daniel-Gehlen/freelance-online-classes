@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from deep_translator import GoogleTranslator
 import random
+from datetime import datetime
 
 # Configurar tópicos e URLs de referência
 topics = {
@@ -139,12 +140,13 @@ for topic_name, topic_keyword in random_topics:
             translated_text = translator.translate(p.get_text())
             translated_paragraphs.append(f"<p>{translated_text}</p>")
 
-        # Adicionar a estrutura do card com título, conteúdo e fonte
+        # Adicionar a estrutura do card com título, conteúdo, fonte e data
         topic_content = (
             f'<section class="card neon-card mb-5">\n'
             f'  <div class="card-body">\n'
             f'    <h2 class="card-title neon-text">{topic_name}</h2>\n'
             + "\n".join(translated_paragraphs)
+            + f'\n    <p class="post-date">{datetime.now().strftime("%d/%m/%Y")}</p>\n'
             + f'\n    <p><a href="{url}" target="_blank">Fonte: {url}</a></p>\n'
             f'  </div>\n'
             f'</section>\n'
