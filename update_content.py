@@ -59,11 +59,11 @@ def get_existing_content_hashes(html_content):
     """Extrai e retorna hashes de todo o conteúdo existente"""
     soup = BeautifulSoup(html_content, 'html.parser')
     content_hashes = set()
-    
+
     for section in soup.find_all('section', class_='card'):
         content = section.get_text().strip()
         content_hashes.add(generate_content_hash(content))
-    
+
     return content_hashes
 
 def is_content_duplicate(content, existing_hashes):
@@ -128,7 +128,7 @@ def get_wikipedia_content(url, sections):
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
         content = []
-        
+
         for section in sections:
             section_element = soup.find(id=section)
             if section_element:
@@ -139,7 +139,7 @@ def get_wikipedia_content(url, sections):
                         content.append(element.text.strip())
                     if len(content) >= 2:  # Limita a 2 parágrafos por seção
                         break
-        
+
         return content[:2]  # Retorna no máximo 2 parágrafos
     except Exception as e:
         print(f"Erro ao acessar {url}: {e}")
@@ -147,33 +147,33 @@ def get_wikipedia_content(url, sections):
 
 def update_content():
     file_path = "teoria-musical-wikipedia.html"
-    
+
     # Criar arquivo inicial se não existir
     if not os.path.exists(file_path):
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(create_initial_html())
-    
+
     # Ler conteúdo existente
     with open(file_path, "r", encoding="utf-8") as file:
         existing_content = file.read()
-    
+
     # Obter hashes do conteúdo existente
     existing_hashes = get_existing_content_hashes(existing_content)
-    
+
     # Processar tópicos e gerar novo conteúdo
     new_content = []
     translator = GoogleTranslator(source='en', target='pt')
-    
+
     # Sortear tópicos aleatoriamente
     random_topics = random.sample(list(TOPICS.items()), len(TOPICS))
-    
+
     for topic_name, topic_info in random_topics:
         try:
             paragraphs = get_wikipedia_content(topic_info["url"], topic_info["sections"])
-            
+
             if not paragraphs:
                 continue
-                
+
             translated_paragraphs = []
             for p in paragraphs:
                 try:
@@ -183,10 +183,10 @@ def update_content():
                 except Exception as e:
                     print(f"Erro na tradução para {topic_name}: {e}")
                     continue
-            
+
             if not translated_paragraphs:
                 continue
-            
+
             topic_content = f"""
             <section class="card neon-card mb-5">
                 <div class="card-body">
@@ -195,29 +195,29 @@ def update_content():
                     <p><a href="{topic_info['url']}" target="_blank">Fonte: {topic_info['url']}</a></p>
                 </div>
             </section>"""
-            
+
             if not is_content_duplicate(topic_content, existing_hashes):
                 new_content.append(topic_content)
                 existing_hashes.add(generate_content_hash(topic_content))
-            
+
         except Exception as e:
             print(f"Erro ao processar {topic_name}: {e}")
-        
+
         time.sleep(2)  # Pausa entre requisições para evitar sobrecarga
-    
+
     if new_content:
         # Inserir novo conteúdo antes do </main>
         soup = BeautifulSoup(existing_content, 'html.parser')
         main_tag = soup.find('main')
-        
+
         for content in new_content:
             content_soup = BeautifulSoup(content, 'html.parser')
             main_tag.append(content_soup)
-        
+
         # Salvar arquivo atualizado
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(str(soup.prettify()))
-        
+
         print(f"Adicionados {len(new_content)} novos tópicos.")
     else:
         print("Nenhum novo conteúdo para adicionar.")
