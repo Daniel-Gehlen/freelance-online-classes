@@ -5,6 +5,9 @@ on:
     - cron: "0 0 * * 0" # Executar semanalmente (domingo à meia-noite)
   workflow_dispatch: # Permitir execução manual via interface do GitHub
 
+permissions:
+  contents: write  # Permite fazer push no repositório
+
 jobs:
   update-content:
     runs-on: ubuntu-latest
@@ -18,9 +21,9 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"  # Use a versão do Python que você está utilizando
+          python-version: "3.x"
 
-      # Passo 3: Instalar dependências a partir do requirements.txt
+      # Passo 3: Instalar dependências
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
@@ -48,4 +51,4 @@ jobs:
           git config --global user.email "actions@github.com"
           git add teoria-musical-wikipedia.html
           git commit -m "Atualização automática dos conteúdos da Wikipedia"
-          git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+          git push origin main
