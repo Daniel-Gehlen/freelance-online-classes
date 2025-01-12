@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Primeiro script
+    // Função para adicionar datas à sidebar
     function addDatesToSidebar() {
         const dateList = document.getElementById('date-list');
         const posts = document.querySelectorAll('.card.neon-card');
         const dates = new Set();
 
+        // Coletar todas as datas dos posts
         posts.forEach(post => {
             const dateElement = post.querySelector('.post-date');
             if (dateElement) {
@@ -13,7 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        dates.forEach(date => {
+        // Converter o Set de datas para um array e ordenar em ordem decrescente
+        const sortedDates = Array.from(dates).sort((a, b) => new Date(b) - new Date(a));
+
+        // Adicionar as datas à sidebar
+        sortedDates.forEach(date => {
             const li = document.createElement('li');
             const a = document.createElement('a');
             a.href = `#${date.replace(/\s+/g, '-')}`;
@@ -21,17 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
             li.appendChild(a);
             dateList.appendChild(li);
         });
+
+        // Exibir apenas os posts da data mais recente por padrão
+        if (sortedDates.length > 0) {
+            const mostRecentDate = sortedDates[0];
+            filterPostsByDate(mostRecentDate.replace(/\s+/g, '-'));
+        }
     }
 
-    function filterPostsByDate() {
-        const hash = window.location.hash.substring(1);
+    // Função para filtrar posts por data
+    function filterPostsByDate(date) {
         const posts = document.querySelectorAll('.card.neon-card');
 
         posts.forEach(post => {
             const dateElement = post.querySelector('.post-date');
             if (dateElement) {
-                const date = dateElement.textContent.trim().replace(/\s+/g, '-');
-                if (hash === date) {
+                const postDate = dateElement.textContent.trim().replace(/\s+/g, '-');
+                if (date === postDate) {
                     post.style.display = 'block';
                 } else {
                     post.style.display = 'none';
@@ -40,33 +51,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Adicionar datas à sidebar ao carregar a página
     addDatesToSidebar();
-    filterPostsByDate();
 
+    // Filtrar posts por data ao clicar em uma data na sidebar
     document.querySelectorAll('.date-list a').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const date = this.textContent.replace(/\s+/g, '-');
             window.location.hash = date;
-            filterPostsByDate();
+            filterPostsByDate(date);
         });
     });
 
+    // Filtrar posts por data ao carregar a página com hash na URL
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        filterPostsByDate(hash);
+    }
+
+    // Carregar conteúdo da Wikipedia
     fetch('https://pt.wikipedia.org/api/rest_v1/page/summary/Teoria_musical')
         .then(response => response.json())
         .then(data => {
             document.getElementById('wikipedia-content').innerHTML = data.extract;
         });
+});
 
-    // Segundo script
+document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.querySelector('.sidebar');
-    const navbarHeight = 190;
+    const navbarHeight = 190; // Altura da navbar
 
     window.addEventListener('scroll', function() {
         if (window.scrollY >= navbarHeight) {
-            sidebar.classList.add('fixed');
+            sidebar.classList.add('fixed'); // Fixa a sidebar no topo
         } else {
-            sidebar.classList.remove('fixed');
+            sidebar.classList.remove('fixed'); // Retorna à posição inicial
         }
     });
 });
