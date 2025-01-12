@@ -103,14 +103,20 @@ body.dark-theme {
 /* Estilos da Sidebar */
 .sidebar {
     position: fixed;
-    top: 60px; /* Ajusta o topo para ficar abaixo da navbar */
+    top: 190px; /* Posição inicial (abaixo da navbar) */
     left: 0;
-    height: calc(100% - 60px); /* Ajusta a altura para ocupar o restante da página */
-    width: 100px; /* Largura de uma data */
+    width: 130px; /* Largura da sidebar */
+    height: calc(100vh - 190px); /* Altura restante da página */
     background-color: #0d0d0d; /* Fundo preto */
-    padding: 20px;
+    padding: 10px;
     overflow-y: auto;
     z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
+    transition: top 0.3s ease; /* Transição suave */
+}
+
+/* Quando a sidebar está fixa no topo */
+.sidebar.fixed {
+    top: 0;
 }
 
 .sidebar h2 {
@@ -125,13 +131,13 @@ body.dark-theme {
 }
 
 .sidebar .search-bar input {
-    width: 80px; /* Largura ajustada para caber na sidebar */
-    padding: 10px;
+    width: 100px; /* Largura ajustada para caber na sidebar */
+    padding: 5px;
     border: 1px solid #00ffcc;
     border-radius: 4px;
     background-color: #0d0d0d; /* Fundo preto */
     color: #00ffcc; /* Cor do texto contrastante */
-    text-align: center;
+    text-align: left;
 }
 
 .sidebar .date-list {
@@ -151,7 +157,8 @@ body.dark-theme {
 }
 
 .sidebar .date-list li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #65f5d8;
 }
 
 .main-content {

@@ -5,11 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const posts = document.querySelectorAll('.card.neon-card');
         const dates = new Set();
 
+        // Coletar todas as datas dos posts
         posts.forEach(post => {
-            const date = post.querySelector('.post-date').textContent;
-            dates.add(date);
+            const dateElement = post.querySelector('.post-date');
+            if (dateElement) {
+                const date = dateElement.textContent.trim();
+                dates.add(date);
+            }
         });
 
+        // Adicionar as datas à sidebar
         dates.forEach(date => {
             const li = document.createElement('li');
             const a = document.createElement('a');
@@ -26,16 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const posts = document.querySelectorAll('.card.neon-card');
 
         posts.forEach(post => {
-            const date = post.querySelector('.post-date').textContent.replace(/\s+/g, '-');
-            if (hash === date) {
-                post.style.display = 'block';
-            } else {
-                post.style.display = 'none';
+            const dateElement = post.querySelector('.post-date');
+            if (dateElement) {
+                const date = dateElement.textContent.trim().replace(/\s+/g, '-');
+                if (hash === date) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
             }
         });
     }
 
-    // Adicionar datas à sidebar
+    // Adicionar datas à sidebar ao carregar a página
     addDatesToSidebar();
 
     // Filtrar posts por data ao carregar a página
@@ -50,23 +58,24 @@ document.addEventListener('DOMContentLoaded', function() {
             filterPostsByDate();
         });
     });
+
+    // Carregar conteúdo da Wikipedia
+    fetch('https://pt.wikipedia.org/api/rest_v1/page/summary/Teoria_musical')
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('wikipedia-content').innerHTML = data.extract;
+      });
 });
 
-// Popup de saída
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-    e.returnValue = 'Tem certeza que deseja sair?';
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const navbarHeight = 190; // Altura da navbar
 
-// Acordeões
-document.querySelectorAll('.neon-card').forEach(card => {
-    card.addEventListener('click', () => {
-        card.classList.toggle('active');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY >= navbarHeight) {
+            sidebar.classList.add('fixed'); // Fixa a sidebar no topo
+        } else {
+            sidebar.classList.remove('fixed'); // Retorna à posição inicial
+        }
     });
 });
-
-fetch('https://pt.wikipedia.org/api/rest_v1/page/summary/Teoria_musical')
-  .then(response => response.json())
-  .then(data => {
-      document.getElementById('wikipedia-content').innerHTML = data.extract;
-  });
