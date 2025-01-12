@@ -6,22 +6,22 @@ import random
 
 # Configurar tópicos e URLs de referência
 topics = {
-    "Análise Musical": "https://en.wikipedia.org/wiki/Musical_analysis",
-    "História da Música": "https://en.wikipedia.org/wiki/History_of_music",
-    "Educação de Jovens e Adultos no Brasil: História e Política": "https://en.wikipedia.org/wiki/Education_in_Brazil#Education_of_young_people_and_adults_in_Brazil",
-    "Educação Musical na Infância": "https://en.wikipedia.org/wiki/Childhood_music_education",
-    "Fundamentos da Música": "https://en.wikipedia.org/wiki/Music_theory",
-    "História da Música Brasileira": "https://en.wikipedia.org/wiki/History_of_Brazilian_music",
-    "Harmonia": "https://en.wikipedia.org/wiki/Harmony_(music)",
-    "Instrumento - Canto": "https://en.wikipedia.org/wiki/Vocal_music",
-    "Instrumento - Violão": "https://en.wikipedia.org/wiki/Guitar",
-    "Materiais Didáticos": "https://en.wikipedia.org/wiki/Teaching_material",
-    "Prática Musical em Conjunto": "https://en.wikipedia.org/wiki/Musical_ensemble",
-    "Práticas de Composição para Educação Musical": "https://en.wikipedia.org/wiki/Composition_(music)",
-    "Práticas Vocais para a Educação Musical": "https://en.wikipedia.org/wiki/Vocal_music_education",
-    "Projetos Sociais e Culturais e Educação Musical": "https://en.wikipedia.org/wiki/Music_education",
-    "Sociologia e Educação Musical": "https://en.wikipedia.org/wiki/Sociology_of_music",
-    "Tecnologias para Educação Musical": "https://en.wikipedia.org/wiki/Music_technology"
+    "Análise Musical": "Musical_analysis",
+    "História da Música": "History_of_music",
+    "Educação de Jovens e Adultos no Brasil: História e Política": "Education_in_Brazil",
+    "Educação Musical na Infância": "Childhood_music_education",
+    "Fundamentos da Música": "Music_theory",
+    "História da Música Brasileira": "History_of_Brazilian_music",
+    "Harmonia": "Harmony_(music)",
+    "Instrumento - Canto": "Vocal_music",
+    "Instrumento - Violão": "Guitar",
+    "Materiais Didáticos": "Teaching_material",
+    "Prática Musical em Conjunto": "Musical_ensemble",
+    "Práticas de Composição para Educação Musical": "Composition_(music)",
+    "Práticas Vocais para a Educação Musical": "Vocal_music_education",
+    "Projetos Sociais e Culturais e Educação Musical": "Music_education",
+    "Sociologia e Educação Musical": "Sociology_of_music",
+    "Tecnologias para Educação Musical": "Music_technology"
 }
 
 # Nome do arquivo HTML que será atualizado
@@ -100,12 +100,24 @@ new_content = ""
 # Inicializar o tradutor
 translator = GoogleTranslator(source='en', target='pt')
 
+# Função para obter uma página aleatória da Wikipedia relacionada a um tópico
+def get_random_wikipedia_page(topic):
+    url = f"https://en.wikipedia.org/w/api.php?action=query&list=random&rnnamespace=0&rnlimit=1&format=json&rntitle={topic}"
+    response = requests.get(url)
+    data = response.json()
+    page_id = data['query']['random'][0]['id']
+    page_url = f"https://en.wikipedia.org/?curid={page_id}"
+    return page_url
+
 # Seleção randômica de tópicos
 random_topics = random.sample(list(available_topics.items()), min(len(available_topics), 5))
 
 # Buscar e processar os tópicos selecionados
-for topic_name, url in random_topics:
+for topic_name, topic_keyword in random_topics:
     try:
+        # Obter a URL de uma página aleatória relacionada ao tópico
+        url = get_random_wikipedia_page(topic_keyword)
+
         # Obter o conteúdo da página
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
