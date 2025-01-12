@@ -10,13 +10,11 @@ body.dark-theme {
     padding: 20px 20px 20px 240px; /* padding-left: 240px (200px do logo + 40px de margem) */
     border-bottom: 2px solid #00ffcc;
     position: relative; /* Permite posicionar o logo corretamente */
-
 }
 
 .neon-text {
     color: #00ffcc;
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-    
 }
 
 .neon-navbar {
@@ -29,7 +27,6 @@ body.dark-theme {
     color: #00ffcc;
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
     align-items: center; /* Centraliza os itens verticalmente */
-
 }
 
 .neon-navbar .nav-link:hover {
@@ -39,12 +36,11 @@ body.dark-theme {
 
 .neon-navbar .navbar-toggler {
     border-color: #00ffcc;
-justify-content: center;
+    justify-content: center;
 }
 
 .neon-navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-
 }
 
 .neon-card {
@@ -100,4 +96,55 @@ justify-content: center;
     height: 100px; /* Altura proporcional para manter o formato retangular */
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
     border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
+}
+
+/* Estilos da Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #f4f4f9;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: #28a745;
+}
+
+.sidebar .search-bar {
+    margin-bottom: 20px;
+}
+
+.sidebar .search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sidebar .date-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar .date-list li {
+    margin-bottom: 10px;
+}
+
+.sidebar .date-list li a {
+    text-decoration: none;
+    color: #28a745;
+}
+
+.sidebar .date-list li a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    margin-left: 300px;
+    padding: 20px;
 }
