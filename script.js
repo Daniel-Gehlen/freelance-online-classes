@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Função para adicionar datas à sidebar
+    // Primeiro script
     function addDatesToSidebar() {
         const dateList = document.getElementById('date-list');
         const posts = document.querySelectorAll('.card.neon-card');
         const dates = new Set();
 
-        // Coletar todas as datas dos posts
         posts.forEach(post => {
             const dateElement = post.querySelector('.post-date');
             if (dateElement) {
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Adicionar as datas à sidebar
         dates.forEach(date => {
             const li = document.createElement('li');
             const a = document.createElement('a');
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Função para filtrar posts por data
     function filterPostsByDate() {
         const hash = window.location.hash.substring(1);
         const posts = document.querySelectorAll('.card.neon-card');
@@ -43,13 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Adicionar datas à sidebar ao carregar a página
     addDatesToSidebar();
-
-    // Filtrar posts por data ao carregar a página
     filterPostsByDate();
 
-    // Adicionar evento de clique para filtrar posts por data
     document.querySelectorAll('.date-list a').forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
@@ -59,23 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Carregar conteúdo da Wikipedia
     fetch('https://pt.wikipedia.org/api/rest_v1/page/summary/Teoria_musical')
-      .then(response => response.json())
-      .then(data => {
-          document.getElementById('wikipedia-content').innerHTML = data.extract;
-      });
-});
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('wikipedia-content').innerHTML = data.extract;
+        });
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Segundo script
     const sidebar = document.querySelector('.sidebar');
-    const navbarHeight = 190; // Altura da navbar
+    const navbarHeight = 190;
 
     window.addEventListener('scroll', function() {
         if (window.scrollY >= navbarHeight) {
-            sidebar.classList.add('fixed'); // Fixa a sidebar no topo
+            sidebar.classList.add('fixed');
         } else {
-            sidebar.classList.remove('fixed'); // Retorna à posição inicial
+            sidebar.classList.remove('fixed');
         }
     });
 });
