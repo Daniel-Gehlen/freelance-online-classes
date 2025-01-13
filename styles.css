@@ -112,7 +112,7 @@ body.dark-theme {
     padding: 10px;
     overflow-y: auto;
     z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
-    transition: top 0.3s ease; /* Transição suave */
+    transition: top 0.3s ease, left 0.3s ease; /* Transição suave */
 }
 
 /* Quando a sidebar está fixa no topo */
@@ -186,7 +186,7 @@ body.dark-theme {
         display: block;
     }
 
-        .sidebar {
+    .sidebar {
         width: 100%;
         height: auto;
         position: fixed;
@@ -199,7 +199,7 @@ body.dark-theme {
         left: 0; /* Mostra a sidebar */
     }
 
-        .neon-header {
+    .neon-header {
         padding-left: 20px; /* Reduz o padding para telas pequenas */
     }
 
@@ -216,4 +216,3 @@ body.dark-theme {
         max-width: 100%; /* Ajusta a largura dos cards */
     }
 }
-
