@@ -201,19 +201,70 @@ body.dark-theme {
         display: block;
     }
 
+    /* Ajustes para o menu hambúrguer */
+    .navbar-toggler {
+        position: fixed; /* Fixa o botão no topo */
+        top: 20px; /* Distância do topo */
+        right: 20px; /* Distância da direita */
+        z-index: 1100; /* Garante que fique acima da sidebar e outros elementos */
+        background-color: #0d0d0d; /* Mesma cor da navbar */
+        border: 1px solid #00ffcc; /* Borda neon */
+        border-radius: 4px; /* Bordas levemente arredondadas */
+        padding: 8px 12px; /* Espaçamento interno */
+    }
+
+    .navbar-toggler-icon {
+        filter: drop-shadow(0 0 2px #00ffcc); /* Efeito neon no ícone */
+    }
+
+    /* Ajustes para a sidebar */
     .sidebar {
         width: 100%;
         height: auto;
         position: fixed;
-        top: 60px; /* Ajuste conforme a altura do navbar */
+        top: 0;
         left: -100%; /* Esconde a sidebar */
         transition: left 0.3s ease;
+        background-color: #0d0d0d; /* Mesma cor da navbar */
+        z-index: 1000; /* Garante que fique acima do conteúdo */
     }
 
     .sidebar.open {
         left: 0; /* Mostra a sidebar */
     }
 
+    /* Altera o texto da sidebar para o título da página */
+    .sidebar h2 {
+        font-size: 1.5em;
+        color: #00ffcc;
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .sidebar .date-list {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .sidebar .date-list li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar .date-list li a {
+        text-decoration: none;
+        color: #00ffcc;
+        font-size: 1.2em;
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+    }
+
+    .sidebar .date-list li a:hover {
+        color: #65f5d8;
+        text-shadow: 0 0 5px #65f5d8, 0 0 10px #65f5d8;
+    }
+
+    /* Ajustes para o header em telas pequenas */
     .neon-header {
         padding-left: 20px; /* Reduz o padding para telas pequenas */
     }
@@ -223,11 +274,40 @@ body.dark-theme {
         text-align: center; /* Centraliza o logo */
     }
 
+    /* Ajustes para o conteúdo principal */
     .main-content {
         margin-left: 0; /* Remove a margem da sidebar */
+        padding-bottom: 60px; /* Espaço para o footer */
     }
 
     .neon-card {
-        max-width: 100%; /* Ajusta a largura dos cards */
+        max-width: 97%; /* Ajusta a largura dos cards */
+    }
+}
+
+/* Ajustes específicos para dispositivos com largura de 340px */
+@media (max-width: 340px) {
+    .navbar-toggler {
+        right: 10px; /* Ajuste da posição do botão */
+    }
+
+    .sidebar {
+        top: 0; /* Ajuste da altura da sidebar */
+    }
+
+    .sidebar h2 {
+        font-size: 1.2em; /* Reduz o tamanho do título */
+    }
+
+    .sidebar .date-list li a {
+        font-size: 1em; /* Reduz o tamanho dos links */
+    }
+
+    .neon-header {
+        padding-left: 10px; /* Reduz o padding do header */
+    }
+
+    .main-content {
+        padding: 10px; /* Reduz o padding do conteúdo */
     }
 }
