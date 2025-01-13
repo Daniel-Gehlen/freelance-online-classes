@@ -3,6 +3,7 @@ body.dark-theme {
     background-color: #1a1a1a;
     color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 .neon-header {
@@ -165,3 +166,54 @@ body.dark-theme {
     margin-left: 120px; /* Ajustado para a largura da sidebar */
     padding: 20px;
 }
+
+/* Estilos para o menu hambúrguer */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Esconder o menu em telas pequenas */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+    }
+    .navbar-collapse.show {
+        display: block;
+    }
+
+        .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 60px; /* Ajuste conforme a altura do navbar */
+        left: -100%; /* Esconde a sidebar */
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0; /* Mostra a sidebar */
+    }
+
+        .neon-header {
+        padding-left: 20px; /* Reduz o padding para telas pequenas */
+    }
+
+    .logo-link {
+        position: static; /* Remove o posicionamento absoluto */
+        text-align: center; /* Centraliza o logo */
+    }
+
+    .main-content {
+        margin-left: 0; /* Remove a margem da sidebar */
+    }
+
+    .neon-card {
+        max-width: 100%; /* Ajusta a largura dos cards */
+    }
+}
+
