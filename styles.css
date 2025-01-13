@@ -3,7 +3,7 @@ body.dark-theme {
     background-color: #1a1a1a;
     color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 .neon-header {
@@ -11,6 +11,25 @@ body.dark-theme {
     padding: 20px 20px 20px 240px; /* padding-left: 240px (200px do logo + 40px de margem) */
     border-bottom: 2px solid #00ffcc;
     position: relative; /* Permite posicionar o logo corretamente */
+}
+
+/* Estilo para o h1 */
+h1.neon-text {
+    color: #00ffcc; /* Cor neon */
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
+    opacity: 1; /* Garante que não está transparente */
+    text-align: left;
+}
+
+/* Estilo para o h2 com efeito neon e interior preto */
+h2.neon-text {
+    color: #00ffcc; /* Cor neon */
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
+    -webkit-text-fill-color: black; /* Torna o interior do texto transparente */
+    -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
+    background-clip: text; /* Propriedade padrão para compatibilidade */    
+    background-image: linear-gradient(to bottom, #000, #000); /* Interior preto */
+    text-align: left;
 }
 
 .neon-text {
@@ -194,6 +213,10 @@ body.dark-theme {
 
 /* Esconder o menu em telas pequenas */
 @media (max-width: 768px) {
+    h1 {
+        text-align: center !important;
+    }
+
     .navbar-collapse {
         display: none;
     }
@@ -234,7 +257,7 @@ body.dark-theme {
     }
 
     /* Altera o texto da sidebar para o título da página */
-    .sidebar h2 {
+    .sidebar {
         font-size: 1.5em;
         color: #00ffcc;
         text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
@@ -287,6 +310,10 @@ body.dark-theme {
 
 /* Ajustes específicos para dispositivos com largura de 340px */
 @media (max-width: 340px) {
+    h1 {
+        text-align: center !important;
+    }
+
     .navbar-toggler {
         right: 10px; /* Ajuste da posição do botão */
     }
@@ -303,8 +330,9 @@ body.dark-theme {
         font-size: 1em; /* Reduz o tamanho dos links */
     }
 
+    /* Ajustes para o header em telas pequenas */
     .neon-header {
-        padding-left: 10px; /* Reduz o padding do header */
+        padding-left: 10px; /* Reduz o padding para telas pequenas */
     }
 
     .main-content {
