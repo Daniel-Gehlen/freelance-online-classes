@@ -211,6 +211,38 @@ h2.neon-text {
     z-index: 1000; /* Garante que o footer fique acima de outros elementos */
 }
 
+/* Estilo do botão de voltar ao topo */
+.scroll-to-top-btn {
+    display: none; /* Esconde o botão inicialmente */
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 50%; /* Formato circular */
+    background-color: #00ffcc; /* Cor de fundo neon */
+    color: #0d0d0d; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    cursor: pointer; /* Cursor de ponteiro */
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; /* Efeito neon */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #00cc99; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta ligeiramente o botão */
+    box-shadow: 0 0 15px #00cc99, 0 0 30px #00cc99; /* Efeito neon ao passar o mouse */
+}
+
+/* Estilo da seta */
+.arrow-up {
+    display: block;
+    text-align: center;
+    line-height: 50px; /* Centraliza verticalmente */
+}
+
 /* Esconder o menu em telas pequenas */
 @media (max-width: 768px) {
     h1 {
