@@ -76,17 +76,29 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             document.getElementById('wikipedia-content').innerHTML = data.extract;
         });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Controle do toggle e sidebar
+    const navbarToggler = document.querySelector('.navbar-toggler');
     const sidebar = document.querySelector('.sidebar');
-    const navbarHeight = 190; // Altura da navbar
 
+    navbarToggler.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+    });
+
+    // Fecha a sidebar ao clicar fora dela (opcional)
+    document.addEventListener('click', function(event) {
+        if (!sidebar.contains(event.target) && !navbarToggler.contains(event.target)) {
+            sidebar.classList.remove('open');
+        }
+    });
+
+    // Fixar a sidebar ao rolar a página
+    const navbarHeight = 190;
     window.addEventListener('scroll', function() {
         if (window.scrollY >= navbarHeight) {
-            sidebar.classList.add('fixed'); // Fixa a sidebar no topo
+            sidebar.classList.add('fixed');
         } else {
-            sidebar.classList.remove('fixed'); // Retorna à posição inicial
+            sidebar.classList.remove('fixed');
         }
     });
 });
