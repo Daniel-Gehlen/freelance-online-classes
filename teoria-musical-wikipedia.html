@@ -10,7 +10,7 @@
     <meta property="og:image" content="https://daniel-gehlen.github.io/freelance-online-classes/logo.jpg">
     <meta property="og:url" content="https://daniel-gehlen.github.io/freelance-online-classes/">
     <meta property="og:type" content="website">
-    
+
     <!-- Outros links e estilos -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,17 @@
 </head>
 
 <body class="dark-theme">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Data</h2>
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="🔍 Data">
+        </div>
+        <ul class="date-list" id="date-list">
+            <!-- Datas serão adicionadas dinamicamente aqui -->
+        </ul>
+    </div>
+
     <!-- Cabeçalho com Logo -->
     <header class="neon-header">
         <div class="logo-link">
@@ -28,23 +39,29 @@
         <p>Aprenda no seu ritmo, com aulas personalizadas e flexíveis!</p>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="teoria-musical-wikipedia.html">Teoria Musical</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
+    <div class="container-fluid">
+        <!-- Botão de toggle (menu hambúrguer) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <main class="container my-5">
+        <!-- Conteúdo do navbar -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand neon-text" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand neon-text" href="teoria-musical-wikipedia.html">Teoria Musical</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <main class="main-content container my-5">
         <!-- Conteúdo da Wikipedia -->
         <section class="card neon-card mb-5">
             <div class="card-body">
@@ -58,20 +75,13 @@
                 </p>
             </div>
         </section>
-        </section>
-    </main>
 
-    <footer class="neon-footer text-center py-3">
-        <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Análise Musical</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Análise Musical</p>
             <p>Análise musical é o estudo da estrutura musical em composições ou performances.[1] De acordo com o
                 teórico musical Ian Bent, a análise musical "é o meio de responder diretamente à pergunta 'Como isso
                 funciona?'".[2] O método empregado para responder a essa pergunta, e de fato exatamente o que se quer
@@ -89,6 +99,8 @@
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">História da Música</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">História da Música</p>
             <p></p>
             <p>Embora as definições de música variem muito em todo o mundo, todas as culturas conhecidas participam
                 dela, e ela é, portanto, considerada um universal cultural. As origens da música permanecem altamente
@@ -102,12 +114,13 @@
         </div>
     </section>
 
-
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Sociologia e Educação Musical</h2>
-            <p>Década de 1800: Martineau · Tocqueville · Marx · Spencer · Le Bon · Ward · Pareto · Tönnies · Veblen
-                · Simmel · Durkheim · Addams · Mead · Weber · Du Bois · Mannheim · Elias</p>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Sociologia e Educação Musical</p>
+            <p>Década de 1800: Martineau · Tocqueville · Marx · Spencer · Le Bon · Ward · Pareto · Tönnies · Veblen
+                · Simmel · Durkheim · Addams · Mead · Weber · Du Bois · Mannheim · Elias</p>
             <p>Sociomusicologia (do latim: socius, "companheiro"; do francês antigo musique; e o sufixo -ology, "o
                 estudo de", do grego antigo λόγος, lógos: "discurso"), também chamada de sociologia da música ou
                 sociologia da música, refere-se tanto a um subcampo acadêmico da sociologia que se preocupa com a música
@@ -118,10 +131,11 @@
         </div>
     </section>
 
-
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Fundamentos da Música</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Fundamentos da Música</p>
             <p>As obras do primeiro tipo (manuais técnicos) incluem</p>
             <p>Mais tratados filosóficos do segundo tipo incluem</p>
             <p><a href="https://en.wikipedia.org/wiki/Music_theory" target="_blank">Fonte:
@@ -132,6 +146,8 @@
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Análise Musical</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Análise Musical</p>
             <p>Exemplos:</p>
             <p>Um analista não apenas seleciona características particulares, mas também as organiza de acordo com um
                 enredo [intriga].... Nosso senso das partes componentes de uma obra musical, assim como nosso senso de
@@ -144,6 +160,8 @@
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">História da Música Brasileira</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">História da Música Brasileira</p>
             <p>No século XVIII, havia intensa atividade musical em todas as regiões mais desenvolvidas do Brasil, com
                 suas estruturas institucionais e educacionais moderadamente estáveis. As orquestras privadas, antes
                 poucas, tornaram-se mais comuns e as igrejas apresentavam uma grande variedade musical.</p>
@@ -157,6 +175,8 @@
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Tecnologias para Educação Musical</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Tecnologias para Educação Musical</p>
             <p>Os instrumentos romanos incluem:</p>
             <p>Muitos instrumentos se originaram durante o Renascimento; outros eram variações ou melhorias de
                 instrumentos que existiam anteriormente na era medieval. Os instrumentos de sopro no Renascimento eram
@@ -170,6 +190,8 @@
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Educação de Jovens e Adultos no Brasil: História e Política</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Educação de Jovens e Adultos no Brasil: História e Política</p>
             <p>O Brasil usa sistemas de escolas públicas e privadas. Eles têm os níveis tradicionais de ensino primário,
                 secundário, terciário e técnico.</p>
             <p>A educação é dividida em três níveis, com séries em cada nível:</p>
@@ -183,6 +205,8 @@
     <section class="card neon-card mb-5">
         <div class="card-body">
             <h2 class="card-title neon-text">Instrumento - Violão</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Instrumento - Violão</p>
             <p>O tensor é uma haste de metal fina e forte que corre ao longo da parte interna do braço. É usado para
                 corrigir alterações na curvatura do braço causadas pelo envelhecimento das madeiras do braço, alterações
                 na umidade ou para compensar alterações na tensão das cordas. A tensão do conjunto da haste e do braço é
@@ -197,36 +221,56 @@
                 (normalmente em violões acústicos) ou peças separadas, uma para cada corda (guitarras elétricas e
                 baixos). O propósito básico do rastilho é fornecer o ponto final para a vibração da corda no local
                 correto para a entonação adequada e, em violões acústicos, transferir as vibrações através da ponte para
-                a madeira superior da guitarra. Os rastilho são normalmente feitos de plástico ou osso para violões
+                a madeira superior da guitarra. Os rastilhos são normalmente feitos de plástico ou osso para violões
                 acústicos, embora sintéticos e algumas variações exóticas de dentes de animais (por exemplo, dente
-                fossilizado, marfim, etc.) tenham se tornado populares entre alguns músicos. Os rastilho de guitarra
-                elétrica são normalmente de metal, embora alguns rastilho sintéticos estejam disponíveis.</p>
+                fossilizado, marfim, etc.) tenham se tornado populares entre alguns músicos. Os rastilhos de guitarra
+                elétrica são normalmente de metal, embora alguns rastilhos sintéticos estejam disponíveis.</p>
             <p><a href="https://en.wikipedia.org/wiki/Guitar" target="_blank">Fonte:
                     https://en.wikipedia.org/wiki/Guitar</a></p>
         </div>
     </section>
 
-   
+    <section class="card neon-card mb-5">
+        <div class="card-body">
+            <h2 class="card-title neon-text">Harmonia</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Harmonia</p>
+            <p>Os seguintes são intervalos comuns:</p>
+            <p>Os intervalos compostos são formados e nomeados da seguinte forma:</p>
+            <p><a href="https://en.wikipedia.org/wiki/Harmony_(music)" target="_blank">Fonte: https://en.wikipedia.org/wiki/Harmony_(music)</a></p>
+        </div>
+    </section>
 
-<section class="card neon-card mb-5">
-  <div class="card-body">
-    <h2 class="card-title neon-text">Harmonia</h2>
-<p>Os seguintes são intervalos comuns:</p>
-<p>Os intervalos compostos são formados e nomeados da seguinte forma:</p>
-    <p><a href="https://en.wikipedia.org/wiki/Harmony_(music)" target="_blank">Fonte: https://en.wikipedia.org/wiki/Harmony_(music)</a></p>
-  </div>
-</section>
+    <section class="card neon-card mb-5">
+        <div class="card-body">
+            <h2 class="card-title neon-text">Projetos Sociais e Culturais e Educação Musical</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Projetos Sociais e Culturais e Educação Musical</p>
+            <p>Além dos quatro principais métodos internacionais descritos acima, outras abordagens foram influentes. Métodos menos conhecidos são descritos abaixo:</p>
+            <p>Algumas escolas e organizações promovem a integração de aulas de artes, como música, com outras disciplinas, como matemática, ciências ou inglês, acreditando que a integração dos diferentes currículos ajudará cada disciplina a se desenvolver mutuamente, melhorando a qualidade geral da educação.</p>
+            <p><a href="https://en.wikipedia.org/wiki/Music_education" target="_blank">Fonte: https://en.wikipedia.org/wiki/Music_education</a></p>
+        </div>
+    </section>
 
-<section class="card neon-card mb-5">
-  <div class="card-body">
-    <h2 class="card-title neon-text">Projetos Sociais e Culturais e Educação Musical</h2>
-<p>Além dos quatro principais métodos internacionais descritos acima, outras abordagens foram influentes. Métodos menos conhecidos são descritos abaixo:</p>
-<p>Algumas escolas e organizações promovem a integração de aulas de artes, como música, com outras disciplinas, como matemática, ciências ou inglês, acreditando que a integração dos diferentes currículos ajudará cada disciplina a se desenvolver mutuamente, melhorando a qualidade geral da educação.</p>
-    <p><a href="https://en.wikipedia.org/wiki/Music_education" target="_blank">Fonte: https://en.wikipedia.org/wiki/Music_education</a></p>
-  </div>
-</section>
+    <section class="card neon-card mb-5">
+        <div class="card-body">
+            <h2 class="card-title neon-text">Prática Musical em Conjunto</h2>
+            <p class="post-date">12/01/2025</p>
+            <p class="post-topic">Prática Musical em Conjunto</p>
+            <p>Já em 1771, ele deu um primeiro exemplo das críticas sistemáticas que se tornariam tão típicas de sua produção, sendo o único de seus contemporâneos a desaprovar a tradução de Les Géorgiques feita pelo abade Delille.</p>
+            <p>Ele escreveu uma tragédia em três atos, Médée (1779), mas sem sucesso. Como colaborador do Le Journal de Monsieur, Le Journal Français e outras coleções periódicas, ele se tornou um crítico, glorificando sistematicamente os Antigos e os clássicos do século XVII, e atacando cada vez mais violentamente os autores vivos daquela época.</p>
+            <p><a href="https://en.wikipedia.org/?curid=34276096" target="_blank">Fonte: https://en.wikipedia.org/?curid=34276096</a></p>
+        </div>
+    </section>
 
 
+    <footer class="neon-footer text-center py-3">
+        <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
