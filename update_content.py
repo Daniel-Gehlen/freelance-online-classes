@@ -5,11 +5,43 @@ from deep_translator import GoogleTranslator
 import random
 from datetime import datetime
 
-# Lista de termos musicais para busca
+# Configurar tópicos e URLs de referência
+topics = {
+    "Análise Musical": "Musical_analysis",
+    "História da Música": "History_of_music",
+    "Educação de Jovens e Adultos no Brasil: História e Política": "Education_in_Brazil",
+    "Educação Musical na Infância": "Childhood_music_education",
+    "Fundamentos da Música": "Music_theory",
+    "História da Música Brasileira": "History_of_Brazilian_music",
+    "Harmonia": "Harmony_(music)",
+    "Instrumento - Canto": "Vocal_music",
+    "Instrumento - Violão": "Guitar",
+    "Materiais Didáticos": "Teaching_material",
+    "Prática Musical em Conjunto": "Musical_ensemble",
+    "Práticas de Composição para Educação Musical": "Composition_(music)",
+    "Práticas Vocais para a Educação Musical": "Vocal_music_education",
+    "Projetos Sociais e Culturais e Educação Musical": "Music_education",
+    "Sociologia e Educação Musical": "Sociology_of_music",
+    "Tecnologias para Educação Musical": "Music_technology"
+}
+
+# Lista de termos relacionados à música para filtrar parágrafos
 music_terms = [
     "recording studio", "mixing", "mastering", "live sound", "stage", "backline", "roadie", "sound technician",
     "stage technician", "lighting technician", "road manager", "music producer", "sound engineer", "recording technician",
-    "mixing technician", "mastering technician", "audio technician", "video technician"
+    "mixing technician", "mastering technician", "audio technician", "video technician", "rhythm", "melody", "harmony",
+    "counterpoint", "musical form", "musical analysis", "music theory", "composition", "orchestration", "arrangement",
+    "improvisation", "sight-reading", "ear training", "musical notation", "tempo", "dynamics", "articulation", "timbre",
+    "texture", "scale", "mode", "interval", "chord", "cadence", "modulation", "transposition", "musical phrasing",
+    "musical interpretation", "conducting", "vocal technique", "instrumental technique", "music history", "baroque music",
+    "classical music", "romantic music", "modern music", "contemporary music", "opera", "symphony", "sonata", "fugue",
+    "chorale", "lied", "musical theater", "jazz", "blues", "folk music", "world music", "electronic music", "acoustics",
+    "music pedagogy", "music psychology", "music therapy", "ethnomusicology", "musicology", "music criticism",
+    "music technology", "digital audio", "synthesizer", "sampler", "sequencer", "DAW", "music software", "music hardware",
+    "music education", "music curriculum", "music assessment", "music performance", "music ensemble", "chamber music",
+    "orchestra", "choir", "band", "solo performance", "music rehearsal", "music practice", "music improvisation",
+    "music composition", "music arrangement", "music production", "music publishing", "music copyright", "music business",
+    "music marketing", "music distribution", "music streaming", "music festivals", "music competitions", "music awards"
 ]
 
 # Nome do arquivo HTML que será atualizado
@@ -24,7 +56,7 @@ if not os.path.exists(file_path):
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Teoria Musical - Temas Relacionados</title>
+            <title>Teoria Musical - Conteúdos</title>
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -61,7 +93,7 @@ if not os.path.exists(file_path):
             </style>
         </head>
         <body>
-            <h1>Teoria Musical - Conteúdos Relacionados</h1>
+            <h1>Teoria Musical - Conteúdos</h1>
         </body>
         </html>
         """)
