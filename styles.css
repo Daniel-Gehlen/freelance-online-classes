@@ -27,7 +27,7 @@ h2.neon-text {
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
     -webkit-text-fill-color: black; /* Torna o interior do texto transparente */
     -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
-    background-clip: text; /* Propriedade padrão para compatibilidade */    
+    background-clip: text; /* Propriedade padrão para compatibilidade */
     background-image: linear-gradient(to bottom, #000, #000); /* Interior preto */
     text-align: left;
 }
@@ -99,12 +99,6 @@ h2.neon-text {
 
 .btn-neon:hover {
     background-color: #00cc99;
-}
-
-.neon-footer {
-    background-color: #0d0d0d;
-    border-top: 2px solid #00ffcc;
-    padding: 10px;
 }
 
 .logo-link {
@@ -184,8 +178,8 @@ h2.neon-text {
 .main-content {
     margin-left: 120px; /* Ajustado para a largura da sidebar */
     padding: 20px;
-    padding-bottom: 60px; /* Adiciona um espaço extra no final do conteúdo */
-
+    padding-bottom: 80px; /* Adiciona um espaço extra no final do conteúdo */
+    margin-bottom: 80px; /* Ajuste o valor conforme necessário */
 }
 
 /* Estilos para o menu hambúrguer */
@@ -203,12 +197,13 @@ h2.neon-text {
     background-color: #0d0d0d;
     border-top: 2px solid #00ffcc;
     padding: 10px;
-    position: fixed; /* Fixa o footer no bottom */
+    position: relative; /* Altera para relative */
     left: 0;
-    bottom: 0;
     width: 100%; /* Ocupa toda a largura da tela */
     text-align: center; /* Centraliza o conteúdo */
     z-index: 1000; /* Garante que o footer fique acima de outros elementos */
+    clear: both; /* Garante que o footer seja posicionado após o conteúdo */
+    margin-top: 20px; /* Adiciona espaço entre o conteúdo e o footer */
 }
 
 /* Estilo do botão de voltar ao topo */
@@ -333,10 +328,12 @@ h2.neon-text {
     .main-content {
         margin-left: 0; /* Remove a margem da sidebar */
         padding-bottom: 60px; /* Espaço para o footer */
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
     }
 
     .neon-card {
         max-width: 97%; /* Ajusta a largura dos cards */
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
     }
 }
 
@@ -369,5 +366,7 @@ h2.neon-text {
 
     .main-content {
         padding: 10px; /* Reduz o padding do conteúdo */
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
+        padding-block: 10px;
     }
 }
