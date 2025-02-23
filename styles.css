@@ -27,7 +27,7 @@ h2.neon-text {
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
     -webkit-text-fill-color: black; /* Torna o interior do texto transparente */
     -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
-    background-clip: text; /* Propriedade padrão para compatibilidade */    
+    background-clip: text; /* Propriedade padrão para compatibilidade */
     background-image: linear-gradient(to bottom, #000, #000); /* Interior preto */
     text-align: left;
 }
@@ -69,7 +69,7 @@ h2.neon-text {
     border-radius: 10px;
     box-shadow: 0 0 10px #00ffcc;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 80%; /* Ajusta a largura máxima dos cards */
+    max-width: 70%; /* Ajusta a largura máxima dos cards */
     margin: 0 auto 20px auto; /* Centraliza os cards e ajusta a margem inferior */
 }
 
@@ -101,12 +101,6 @@ h2.neon-text {
     background-color: #00cc99;
 }
 
-.neon-footer {
-    background-color: #0d0d0d;
-    border-top: 2px solid #00ffcc;
-    padding: 10px;
-}
-
 .logo-link {
     position: absolute; /* Posiciona o logo no canto esquerdo */
     left: 20px; /* Distância da esquerda */
@@ -123,9 +117,9 @@ h2.neon-text {
 /* Estilos da Sidebar */
 .sidebar {
     position: fixed;
-    top: 190px; /* Posição inicial (abaixo da navbar) */
+    top: 40%; /* Posição inicial (abaixo da navbar) */
     left: 0;
-    width: 130px; /* Largura da sidebar */
+    width: 15%; /* Largura da sidebar */
     height: calc(100vh - 190px); /* Altura restante da página */
     background-color: #0d0d0d; /* Fundo preto */
     padding: 10px;
@@ -184,18 +178,8 @@ h2.neon-text {
 .main-content {
     margin-left: 120px; /* Ajustado para a largura da sidebar */
     padding: 20px;
-    padding-bottom: 60px; /* Adiciona um espaço extra no final do conteúdo */
-
-}
-
-/* Estilos para o menu hambúrguer */
-.navbar-toggler {
-    border: none;
-    background: transparent;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    padding-bottom: 100px; /* Adiciona um espaço extra no final do conteúdo */
+    margin-bottom: 80px; /* Ajuste o valor conforme necessário */
 }
 
 /* Estilos para o Footer */
@@ -203,12 +187,13 @@ h2.neon-text {
     background-color: #0d0d0d;
     border-top: 2px solid #00ffcc;
     padding: 10px;
-    position: fixed; /* Fixa o footer no bottom */
+    position: relative; /* Altera para relative */
     left: 0;
-    bottom: 0;
     width: 100%; /* Ocupa toda a largura da tela */
     text-align: center; /* Centraliza o conteúdo */
     z-index: 1000; /* Garante que o footer fique acima de outros elementos */
+    clear: both; /* Garante que o footer seja posicionado após o conteúdo */
+    margin-top: 20px; /* Adiciona espaço entre o conteúdo e o footer */
 }
 
 /* Estilo do botão de voltar ao topo */
@@ -272,17 +257,19 @@ h2.neon-text {
         filter: drop-shadow(0 0 2px #00ffcc); /* Efeito neon no ícone */
     }
 
-    /* Ajustes para a sidebar */
     .sidebar {
-        width: 100%;
+        width: 45%;
         height: auto;
         position: fixed;
-        top: 0;
+        top: 50%;
         left: -100%; /* Esconde a sidebar */
         transition: left 0.3s ease;
-        background-color: #0d0d0d; /* Mesma cor da navbar */
+        background-color: #0d0d0d00; /* Mesma cor da navbar */
         z-index: 1000; /* Garante que fique acima do conteúdo */
+        border: 2px solid #00ffcc; /* Borda verde neon */
+        border-radius: 10px; /* Cantos arredondados */
     }
+    
 
     .sidebar.open {
         left: 0; /* Mostra a sidebar */
@@ -292,7 +279,7 @@ h2.neon-text {
     .sidebar {
         font-size: 1.5em;
         color: #00ffcc;
-        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+        text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
         text-align: center;
         margin-top: 20px;
     }
@@ -301,6 +288,8 @@ h2.neon-text {
         list-style-type: none;
         padding: 0;
         text-align: center;
+        text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
+
     }
 
     .sidebar .date-list li {
@@ -311,7 +300,7 @@ h2.neon-text {
         text-decoration: none;
         color: #00ffcc;
         font-size: 1.2em;
-        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+        text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
     }
 
     .sidebar .date-list li a:hover {
@@ -333,10 +322,12 @@ h2.neon-text {
     .main-content {
         margin-left: 0; /* Remove a margem da sidebar */
         padding-bottom: 60px; /* Espaço para o footer */
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
     }
 
     .neon-card {
         max-width: 97%; /* Ajusta a largura dos cards */
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
     }
 }
 
@@ -369,5 +360,7 @@ h2.neon-text {
 
     .main-content {
         padding: 10px; /* Reduz o padding do conteúdo */
+        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
+        padding-block: 10px;
     }
 }
