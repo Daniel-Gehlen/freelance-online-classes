@@ -148,7 +148,7 @@
                             <div class="card-body">
                                 <h5 class="card-title neon-text">Importância do Estudo Gradual e Prática Musical Equilibrada</h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/watch?v=h5V9VqH21iw" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/h5V9VqH21iw" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -159,15 +159,29 @@
                             <div class="card-body">
                                 <h5 class="card-title neon-text">O caminho para tocar violão: material didático de apoio</h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.youtube.com/watch?v=JLXLVC9uVH0" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/JLXLVC9uVH0" allowfullscreen></iframe>
                                 </div>
-                                <h5 class="card-title neon-text">Página de compra HotMart com todos conteúdos abordados</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Vídeo 3 -->
+                    <div class="col-md-6 mb-3">
+                        <div class="card neon-card">
+                            <div class="card-body">
+                                <h5 class="card-title neon-text">Bourreé - Johann Sebastian Bach (Violão: Daniel Gehlen)</h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/cFlu3W2SUbI" allowfullscreen></iframe>
                                 </div>
-                                <h5 class="card-title neon-text">Página de compra Udemy - Aprenda Violão do Zero: Ritmos e Acordes Básicos em 30 Dias!</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Vídeo 4 -->
+                    <div class="col-md-6 mb-3">
+                        <div class="card neon-card">
+                            <div class="card-body">
+                                <h5 class="card-title neon-text">Não é fácil - Daniel Gehlen (Autoral)</h5>
                                 <div class="ratio ratio-16x9">
-                                    <iframe src="https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/WOu4EfVlBBA" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +189,104 @@
                 </div>
             </div>
         </section>
-    </main>
+
+<!-- Seção de Links Externos -->
+<section class="card neon-card mb-5">
+    <div class="card-body">
+        <h2 class="card-title neon-text">📚 Materiais Didáticos</h2>
+        <p class="card-text">Confira os materiais didáticos disponíveis:</p>
+
+        <!-- HotMart -->
+        <div class="card neon-card mb-4">
+            <div class="card-body text-center">
+                <!-- Imagem eu-hotmart.jpeg -->
+                <img src="eu-rotmart.jpeg" alt="HotMart Preview" class="img-fluid mb-3" style="border-radius: 10px; max-width: 100%; height: auto;">
+                <h5 class="card-title">Compre por aqui</h5>
+                <p class="card-text">ou Acesse o material completo na HotMart.</p>
+
+                <!-- Botão "Mostrar Conteúdos" -->
+                <button id="mostrarConteudos" class="btn btn-primary mb-3 w-100">Mostrar Conteúdos</button>
+
+                <!-- Lista de Conteúdos (inicialmente oculta) -->
+                <div id="listaConteudos" style="display: none;">
+                    <h6>Conteúdos do Curso:</h6>
+                    <ul class="list-unstyled">
+                        <li>1º Módulo - Iniciação prática musical</li>
+                        <li>2º Módulo - Divisão rítmica</li>
+                        <li>3º Módulo - i, m, a, nas três cordas abaixo</li>
+                        <li>4º Módulo - Polegar nas três cordas acima</li>
+                        <li>5º Módulo - Início: Notas presas na 6ª, na 5ª e na 4ª corda.</li>
+                        <li>6ª Corda</li>
+                        <li>5ª Corda</li>
+                        <li>4ª Corda</li>
+                        <li>Módulo 5 - Final</li>
+                        <li>6º Módulo - Início: Notas presas na 3ª, na 2ª e na 1ª corda.</li>
+                        <li>3ª Corda</li>
+                        <li>2ª Corda</li>
+                        <li>1ª Corda</li>
+                        <li>Final do Módulo 6</li>
+                        <li>7º Módulo - Sustenido e bemol: notas alteradas</li>
+                        <li>8º Módulo - Partitura a duas vozes</li>
+                        <li>9º Módulo - Acompanhamentos rítmicos</li>
+                        <li>10º Módulo - Oitavas</li>
+                        <li>11º Módulo - Colcheias</li>
+                        <li>Solfejando</li>
+                        <li>Tocando</li>
+                        <li>12º Módulo - Músicas Instrumentais</li>
+                        <li>Bônus - Doze Dicas Pontuais de Estudos</li>
+                    </ul>
+                </div>
+
+                <!-- Botão "Comprar Agora" -->
+                <script type="text/javascript">
+                    function importHotmart() {
+                        var imported = document.createElement('script');
+                        imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+                        document.head.appendChild(imported);
+                        var link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+                        document.head.appendChild(link);
+                    }
+                    importHotmart();
+                </script>
+                <a onclick="return false;" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
+                    <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
+                </a>
+
+                <!-- Botão "Acessar na Hotmart" -->
+                <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K" target="_blank" class="btn btn-primary w-100">Acessar na Hotmart</a>
+            </div>
+        </div>
+
+        <!-- Udemy -->
+        <div class="card neon-card mb-4">
+            <div class="card-body text-center">
+                <!-- Imagem padrão do Udemy -->
+                <img src="udemy-logo.png" alt="Udemy Preview" class="img-fluid mb-3" style="border-radius: 10px;">
+                <h5 class="card-title">Página de compra Udemy</h5>
+                <p class="card-text">Aprenda Violão do Zero: Ritmos e Acordes Básicos em 30 Dias!</p>
+                <a href="https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR" target="_blank" class="btn btn-primary">Acessar Udemy</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Script para mostrar/ocultar a lista de conteúdos -->
+<script>
+    document.getElementById('mostrarConteudos').addEventListener('click', function () {
+        var lista = document.getElementById('listaConteudos');
+        if (lista.style.display === 'none') {
+            lista.style.display = 'block';
+            this.textContent = 'Ocultar Conteúdos';
+        } else {
+            lista.style.display = 'none';
+            this.textContent = 'Mostrar Conteúdos';
+        }
+    });
+</script>
 
     <footer class="neon-footer text-center py-3">
         <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
