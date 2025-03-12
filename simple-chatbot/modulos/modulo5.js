@@ -7,5 +7,5 @@ export default function modulo5() {
     - Se passarmos disso e significar o aceite de uma aula por parte do aluno em extender o tempo para uma hora de aula.<br>
     - Essa hora entra na mensalidade normalmente.<br><br>
     Para agendar sua aula experimental gratuita de 30min:<br><br>
-    - Me diga qual o melhor dia e hora para você. 😉`;
+    - Digite 8 para falar diretamente com o prfessor e lhe diga qual o melhor dia e hora para você. 😉`;
 }
