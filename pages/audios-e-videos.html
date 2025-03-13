@@ -473,7 +473,7 @@
         return new Promise((resolve, reject) => {
             var imported = document.createElement('script');
             imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-            imported.onload = resolve; // Resolve a Promise quando o script é carregado
+            imported.onload = resolve; // Resolve a Promise quando o script é carregad
             imported.onerror = reject; // Rejeita a Promise em caso de erro
             document.head.appendChild(imported);
 
