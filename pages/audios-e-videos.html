@@ -459,53 +459,71 @@
     });
 </script>
 
-            <!-- Botão "Comprar Agora" -->
-            <a id="hotmart-button" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
-                <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
-            </a>
+<!-- Botão "Comprar Agora" -->
+<a id="hotmart-button" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
+    <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
+</a>
 
-            <!-- Script do Confetti -->
-            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    // Função para disparar o efeito de confete
-                    function triggerConfetti() {
-                        confetti({
-                            particleCount: 1300, // Mais partículas para uma explosão mais energética
-                            spread: 180, // Espalhamento maior para cobrir mais área
-                            origin: { y: 0.6 }, // Origem do efeito (0.6 = 60% da altura da tela)
-                            gravity: 0.5, // Reduz a velocidade de queda (0.5 = mais lento)
-                            ticks: 200, // Aumenta o tempo de vida das partículas
-                            colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'] // Cores variadas
-                        });
+<!-- Script do Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-                        // Ajusta o z-index do canvas dos confetes
-                        const canvas = document.querySelector('canvas');
-                        if (canvas) {
-                            canvas.style.position = 'fixed'; // Garante que o canvas fique fixo na tela
-                            canvas.style.zIndex = '2147483647'; // Define um z-index altíssimo para ficar na frente de tudo
-                            canvas.style.pointerEvents = 'none'; // Impede que o canvas bloqueie interações com o modal
-                        }
-                    }
+<!-- Script do Hotmart -->
+<script type="text/javascript">
+    function importHotmart() {
+        var imported = document.createElement('script');
+        imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+        document.head.appendChild(imported);
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+        document.head.appendChild(link);
+    }
+    // Carrega o script do Hotmart assim que a página for carregada
+    document.addEventListener('DOMContentLoaded', function () {
+        importHotmart();
+    });
+</script>
 
-                    // Adicionar evento de clique ao botão
-                    document.getElementById('hotmart-button').addEventListener('click', function (event) {
-                        event.preventDefault(); // Impede o redirecionamento imediato
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Função para disparar o efeito de confete
+        function triggerConfetti() {
+            confetti({
+                particleCount: 1300, // Mais partículas para uma explosão mais energética
+                spread: 180, // Espalhamento maior para cobrir mais área
+                origin: { y: 0.6 }, // Origem do efeito (0.6 = 60% da altura da tela)
+                gravity: 0.5, // Reduz a velocidade de queda (0.5 = mais lento)
+                ticks: 200, // Aumenta o tempo de vida das partículas
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'] // Cores variadas
+            });
 
-                        // Dispara os confetes imediatamente
-                        triggerConfetti();
+            // Ajusta o z-index do canvas dos confetes
+            const canvas = document.querySelector('canvas');
+            if (canvas) {
+                canvas.style.position = 'fixed'; // Garante que o canvas fique fixo na tela
+                canvas.style.zIndex = '2147483647'; // Define um z-index altíssimo para ficar na frente de tudo
+                canvas.style.pointerEvents = 'none'; // Impede que o canvas bloqueie interações com o modal
+            }
+        }
 
-                        // Abre o modal do Hotmart após um pequeno atraso (100ms)
-                        setTimeout(function () {
-                            if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
-                                Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
-                            } else {
-                                console.error('Hotmart.Checkout não está disponível.');
-                            }
-                        }, 100); // 100ms de atraso
-                    });
-                });
-            </script>
+        // Adicionar evento de clique ao botão
+        document.getElementById('hotmart-button').addEventListener('click', function (event) {
+            event.preventDefault(); // Impede o redirecionamento imediato
+
+            // Dispara os confetes imediatamente
+            triggerConfetti();
+
+            // Abre o modal do Hotmart
+            if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
+                Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
+            } else {
+                console.error('Hotmart.Checkout não está disponível.');
+                alert('Ocorreu um erro ao abrir o checkout. Por favor, tente novamente.');
+            }
+        });
+    });
+</script>
 
                 <!-- Botão "Acessar na Hotmart" -->
                 <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K" target="_blank" class="btn mb-3 btn-primary w-100">Acessar na Hotmart</a>
