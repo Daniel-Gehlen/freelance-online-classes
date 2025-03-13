@@ -1,0 +1,21 @@
+# Ignora a pasta de configuração do VS Code
+.vscode/
+
+# Ignora arquivos de ambiente
+.env
+
+# Ignora dependências do Node.js
+node_modules/
+
+# Ignora pastas de build
+dist/
+build/
+
+# Ignora arquivos de log
+*.log
+
+# Ignora arquivos de sistema do macOS
+.DS_Store
+
+# Ignora configurações do IntelliJ IDEA
+.idea/
