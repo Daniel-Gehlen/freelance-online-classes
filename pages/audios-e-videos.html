@@ -470,18 +470,38 @@
 <!-- Script do Hotmart -->
 <script type="text/javascript">
     function importHotmart() {
-        var imported = document.createElement('script');
-        imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-        document.head.appendChild(imported);
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-        document.head.appendChild(link);
+        return new Promise((resolve, reject) => {
+            var imported = document.createElement('script');
+            imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+            imported.onload = resolve; // Resolve a Promise quando o script é carregado
+            imported.onerror = reject; // Rejeita a Promise em caso de erro
+            document.head.appendChild(imported);
+
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+            document.head.appendChild(link);
+        });
     }
+
     // Carrega o script do Hotmart assim que a página for carregada
     document.addEventListener('DOMContentLoaded', function () {
-        importHotmart();
+        // Exibe um loader ou mensagem de "Carregando..."
+        const button = document.getElementById('hotmart-button');
+        button.innerHTML = 'Carregando...'; // Feedback visual
+
+        importHotmart()
+            .then(() => {
+                // Script do Hotmart carregado com sucesso
+                button.innerHTML = '<img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar no HotMart" style="max-width: 100%; height: auto;">';
+                button.disabled = false; // Habilita o botão
+            })
+            .catch((error) => {
+                // Erro ao carregar o script do Hotmart
+                console.error('Erro ao carregar o script do Hotmart:', error);
+                button.innerHTML = 'Erro ao carregar. Tente novamente.';
+            });
     });
 </script>
 
