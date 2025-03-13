@@ -441,109 +441,107 @@
                     </ul>
                 </div>
 
-<!-- Pré-carregar o script do Hotmart -->
-<script type="text/javascript">
-    function importHotmart() {
-        var imported = document.createElement('script');
-        imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-        document.head.appendChild(imported);
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-        document.head.appendChild(link);
-    }
-    // Carrega o script do Hotmart assim que a página for carregada
-    document.addEventListener('DOMContentLoaded', function () {
-        importHotmart();
-    });
-</script>
+    <!-- Pré-carregar o script do Hotmart -->
+    <script type="text/javascript">
+        function importHotmart() {
+            return new Promise((resolve, reject) => {
+                var imported = document.createElement('script');
+                imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+                imported.onload = resolve; // Resolve a Promise quando o script é carregado
+                imported.onerror = reject; // Rejeita a Promise em caso de erro
+                document.head.appendChild(imported);
 
-<!-- Botão "Comprar Agora" -->
-<a id="hotmart-button" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
-    <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
-</a>
-
-<!-- Script do Confetti -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-<!-- Script do Hotmart -->
-<script type="text/javascript">
-    function importHotmart() {
-        return new Promise((resolve, reject) => {
-            var imported = document.createElement('script');
-            imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-            imported.onload = resolve; // Resolve a Promise quando o script é carregad
-            imported.onerror = reject; // Rejeita a Promise em caso de erro
-            document.head.appendChild(imported);
-
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-            document.head.appendChild(link);
-        });
-    }
-
-    // Carrega o script do Hotmart assim que a página for carregada
-    document.addEventListener('DOMContentLoaded', function () {
-        importHotmart()
-            .then(() => {
-                console.log('Script do Hotmart carregado com sucesso.');
-            })
-            .catch((error) => {
-                console.error('Erro ao carregar o script do Hotmart:', error);
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+                document.head.appendChild(link);
             });
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Função para disparar o efeito de confete
-        function triggerConfetti() {
-            confetti({
-                particleCount: 1300, // Mais partículas para uma explosão mais energética
-                spread: 180, // Espalhamento maior para cobrir mais área
-                origin: { y: 0.6 }, // Origem do efeito (0.6 = 60% da altura da tela)
-                gravity: 0.5, // Reduz a velocidade de queda (0.5 = mais lento)
-                ticks: 200, // Aumenta o tempo de vida das partículas
-                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'] // Cores variadas
-            });
-
-            // Ajusta o z-index do canvas dos confetes
-            const canvas = document.querySelector('canvas');
-            if (canvas) {
-                canvas.style.position = 'fixed'; // Garante que o canvas fique fixo na tela
-                canvas.style.zIndex = '2147483647'; // Define um z-index altíssimo para ficar na frente de tudo
-                canvas.style.pointerEvents = 'none'; // Impede que o canvas bloqueie interações com o modal
-            }
         }
 
-        // Adicionar evento de clique ao botão
-        document.getElementById('hotmart-button').addEventListener('click', function (event) {
-            event.preventDefault(); // Impede o redirecionamento imediato
-
-            // Dispara os confetes imediatamente
-            triggerConfetti();
-
-            // Verifica o tamanho da tela
-            if (window.matchMedia('(min-width: 768px)').matches) {
-                // Telas maiores: Abre o modal do Hotmart
-                if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
-                    Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
-                } else {
-                    console.error('Hotmart.Checkout não está disponível.');
-                    alert('Ocorreu um erro ao abrir o checkout. Por favor, tente novamente.');
-                }
-            } else {
-                // Telas menores: Redireciona para a página de compra após 1,5 segundos
-                setTimeout(function () {
-                    window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
-                }, 1500); // 1,5 segundos de atraso
-            }
+        // Carrega o script do Hotmart assim que a página for carregada
+        document.addEventListener('DOMContentLoaded', function () {
+            importHotmart()
+                .then(() => {
+                    console.log('Script do Hotmart carregado com sucesso.');
+                })
+                .catch((error) => {
+                    console.error('Erro ao carregar o script do Hotmart:', error);
+                });
         });
-    });
-</script>
+    </script>
+</head>
+<body>
+    <!-- Botão "Comprar Agora" -->
+    <a id="hotmart-button" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
+        <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
+    </a>
+
+    <!-- Script do Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Função para disparar o efeito de confete
+            function triggerConfetti() {
+                confetti({
+                    particleCount: 1300,
+                    spread: 180,
+                    origin: { y: 0.6 },
+                    gravity: 0.5,
+                    ticks: 200,
+                    colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+                });
+
+                // Ajusta o z-index do canvas dos confetes
+                const canvas = document.querySelector('canvas');
+                if (canvas) {
+                    canvas.style.position = 'fixed';
+                    canvas.style.zIndex = '2147483647';
+                    canvas.style.pointerEvents = 'none';
+                }
+            }
+
+            // Adicionar evento de clique ao botão
+            document.getElementById('hotmart-button').addEventListener('click', function (event) {
+                event.preventDefault(); // Impede o redirecionamento imediato
+
+                // Dispara os confetes imediatamente
+                triggerConfetti();
+
+                // Verifica o tamanho da tela
+                if (window.matchMedia('(min-width: 768px)').matches) {
+                    // Telas maiores: Abre o modal do Hotmart
+                    if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
+                        Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
+                    } else {
+                        // Se o Hotmart não estiver carregado, tenta carregar novamente
+                        importHotmart()
+                            .then(() => {
+                                if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
+                                    Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
+                                } else {
+                                    // Se ainda não conseguir, redireciona para a URL direta
+                                    console.warn('Redirecionando para URL direta do Hotmart');
+                                    window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+                                }
+                            })
+                            .catch((error) => {
+                                console.error('Erro ao carregar o script do Hotmart:', error);
+                                // Redireciona para a URL direta em caso de erro
+                                window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+                            });
+                    }
+                } else {
+                    // Telas menores: Redireciona para a página de compra após 1,5 segundos
+                    setTimeout(function () {
+                        window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+               
 
                 <!-- Botão "Acessar na Hotmart" -->
                 <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K" target="_blank" class="btn mb-3 btn-primary w-100">Acessar na Hotmart</a>
