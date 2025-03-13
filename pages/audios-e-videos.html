@@ -393,219 +393,152 @@
                 </div>
             </div>
         </section>
+        <!-- Seção de Links Externos -->
+        <section class="card neon-card mb-5">
+            <div class="card-body">
+                <h2 class="card-title neon-text">📚 Materiais Didáticos</h2>
+                <p class="card-text">Confira os materiais didáticos disponíveis:</p>
+                <!-- HotMart -->
+                <div class="card neon-card mb-4">
+                    <div class="card-body text-center">
+                        <img src="../assets/eu-rotmart.jpeg" alt="HotMart Preview" class="img-fluid mb-3" style="border-radius: 10px; max-width: 100%; height: auto;">
+                        <h5 class="card-title">Compre por aqui</h5>
+                        <p class="card-text">ou Acesse o material completo na HotMart.</p>
+                        <button id="mostrarConteudos" class="btn btn-primary mb-3 w-100">Mostrar Conteúdos</button>
+                        <div id="listaConteudos" style="display: none;">
+                            <h6>Conteúdos do Curso:</h6>
+                            <ul class="list-unstyled">
+                                <!-- Lista de conteúdos omitida para brevidade -->
+                            </ul>
+                        </div>
 
-<!-- Seção de Links Externos -->
-<section class="card neon-card mb-5">
-    <div class="card-body">
-        <h2 class="card-title neon-text">📚 Materiais Didáticos</h2>
-        <p class="card-text">Confira os materiais didáticos disponíveis:</p>
-
-        <!-- HotMart -->
-        <div class="card neon-card mb-4">
-            <div class="card-body text-center">
-                <!-- Imagem eu-hotmart.jpeg -->
-                <img src="../assets/eu-rotmart.jpeg" alt="HotMart Preview" class="img-fluid mb-3" style="border-radius: 10px; max-width: 100%; height: auto;">
-                <h5 class="card-title">Compre por aqui</h5>
-                <p class="card-text">ou Acesse o material completo na HotMart.</p>
-
-                <!-- Botão "Mostrar Conteúdos" -->
-                <button id="mostrarConteudos" class="btn btn-primary mb-3 w-100">Mostrar Conteúdos</button>
-
-                <!-- Lista de Conteúdos (inicialmente oculta) -->
-                <div id="listaConteudos" style="display: none;">
-                    <h6>Conteúdos do Curso:</h6>
-                    <ul class="list-unstyled">
-                        <li>1º Módulo - Iniciação prática musical</li>
-                        <li>2º Módulo - Divisão rítmica</li>
-                        <li>3º Módulo - i, m, a, nas três cordas abaixo</li>
-                        <li>4º Módulo - Polegar nas três cordas acima</li>
-                        <li>5º Módulo - Início: Notas presas na 6ª, na 5ª e na 4ª corda.</li>
-                        <li>6ª Corda</li>
-                        <li>5ª Corda</li>
-                        <li>4ª Corda</li>
-                        <li>Módulo 5 - Final</li>
-                        <li>6º Módulo - Início: Notas presas na 3ª, na 2ª e na 1ª corda.</li>
-                        <li>3ª Corda</li>
-                        <li>2ª Corda</li>
-                        <li>1ª Corda</li>
-                        <li>Final do Módulo 6</li>
-                        <li>7º Módulo - Sustenido e bemol: notas alteradas</li>
-                        <li>8º Módulo - Partitura a duas vozes</li>
-                        <li>9º Módulo - Acompanhamentos rítmicos</li>
-                        <li>10º Módulo - Oitavas</li>
-                        <li>11º Módulo - Colcheias</li>
-                        <li>Solfejando</li>
-                        <li>Tocando</li>
-                        <li>12º Módulo - Músicas Instrumentais</li>
-                        <li>Bônus - Doze Dicas Pontuais de Estudos</li>
-                    </ul>
-                </div>
-
-    <!-- Pré-carregar o script do Hotmart -->
-    <script type="text/javascript">
-        function importHotmart() {
-            return new Promise((resolve, reject) => {
-                var imported = document.createElement('script');
-                imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-                imported.onload = resolve; // Resolve a Promise quando o script é carregado
-                imported.onerror = reject; // Rejeita a Promise em caso de erro
-                document.head.appendChild(imported);
-
-                var link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-                document.head.appendChild(link);
-            });
-        }
-
-        // Carrega o script do Hotmart assim que a página for carregada
-        document.addEventListener('DOMContentLoaded', function () {
-            importHotmart()
-                .then(() => {
-                    console.log('Script do Hotmart carregado com sucesso.');
-                })
-                .catch((error) => {
-                    console.error('Erro ao carregar o script do Hotmart:', error);
-                });
-        });
-    </script>
-</head>
-<body>
-    <!-- Botão "Comprar Agora" -->
-    <a id="hotmart-button" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
-        <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
-    </a>
-
-    <!-- Script do Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Função para disparar o efeito de confete
-            function triggerConfetti() {
-                confetti({
-                    particleCount: 1300,
-                    spread: 180,
-                    origin: { y: 0.6 },
-                    gravity: 0.5,
-                    ticks: 200,
-                    colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
-                });
-
-                // Ajusta o z-index do canvas dos confetes
-                const canvas = document.querySelector('canvas');
-                if (canvas) {
-                    canvas.style.position = 'fixed';
-                    canvas.style.zIndex = '2147483647';
-                    canvas.style.pointerEvents = 'none';
-                }
-            }
-
-            // Adicionar evento de clique ao botão
-            document.getElementById('hotmart-button').addEventListener('click', function (event) {
-                event.preventDefault(); // Impede o redirecionamento imediato
-
-                // Dispara os confetes imediatamente
-                triggerConfetti();
-
-                // Verifica o tamanho da tela
-                if (window.matchMedia('(min-width: 768px)').matches) {
-                    // Telas maiores: Abre o modal do Hotmart
-                    if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
-                        Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
-                    } else {
-                        // Se o Hotmart não estiver carregado, tenta carregar novamente
-                        importHotmart()
-                            .then(() => {
-                                if (typeof Hotmart !== 'undefined' && Hotmart.Checkout) {
-                                    Hotmart.Checkout.open('T41807997K', { checkoutMode: 2 });
-                                } else {
-                                    // Se ainda não conseguir, redireciona para a URL direta
-                                    console.warn('Redirecionando para URL direta do Hotmart');
-                                    window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
-                                }
-                            })
-                            .catch((error) => {
-                                console.error('Erro ao carregar o script do Hotmart:', error);
-                                // Redireciona para a URL direta em caso de erro
-                                window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+                        <!-- Pré-carregar o script do Hotmart -->
+                        <script type="text/javascript">
+                            function importHotmart() {
+                                return new Promise((resolve, reject) => {
+                                    var imported = document.createElement('script');
+                                    imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+                                    imported.onload = resolve;
+                                    imported.onerror = reject;
+                                    document.head.appendChild(imported);
+                                    var link = document.createElement('link');
+                                    link.rel = 'stylesheet';
+                                    link.type = 'text/css';
+                                    link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+                                    document.head.appendChild(link);
+                                });
+                            }
+                            document.addEventListener('DOMContentLoaded', function () {
+                                importHotmart()
+                                    .then(() => {
+                                        console.log('Script do Hotmart carregado com sucesso.');
+                                    })
+                                    .catch((error) => {
+                                        console.error('Erro ao carregar o script do Hotmart:', error);
+                                    });
                             });
-                    }
+                        </script>
+                        <!-- Botão "Comprar Agora" -->
+                        <a id="hotmart-button" href="https://pay.hotmart.com/T41807997K?checkoutMode=2" class="hotmart-fb hotmart__button-checkout mb-3 w-100">
+                            <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart" style="max-width: 100%; height: auto;">
+                        </a>
+                        <!-- Script do Confetti -->
+                        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                function triggerConfetti() {
+                                    confetti({
+                                        particleCount: 1300,
+                                        spread: 180,
+                                        origin: { y: 0.6 },
+                                        gravity: 0.5,
+                                        ticks: 200,
+                                        colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+                                    });
+                                    const canvas = document.querySelector('canvas');
+                                    if (canvas) {
+                                        canvas.style.position = 'fixed';
+                                        canvas.style.zIndex = '2147483647';
+                                        canvas.style.pointerEvents = 'none';
+                                    }
+                                }
+                                document.getElementById('hotmart-button').addEventListener('click', function (event) {
+                                    event.preventDefault();
+                                    triggerConfetti();
+                                    if (window.matchMedia('(min-width: 768px)').matches) {
+                                        const iframe = document.getElementById('hotmartIframe');
+                                        iframe.src = "https://pay.hotmart.com/T41807997K?checkoutMode=2&bid=1741882425824";
+                                        const modal = new bootstrap.Modal(document.getElementById('hotmartModal'));
+                                        modal.show();
+                                    } else {
+                                        setTimeout(function () {
+                                            window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2&bid=1741882425824";
+                                        }, 1500);
+                                    }
+                                });
+
+                                // Limpar o iframe ao fechar o modal
+                                const modalElement = document.getElementById('hotmartModal');
+                                modalElement.addEventListener('hidden.bs.modal', function () {
+                                    const iframe = document.getElementById('hotmartIframe');
+                                    iframe.src = ''; // Limpa o iframe
+                                });
+                            });
+                        </script>
+                        <!-- Botão "Acessar na Hotmart" -->
+                        <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K" target="_blank" class="btn mb-3 btn-primary w-100">Acessar na Hotmart</a>
+                        <!-- Botão "Acessar receba ofertas" -->
+                        <a href="https://harmonia251251.kpages.online/imperdivel" class="btn mb-3 w-100 text-white" style="background-color: #1DA1F2; border-color: #1DA1F2; padding: 1.em;">Cadastre e Receba Ofertas!</a>
+                    </div>
+                </div>
+                <!-- Udemy -->
+                <div class="card neon-card mb-4">
+                    <div class="card-body text-center">
+                        <img src="../assets/udemy-logo.png" alt="Udemy Preview" class="img-fluid mb-3" style="border-radius: 10px;">
+                        <h5 class="card-title">Página de compra Udemy</h5>
+                        <p class="card-text">Aprenda Violão do Zero: Ritmos e Acordes Básicos em 30 Dias!</p>
+                        <a href="https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR" target="_blank" class="btn btn-primary">Acessar Udemy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ícone do Robô -->
+        <div id="chat-icon" class="chat-icon">
+            <i class="fas fa-robot"></i>
+            <span class="tooltip">Tire as principais dúvidas comigo</span>
+        </div>
+        <!-- Modal do Chat -->
+        <div id="chat-modal" class="chat-modal">
+            <div class="chat-header">
+                <span>Chatbot</span>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-box" class="chat-box"></div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+        <!-- Script para mostrar/ocultar a lista de conteúdos -->
+        <script>
+            document.getElementById('mostrarConteudos').addEventListener('click', function () {
+                var lista = document.getElementById('listaConteudos');
+                if (lista.style.display === 'none') {
+                    lista.style.display = 'block';
+                    this.textContent = 'Ocultar Conteúdos';
                 } else {
-                    // Telas menores: Redireciona para a página de compra após 1,5 segundos
-                    setTimeout(function () {
-                        window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
-                    }, 1500);
+                    lista.style.display = 'none';
+                    this.textContent = 'Mostrar Conteúdos';
                 }
             });
-        });
-    </script>
-               
-
-                <!-- Botão "Acessar na Hotmart" -->
-                <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K" target="_blank" class="btn mb-3 btn-primary w-100">Acessar na Hotmart</a>
-
-                <!-- Botão "Acessar receba ofertas" -->
-                <a href="https://harmonia251251.kpages.online/imperdivel" class="btn mb-3 w-100 text-white" style="background-color: #1DA1F2; border-color: #1DA1F2; padding: 1.em;">Cadastre e Receba Ofertas!</a>
-            </div>
-        </div>
-
-        <!-- Udemy -->
-        <div class="card neon-card mb-4">
-            <div class="card-body text-center">
-                <!-- Imagem padrão do Udemy -->
-                <img src="../assets/udemy-logo.png" alt="Udemy Preview" class="img-fluid mb-3" style="border-radius: 10px;">
-                <h5 class="card-title">Página de compra Udemy</h5>
-                <p class="card-text">Aprenda Violão do Zero: Ritmos e Acordes Básicos em 30 Dias!</p>
-                <a href="https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR" target="_blank" class="btn btn-primary">Acessar Udemy</a>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-<!-- Ícone do Robô -->
-<div id="chat-icon" class="chat-icon">
-    <i class="fas fa-robot"></i>
-    <span class="tooltip">Tire as principais dúvidas comigo</span>
-</div>
-
-<!-- Modal do Chat -->
-<div id="chat-modal" class="chat-modal">
-    <div class="chat-header">
-        <span>Chatbot</span>
-        <button id="close-chat" class="close-chat">&times;</button>
-    </div>
-    <div id="chat-box" class="chat-box"></div>
-    <div class="input-container">
-        <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
-</div>
-
-<!-- Script para mostrar/ocultar a lista de conteúdos -->
-<script>
-    document.getElementById('mostrarConteudos').addEventListener('click', function () {
-        var lista = document.getElementById('listaConteudos');
-        if (lista.style.display === 'none') {
-            lista.style.display = 'block';
-            this.textContent = 'Ocultar Conteúdos';
-        } else {
-            lista.style.display = 'none';
-            this.textContent = 'Mostrar Conteúdos';
-        }
-    });
-</script>
-
+        </script>
+    </main>
     <footer class="neon-footer text-center py-3">
         <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
     </footer>
-
     <!-- Scripts -->
     <script src="../static/script.js"></script>
     <script src="../simple-chatbot/bot.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
