@@ -497,9 +497,26 @@
                         <img src="../assets/udemy-logo.png" alt="Udemy Preview" class="img-fluid mb-3" style="border-radius: 10px;">
                         <h5 class="card-title">Página de compra Udemy</h5>
                         <p class="card-text">Aprenda Violão do Zero: Ritmos e Acordes Básicos em 30 Dias!</p>
-                        <a href="https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR" target="_blank" class="btn btn-primary">Acessar Udemy</a>
+                        <button id="udemyButton" class="btn btn-primary">Acessar Udemy</button>
                     </div>
                 </div>
+                
+                <script>
+                    // Adiciona um evento de clique ao botão
+                    document.getElementById('udemyButton').addEventListener('click', function() {
+                        // Dispara os confetes
+                        confetti({
+                            particleCount: 1300, // Quantidade de confetes
+                            spread: 140,         // Quão espalhados os confetes estarão
+                            origin: { y: 0.6 }  // Origem do efeito (0.6 = 60% da altura da tela)
+                        });
+                
+                        // Redireciona após 1 segundo (1000 milissegundos)
+                        setTimeout(function() {
+                            window.location.href = 'https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR';
+                        }, 1000);
+                    });
+                </script>
             </div>
         </section>
         <!-- Ícone do Robô -->
