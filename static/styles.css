@@ -228,6 +228,19 @@ h2.neon-text {
     line-height: 50px; /* Centraliza verticalmente */
 }
 
+.neon-footer a {
+    color: #E1306C; /* Cor do Instagram */
+    font-size: 42px; /* Tamanho do ícone */
+    margin-left: 10px; /* Espaçamento à esquerda */
+    text-decoration: none; /* Remove o sublinhado do link */
+    display: inline-block; /* Mantém o ícone na mesma linha */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+}
+
+.neon-footer a:hover {
+    color: #ffffff; /* Cor ao passar o mouse */
+}
+
 /* Esconder o menu em telas pequenas */
 @media (max-width: 768px) {
     h1 {
