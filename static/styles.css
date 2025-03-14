@@ -228,14 +228,35 @@ h2.neon-text {
     line-height: 50px; /* Centraliza verticalmente */
 }
 
-.neon-footer a {
+.footer-content {
+    display: flex; /* Coloca os elementos em linha */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaçamento entre os elementos */
     color: #E1306C; /* Cor do Instagram */
-    font-size: 42px; /* Tamanho do ícone */
+    font-size: 12x; /* Tamanho do ícone */
     margin-left: 10px; /* Espaçamento à esquerda */
     text-decoration: none; /* Remove o sublinhado do link */
-    display: inline-block; /* Mantém o ícone na mesma linha */
     vertical-align: middle; /* Alinha verticalmente com o texto */
 }
+
+.gif-container {
+    display: inline-block; /* Mantém o GIF na mesma linha */
+}
+
+.neon-text {
+    margin: 0; /* Remove margens padrão do parágrafo */
+}
+
+.fab.fa-instagram {
+    font-size:34px; /* Tamanho do ícone do Instagram */
+    color: #E1306C; /* Cor do Instagram */
+}
+
+.fab.fa-instagram:hover {
+    color: #ffffff; /* Cor ao passar o mouse */
+}
+
 
 .neon-footer a:hover {
     color: #ffffff; /* Cor ao passar o mouse */
