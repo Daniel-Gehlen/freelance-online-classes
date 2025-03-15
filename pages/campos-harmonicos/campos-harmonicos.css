@@ -37,6 +37,8 @@ h1.neon-text {
   text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
   text-align: center;
   margin-bottom: 20px;
+  opacity: 1; /* Garante que não está transparente */
+  text-align: left;
 }
 
 h2.neon-text {
@@ -207,6 +209,34 @@ h2.neon-text {
 }
 /* Estilos responsivos */
 @media (max-width: 768px) {
+
+  h1 {
+    text-align: center !important;
+}
+
+.navbar-collapse {
+    display: none;
+}
+.navbar-collapse.show {
+    display: block;
+}
+
+/* Ajustes para o menu hambúrguer */
+.navbar-toggler {
+    position: fixed; /* Fixa o botão no topo */
+    top: 20px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+    z-index: 1100; /* Garante que fique acima da sidebar e outros elementos */
+    background-color: #0d0d0d; /* Mesma cor da navbar */
+    border: 1px solid #00ffcc; /* Borda neon */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    padding: 8px 12px; /* Espaçamento interno */
+}
+
+.navbar-toggler-icon {
+    filter: drop-shadow(0 0 2px #00ffcc); /* Efeito neon no ícone */
+}
+
   .container {
     padding: 10px;
   }
@@ -304,4 +334,14 @@ audio::-webkit-media-controls-panel {
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-mute-button {
   filter: invert(1); /* Inverte as cores dos ícones para melhor visibilidade */
+}
+
+@media (max-width: 340px) {
+  h1 {
+      text-align: center !important;
+  }
+
+  .navbar-toggler {
+      right: 10px; /* Ajuste da posição do botão */
+  }
 }
