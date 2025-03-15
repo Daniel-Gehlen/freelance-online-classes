@@ -26,406 +26,58 @@ body.dark-theme {
   border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 h1.neon-text {
   color: #00ffcc;
   text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   opacity: 1; /* Garante que não está transparente */
-  text-align: left;
-}
-
-h2.neon-text {
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.notas-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.nota-quadrado {
-  padding: 10px;
-  background-color: #262626;
-  border: 1px solid #00ffcc;
-  border-radius: 5px;
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc;
-  cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.nota-quadrado:hover {
-  background-color: #333;
-  transform: scale(1.05);
-}
-
-.notas-selecionadas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.notas-selecionadas .nota-selecionada {
-  padding: 10px;
-  background-color: #00ffcc;
-  border-radius: 5px;
-  color: #1a1a1a;
-  text-shadow: none;
-}
-
-.cifra-container {
-  margin-bottom: 20px;
-}
-
-.seletor-campo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.campo-harmonico-select {
-  padding: 10px;
-  background-color: #262626;
-  border: 1px solid #00ffcc;
-  border-radius: 5px;
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.campo-harmonico-select:hover {
-  background-color: #333;
-}
-
-.campo-harmonico {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.acorde-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  background-color: #262626;
-  border: 1px solid #00ffcc;
-  border-radius: 5px;
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc;
-  cursor: grab;
-}
-
-.acorde-item button {
-  background-color: #00ffcc;
-  color: #1a1a1a;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.acorde-item button:hover {
-  background-color: #00cc99;
-}
-
-.botoes {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.btn-neon {
-  background-color: #00ffcc;
-  color: #1a1a1a;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-neon:hover {
-  background-color: #00cc99;
-}
-
-/* Estilos para o efeito neon */
-.neon-text {
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-}
-
-/* Estilos para o footer */
-.neon-footer {
-  background-color: #0d0d0d;
-  border-top: 2px solid #00ffcc;
-  padding: 10px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.neon-navbar {
-  background-color: #0d0d0d;
-  border-bottom: 2px solid #00ffcc;
-}
-
-.neon-navbar .navbar-brand,
-.neon-navbar .nav-link {
-  color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-  align-items: center; /* Centraliza os itens verticalmente */
-}
-
-.neon-navbar .nav-link:hover {
-  color: #00cc99;
-  text-shadow: 0 0 5px #00cc99, 0 0 10px #00cc99;
-}
-
-.neon-navbar .navbar-toggler {
-  border-color: #00ffcc;
-  justify-content: center;
-}
-
-.neon-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-/* Estilos responsivos */
-@media (max-width: 768px) {
-
-  h1 {
-    text-align: center !important;
-}
-
-.navbar-collapse {
-    display: none;
-}
-.navbar-collapse.show {
-    display: block;
-}
-
-/* Ajustes para o menu hambúrguer */
-.navbar-toggler {
-    position: fixed; /* Fixa o botão no topo */
-    top: 20px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
-    z-index: 1100; /* Garante que fique acima da sidebar e outros elementos */
-    background-color: #0d0d0d; /* Mesma cor da navbar */
-    border: 1px solid #00ffcc; /* Borda neon */
-    border-radius: 4px; /* Bordas levemente arredondadas */
-    padding: 8px 12px; /* Espaçamento interno */
-}
-
-.navbar-toggler-icon {
-    filter: drop-shadow(0 0 2px #00ffcc); /* Efeito neon no ícone */
-}
-
-  .container {
-    padding: 10px;
-  }
-
-  .notas-container {
-    gap: 5px;
-  }
-
-  .nota-quadrado {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  .btn-neon {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
-  .campo-harmonico-select {
-    padding: 8px;
-    font-size: 14px;
-  }
-}
-
-.educacao-harmonica {
-  margin-top: 40px;
-  padding: 20px;
-  background: linear-gradient(to bottom, #1a1a1a, #000000);
-  border-radius: 10px;
-}
-
-.educacao-harmonica h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.educacao-harmonica .topico {
-  margin-bottom: 30px;
-}
-
-.educacao-harmonica h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: #ffcc00; /* Cor neon para destacar */
-}
-
-.educacao-harmonica p {
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
-.educacao-harmonica strong {
-  color: #ffcc00; /* Cor neon para destacar */
-}
-
-.explicacao-harmonica {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para combinar com o tema */
-  border-radius: 10px;
-}
-
-.explicacao-harmonica ul {
-  list-style-type: disc; /* Marcadores (bullets) à esquerda */
-  padding-left: 20px; /* Espaçamento para os bullets */
-  margin: 0;
-}
-
-.explicacao-harmonica li {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #ffffff; /* Cor do texto */
-  margin-bottom: 10px; /* Espaçamento entre os itens */
-}
-
-.explicacao-harmonica strong {
-  color: #ffcc00; /* Cor neon para destacar */
-}
-
-.audio-container {
-  margin-top: 15px;
-}
-
-audio {
-  width: 100%; /* Ocupa toda a largura do contêiner */
-  max-width: 300px; /* Limita a largura máxima */
-  background-color: #333; /* Cor de fundo do player */
-  border-radius: 10px; /* Bordas arredondadas */
-}
-
-audio::-webkit-media-controls-panel {
-  background-color: #333; /* Cor de fundo dos controles */
-}
-
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button {
-  filter: invert(1); /* Inverte as cores dos ícones para melhor visibilidade */
-}
-
-/* Estilos Globais */
-body.dark-theme {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-}
-
-.neon-header {
-  background-color: #0d0d0d;
-  padding: 20px; /* Remove o padding-left */
-  border-bottom: 2px solid #00ffcc;
-  position: relative; /* Permite posicionar o logo corretamente */
-  text-align: center; /* Centraliza o texto */
-}
-
-.logo-link {
-  display: block; /* Faz o logo ocupar a linha inteira */
-  text-align: center; /* Centraliza o logo */
-  margin-bottom: 20px; /* Espaço abaixo do logo para o texto */
-}
-
-.logo-img {
-  width: 200px; /* Largura pequena para o logo */
-  height: 100px; /* Altura proporcional para manter o formato retangular */
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-  border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
-}
-
-h1.neon-text {
-  color: #00ffcc; /* Cor neon */
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
-  opacity: 1; /* Garante que não está transparente */
-  text-align: center; /* Centraliza o texto */
-  margin-top: 0; /* Remove a margem superior padrão */
 }
 
 .neon-header p {
-  text-align: center; /* Centraliza o texto */
-  margin-top: 10px; /* Espaço entre o h1 e o parágrafo */
+  text-align: left;
+  margin-top: 10px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .neon-header {
+    padding: 20px; /* Remove o padding-left */
+    text-align: center; /* Centraliza o conteúdo */
+    position: static; /* Remove o posicionamento relativo */
+  }
+
+  .logo-link {
+    position: static; /* Remove o posicionamento absoluto */
+    text-align: center; /* Centraliza o logo */
+    margin-bottom: 20px; /* Espaço abaixo do logo para o texto */
+  }
+
+  h1.neon-text {
+    text-align: center; /* Centraliza o título */
+    margin-top: 0; /* Remove a margem superior padrão */
+  }
+
+  .neon-header p {
+    text-align: center; /* Centraliza o texto */
+  }
 }
 
 @media (max-width: 340px) {
-  h1 {
-      text-align: center !important;
+  .neon-header {
+    padding: 10px; /* Reduz o padding para telas muito pequenas */
   }
 
-  .navbar-toggler {
-      right: 10px; /* Ajuste da posição do botão */
+  .logo-img {
+    width: 150px; /* Reduz o tamanho do logo */
+    height: 75px; /* Mantém a proporção */
   }
 
-  /* Estilos Globais */
-body.dark-theme {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-  font-family: 'Roboto', sans-serif;
-  text-align: left;
-}
+  h1.neon-text {
+    font-size: 1.5em; /* Reduz o tamanho do título */
+  }
 
-.neon-header {
-  background-color: #0d0d0d;
-  padding: 20px; /* Remove o padding-left */
-  border-bottom: 2px solid #00ffcc;
-  position: relative; /* Permite posicionar o logo corretamente */
-  text-align: center; /* Centraliza o texto */
-}
-
-.logo-link {
-  display: block; /* Faz o logo ocupar a linha inteira */
-  text-align: center; /* Centraliza o logo */
-  margin-bottom: 20px; /* Espaço abaixo do logo para o texto */
-}
-
-.logo-img {
-  width: 200px; /* Largura pequena para o logo */
-  height: 100px; /* Altura proporcional para manter o formato retangular */
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-  border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
-}
-
-h1.neon-text {
-  color: #00ffcc; /* Cor neon */
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
-  opacity: 1; /* Garante que não está transparente */
-  text-align: center; /* Centraliza o texto */
-  margin-top: 0; /* Remove a margem superior padrão */
-}
-
-.neon-header p {
-  text-align: center; /* Centraliza o texto */
-  margin-top: 10px; /* Espaço entre o h1 e o parágrafo */
-}
+  .neon-header p {
+    font-size: 0.9em; /* Reduz o tamanho do texto */
+  }
 }
