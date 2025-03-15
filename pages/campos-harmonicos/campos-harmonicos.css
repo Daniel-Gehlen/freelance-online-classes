@@ -336,6 +336,48 @@ audio::-webkit-media-controls-mute-button {
   filter: invert(1); /* Inverte as cores dos ícones para melhor visibilidade */
 }
 
+/* Estilos Globais */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
+.neon-header {
+  background-color: #0d0d0d;
+  padding: 20px; /* Remove o padding-left */
+  border-bottom: 2px solid #00ffcc;
+  position: relative; /* Permite posicionar o logo corretamente */
+  text-align: center; /* Centraliza o texto */
+}
+
+.logo-link {
+  display: block; /* Faz o logo ocupar a linha inteira */
+  text-align: center; /* Centraliza o logo */
+  margin-bottom: 20px; /* Espaço abaixo do logo para o texto */
+}
+
+.logo-img {
+  width: 200px; /* Largura pequena para o logo */
+  height: 100px; /* Altura proporcional para manter o formato retangular */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
+}
+
+h1.neon-text {
+  color: #00ffcc; /* Cor neon */
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
+  opacity: 1; /* Garante que não está transparente */
+  text-align: center; /* Centraliza o texto */
+  margin-top: 0; /* Remove a margem superior padrão */
+}
+
+.neon-header p {
+  text-align: center; /* Centraliza o texto */
+  margin-top: 10px; /* Espaço entre o h1 e o parágrafo */
+}
+
 @media (max-width: 340px) {
   h1 {
       text-align: center !important;
@@ -344,4 +386,46 @@ audio::-webkit-media-controls-mute-button {
   .navbar-toggler {
       right: 10px; /* Ajuste da posição do botão */
   }
+
+  /* Estilos Globais */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
+.neon-header {
+  background-color: #0d0d0d;
+  padding: 20px; /* Remove o padding-left */
+  border-bottom: 2px solid #00ffcc;
+  position: relative; /* Permite posicionar o logo corretamente */
+  text-align: center; /* Centraliza o texto */
+}
+
+.logo-link {
+  display: block; /* Faz o logo ocupar a linha inteira */
+  text-align: center; /* Centraliza o logo */
+  margin-bottom: 20px; /* Espaço abaixo do logo para o texto */
+}
+
+.logo-img {
+  width: 200px; /* Largura pequena para o logo */
+  height: 100px; /* Altura proporcional para manter o formato retangular */
+  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
+}
+
+h1.neon-text {
+  color: #00ffcc; /* Cor neon */
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
+  opacity: 1; /* Garante que não está transparente */
+  text-align: center; /* Centraliza o texto */
+  margin-top: 0; /* Remove a margem superior padrão */
+}
+
+.neon-header p {
+  text-align: center; /* Centraliza o texto */
+  margin-top: 10px; /* Espaço entre o h1 e o parágrafo */
+}
 }
