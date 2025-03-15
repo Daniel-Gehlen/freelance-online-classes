@@ -38,32 +38,62 @@ Tone.Transport.bpm.value = 60; // Definir o tempo para 60 BPM
 const notasParaCifra = {
   "C4": "C",
   "C#4": "C#/Db",
+  "Db4": "Db/C#",
+  "C𝄪4": "C𝄪/D", // Dobrado sustenido
+  "D𝄫4": "D𝄫/C", // Dobrado bemol
   "D4": "D",
   "D#4": "D#/Eb",
+  "Eb4": "Eb/D#",
+  "E𝄫4": "E𝄫/D", // Dobrado bemol
   "E4": "E",
   "F4": "F",
   "F#4": "F#/Gb",
+  "Gb4": "Gb/F#",
+  "F𝄪4": "F𝄪/G", // Dobrado sustenido
+  "G𝄫4": "G𝄫/F", // Dobrado bemol
   "G4": "G",
   "G#4": "G#/Ab",
+  "Ab4": "Ab/G#",
+  "A𝄫4": "A𝄫/G", // Dobrado bemol
   "A4": "A",
   "A#4": "A#/Bb",
+  "Bb4": "Bb/A#",
+  "B𝄫4": "B𝄫/A", // Dobrado bemol
   "B4": "B",
+  "B#4": "B#/C", // Sustenido
+  "Cb4": "Cb/B", // Bemol
+  "C𝄫4": "C𝄫/Bb" // Dobrado bemol
 };
 
 // Mapeamento de notas para nomes em português
 const notasParaPortugues = {
-  "C4": "Do",
-  "C#4": "Do#",
+  "C4": "Dó",
+  "C#4": "Dó#",
+  "Db4": "Réb", // Bemol
+  "C𝄪4": "Dó𝄪", // Dobrado sustenido
+  "D𝄫4": "Rébb", // Dobrado bemol
   "D4": "Ré",
   "D#4": "Ré#",
+  "Eb4": "Mib", // Bemol
+  "E𝄫4": "Mibb", // Dobrado bemol
   "E4": "Mi",
   "F4": "Fá",
   "F#4": "Fá#",
+  "Gb4": "Solb", // Bemol
+  "F𝄪4": "Fá𝄪", // Dobrado sustenido
+  "G𝄫4": "Solbb", // Dobrado bemol
   "G4": "Sol",
   "G#4": "Sol#",
+  "Ab4": "Láb", // Bemol
+  "A𝄫4": "Lább", // Dobrado bemol
   "A4": "Lá",
   "A#4": "Lá#",
+  "Bb4": "Sib", // Bemol
+  "B𝄫4": "Sibb", // Dobrado bemol
   "B4": "Si",
+  "B#4": "Si#", // Sustenido
+  "Cb4": "Dób", // Bemol
+  "C𝄫4": "Dóbb" // Dobrado bemol
 };
 
 // Definição das estruturas de campo harmônico para as escalas mais comuns
@@ -101,6 +131,8 @@ const camposHarmonicos = {
   "Bbm": ["Bbm", "Cdim", "Db", "Ebm", "Fm", "Gb", "Ab"],
   "Ebm": ["Ebm", "Fdim", "Gb", "Abm", "Bbm", "Cb", "Db"],
   "Abm": ["Abm", "Bbdim", "Cb", "Dbm", "Ebm", "Fb", "Gb"],
+  "Dbm": ["Dbm", "Edim", "Fb", "Gbm", "Abm", "Bbb", "Cbm"],
+
 
     // Campos harmônicos menores harmônicos
     "Ahm": ["Am", "Bdim", "C+", "Dm", "E", "F", "G#dim"],
@@ -118,6 +150,11 @@ const camposHarmonicos = {
     "Bbhm": ["Bbm", "Cdim", "Db+", "Ebm", "F", "Gb", "Adim"],
     "Ebhm": ["Ebm", "Fdim", "Gb+", "Abm", "Bb", "Cb", "Dbdim"],
     "Abhm": ["Abm", "Bbdim", "Cb+", "Dbm", "Eb", "Fb", "Gbdim"],
+    "Dbm": ["Dbm", "Ebdim", "Fb", "Gbm", "Abm", "Bbb", "Cb"],
+    "Gbm": ["Gbm", "Abdim", "Bbb", "Cbm", "Dbm", "Ebb", "Fb"],
+    "Cbm": ["Cbm", "Ddim", "Ebb", "Fbm", "Gbm", "Abb", "Bbb"],
+    "Fbm": ["Fbm", "Gdim", "Abb", "Bbm", "Cbm", "Dbb", "Ebb"],
+
   
     // Campos harmônicos menores melódicos
     "Amel": ["Am", "Bm", "C+", "Dm", "E", "F", "G#dim"],
@@ -135,6 +172,11 @@ const camposHarmonicos = {
     "Bbmel": ["Bbm", "Cm", "Db+", "Ebm", "F", "Gb", "Adim"],
     "Ebmel": ["Ebm", "Fm", "Gb+", "Abm", "Bb", "Cb", "Dbdim"],
     "Abmel": ["Abm", "Bbm", "Cb+", "Dbm", "Eb", "Fb", "Gbdim"],
+    "Dbmel": ["Dbm", "Ebm", "Fb+", "Gbm", "Ab", "Bbb", "Cdim"],
+    "Gbmel": ["Gbm", "Abm", "Bbb+", "Cbm", "Db", "Ebb", "Fdim"],
+    "Cbmel": ["Cbm", "Dbm", "Ebb+", "Fbm", "Gb", "Abb", "Bbdim"],
+    "Fbmel": ["Fbm", "Gbm", "Abb+", "Bbm", "Cb", "Dbb", "Ebbdim"],
+
 };
 
 // Mapeamento de acordes para suas notas correspondentes
@@ -149,12 +191,20 @@ const acordesParaNotas = {
   "F#": ["Fá#", "Lá#", "Do#"],
   "C#": ["Do#", "Mi#", "Sol#"],
   "F": ["Fá", "Lá", "Do"],
-  "Bb": ["Lá#", "Ré", "Fá"],
-  "Eb": ["Ré#", "Sol", "Lá#"],
-  "Ab": ["Sol#", "Do", "Ré#"],
-  "Db": ["Do#", "Fá", "Sol#"],
-  "Gb": ["Fá#", "Lá#", "Do#"],
-  "Cb": ["Si", "Mi", "Sol"],
+  "Bb": ["Sib", "Ré", "Fá"],
+  "Eb": ["Mib", "Sol", "Sib"],
+  "Ab": ["Láb", "Dó", "Mib"],
+  "Db": ["Réb", "Fá", "Láb"],
+  "Gb": ["Solb", "Sib", "Réb"],
+  "Cb": ["Dób", "Mib", "Solb"],
+  "Fb": ["Lább", "Dób", "Mibb"],
+  "Bbb": ["Sibb", "Rébb", "Fább"],
+  "Ebb": ["Mibb", "Solb", "Sibb"],
+  "Abb": ["Lább", "Dób", "Mibb"],
+  "Dbb": ["Rébb", "Fább", "Lább"],
+  "Gbb": ["Solb", "Sibb", "Rébb"],
+
+
 
   // Acordes Menores
   "Am": ["Lá", "Do", "Mi"],
@@ -166,12 +216,18 @@ const acordesParaNotas = {
   "D#m": ["Ré#", "Fá#", "Lá#"],
   "A#m": ["Lá#", "Do#", "Mi#"],
   "Dm": ["Ré", "Fá", "Lá"],
-  "Gm": ["Sol", "Lá#", "Ré"],
-  "Cm": ["Do", "Ré#", "Sol"],
-  "Fm": ["Fá", "Sol#", "Do"],
-  "Bbm": ["Lá#", "Do#", "Fá"],
-  "Ebm": ["Ré#", "Fá#", "Lá#"],
-  "Abm": ["Sol#", "Si", "Ré#"],
+  "Gm": ["Sol", "Sib", "Ré"],
+  "Cm": ["Dó", "Mib", "Sol"],
+  "Fm": ["Fá", "Láb", "Dó"],
+  "Bbm": ["Sib", "Réb", "Fá"],
+  "Ebm": ["Mib", "Solb", "Sib"],
+  "Abm": ["Láb", "Dób", "Mib"],
+  "Dbm": ["Réb", "Fáb", "Láb"],
+  "Gbm": ["Solb", "Sibb", "Réb"],
+  "Cbm": ["Dób", "Mibb", "Solb"],
+  "Fbm": ["Fáb", "Lább", "Dób"],
+
+
 
   // Acordes Diminutos
   "Bdim": ["Si", "Ré", "Fá"],
@@ -180,15 +236,16 @@ const acordesParaNotas = {
   "G#dim": ["Sol#", "Si", "Ré"],
   "D#dim": ["Ré#", "Fá#", "Lá"],
   "A#dim": ["Lá#", "Do#", "Mi"],
-  "E#dim": ["Mi", "Sol", "Lá#"],
-  "B#dim": ["Si", "Ré", "Fá"],
-  "Edim": ["Mi", "Sol", "Lá#"],
-  "Adim": ["Lá", "Do", "Ré#"],
-  "Ddim": ["Ré", "Fá", "Sol#"],
-  "Gdim": ["Sol", "Lá#", "Do#"],
-  "Cdim": ["Do", "Ré#", "Fá#"],
-  "Fdim": ["Fá", "Sol#", "Si"],
-  "Bbdim": ["Lá#", "Do#", "Mi"],
+  "E#dim": ["Mi#", "Sol#", "Si"],
+  "B#dim": ["Si#", "Ré#", "Fá#"],
+  "Edim": ["Mi", "Sol", "Sib"],
+  "Adim": ["Lá", "Dó", "Mib"],
+  "Ddim": ["Ré", "Fá", "Láb"],
+  "Gdim": ["Sol", "Sib", "Réb"],
+  "Cdim": ["Dó", "Mib", "Solb"],
+  "Fdim": ["Fá", "Láb", "Réb"],
+  "Bbdim": ["Sib", "Réb", "Mi"],
+  "Ebdim": ["Mib", "Solb", "Sib"],
 };
 
 // Preencher o select com as opções de campo harmônico
