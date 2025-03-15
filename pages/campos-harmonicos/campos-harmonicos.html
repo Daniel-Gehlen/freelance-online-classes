@@ -33,26 +33,22 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
   <div class="container-fluid">
-      <!-- Botão de toggle (menu hambúrguer) -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Conteúdo do navbar -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                  <a class="navbar-brand neon-text" href="/index.html">Início</a>
-              </li>
-              <li class="nav-item">
-                  <a class="navbar-brand neon-text" href="/pages/teoria-musical-wikipedia.html">Teoria Musical</a>
-              </li>
-              <li class="nav-item">
-                  <a class="navbar-brand neon-text" href="/pages/audios-e-videos.html">Áudios e Vídeos</a>
-              </li>
-          </li>
-          </ul>
-      </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link neon-text" href="/index.html">Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neon-text" href="/pages/teoria-musical-wikipedia.html">Teoria Musical</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neon-text" href="/pages/audios-e-videos.html">Áudios e Vídeos</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
@@ -155,6 +151,18 @@
 
     </div>
   </div>
+
+  <script>
+    // Inicializar o menu hambúrguer
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggler = document.querySelector('.navbar-toggler');
+      var navbarCollapse = document.querySelector('.navbar-collapse');
+  
+      navbarToggler.addEventListener('click', function () {
+        navbarCollapse.classList.toggle('show');
+      });
+    });
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
