@@ -95,6 +95,8 @@ h2.neon-text {
     color: #1a1a1a;
     border: none;
     transition: background-color 0.3s ease;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-neon:hover {
@@ -257,12 +259,188 @@ h2.neon-text {
     color: #ffffff; /* Cor ao passar o mouse */
 }
 
-
 .neon-footer a:hover {
     color: #ffffff; /* Cor ao passar o mouse */
 }
 
-/* Esconder o menu em telas pequenas */
+/* Estilos para o seletor de campo harmônico */
+.seletor-campo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.campo-harmonico-select {
+    padding: 10px;
+    background-color: #262626;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.campo-harmonico-select:hover {
+    background-color: #333;
+}
+
+/* Estilos para as notas */
+.notas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nota-quadrado {
+    padding: 10px;
+    background-color: #262626;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nota-quadrado:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.notas-selecionadas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.notas-selecionadas .nota-selecionada {
+    padding: 10px;
+    background-color: #00ffcc;
+    border-radius: 5px;
+    color: #1a1a1a;
+    text-shadow: none;
+}
+
+/* Estilos para os botões */
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para o campo harmônico gerado */
+.campo-harmonico {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.acorde-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #262626;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc;
+    cursor: grab;
+}
+
+.acorde-item button {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.acorde-item button:hover {
+    background-color: #00cc99;
+}
+
+.educacao-harmonica {
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(to bottom, #1a1a1a, #000000);
+    border-radius: 10px;
+}
+
+.educacao-harmonica h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00ffcc; /* Cor neon para o título principal */
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
+}
+
+.educacao-harmonica .topico {
+    margin-bottom: 30px;
+    margin-left: 5px; /* Margem esquerda de 5px */
+    margin-right: 5px; /* Margem direita de 5px */
+}
+
+.educacao-harmonica h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: gold; /* Cor gold para os títulos h3 */
+}
+
+.educacao-harmonica p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #e0e0e0; /* Cor do texto padrão */
+}
+
+.educacao-harmonica strong {
+    color: gold; /* Cor gold para o texto dentro da tag strong */
+}
+
+.educacao-harmonica ul {
+    list-style-type: disc; /* Marcadores (bullets) à esquerda */
+    padding-left: 20px; /* Espaçamento para os bullets */
+    margin: 0;
+}
+
+.educacao-harmonica li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff; /* Cor do texto */
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+}
+
+.educacao-harmonica .audio-container {
+    margin-top: 15px;
+}
+
+.educacao-harmonica audio {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    max-width: 300px; /* Limita a largura máxima */
+    background-color: #333; /* Cor de fundo do player */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.educacao-harmonica audio::-webkit-media-controls-panel {
+    background-color: #333; /* Cor de fundo dos controles */
+}
+
+.educacao-harmonica audio::-webkit-media-controls-play-button,
+.educacao-harmonica audio::-webkit-media-controls-mute-button {
+    filter: invert(1); /* Inverte as cores dos ícones para melhor visibilidade */
+}
+
+/* Estilos responsivos para telas menores */
 @media (max-width: 768px) {
     h1 {
         text-align: center !important;
@@ -303,7 +481,6 @@ h2.neon-text {
         border: 2px solid #00ffcc; /* Borda verde neon */
         border-radius: 10px; /* Cantos arredondados */
     }
-    
 
     .sidebar.open {
         left: 0; /* Mostra a sidebar */
@@ -323,7 +500,6 @@ h2.neon-text {
         padding: 0;
         text-align: center;
         text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
-
     }
 
     .sidebar .date-list li {
@@ -363,6 +539,27 @@ h2.neon-text {
         max-width: 97%; /* Ajusta a largura dos cards */
         margin-bottom: 80px; /* Ajuste o valor conforme necessário */
     }
+
+    .notas-container {
+        gap: 5px;
+    }
+
+    .nota-quadrado {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-neon {
+        padding: 8px 16px;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .campo-harmonico-select {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
 
 /* Ajustes específicos para dispositivos com largura de 340px */
@@ -396,5 +593,26 @@ h2.neon-text {
         padding: 10px; /* Reduz o padding do conteúdo */
         margin-bottom: 80px; /* Ajuste o valor conforme necessário */
         padding-block: 10px;
+    }
+
+    .notas-container {
+        gap: 5px;
+    }
+
+    .nota-quadrado {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .btn-neon {
+        padding: 6px 12px;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .campo-harmonico-select {
+        padding: 6px;
+        font-size: 12px;
     }
 }
