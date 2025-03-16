@@ -7,12 +7,14 @@
     <!-- Meta Tags Open Graph -->
     <meta property="og:title" content="Aulas de Música Online">
     <meta property="og:description" content="Aprenda violão, guitarra e ukulele com aulas personalizadas e flexíveis!">
-    <meta property="og:image" content="https://daniel-gehlen.github.io/freelance-online-classes/logo.jpg">
+    <meta property="og:image" content="https://daniel-gehlen.github.io/freelance-online-classes/assets/logo.jpg">
     <meta property="og:url" content="https://daniel-gehlen.github.io/freelance-online-classes/">
     <meta property="og:type" content="website">
 
     <!-- Outros links e estilos -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
@@ -22,36 +24,41 @@
     <!-- Cabeçalho com Logo -->
     <header class="neon-header">
         <div class="logo-link">
-            <img src="logo.jpg" alt="Logo" class="logo-img" onerror="this.src=''; this.alt='';">
+            <img src="assets/logo.jpg" alt="Logo" class="logo-img" onerror="this.src=''; this.alt='';">
         </div>
         <h1 class="neon-text">🎵 Aulas Online de Violão, Guitarra e Ukulele 🎵</h1>
         <p>Aprenda no seu ritmo, com aulas personalizadas e flexíveis!</p>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
-        <div class="container-fluid">
-            <!-- Botão de toggle (menu hambúrguer) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
+    <div class="container-fluid">
+        <!-- Botão de toggle (menu hambúrguer) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- Conteúdo do navbar -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="teoria-musical-wikipedia.html">Teoria Musical</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="audios-e-videos.html">Áudios e Vídeos</a>
-                    </li>
-                </ul>
-            </div>
+        <!-- Conteúdo do navbar -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="navbar-brand neon-text" href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand neon-text" href="pages/teoria-musical-wikipedia.html">Teoria Musical</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand neon-text" href="pages/audios-e-videos.html">Áudios e Vídeos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo Harmônico</a>
+                </li>
+            </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <main class="container my-5">
         <!-- Seção de Anúncio -->
@@ -60,14 +67,25 @@
                 <h2 class="card-title neon-text">🎵 Saudações Musicais</h2>
                 <p class="card-text">INSCRIÇÕES ABERTAS</p>
                 <p class="card-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100% adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e comece já sua jornada musical!</p>
+                <!-- Inserindo o áudio -->
+                <audio controls>
+                    <source src="audio/anuncio-inicio-com-fundo-musical.m4a" type="audio/mp4">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
             </div>
         </section>
 
         <!-- Novo Card para o GIF -->
         <section class="card neon-card mb-5">
             <div class="card-body text-center">
-                <img src="aula-online.gif" alt="Aulas Online" class="img-fluid" style="max-width: 100%; height: auto;">
+                <img src="assets/aula-online.gif" alt="Aulas Online" class="img-fluid" style="max-width: 100%; height: auto;">
             </div>
+
+            <!-- Inserindo o áudio -->
+            <audio controls>
+                <source src="audio/encontrar-horario.mp3" type="audio/mp4">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
         </section>
 
         <!-- Seção de Qualificação -->
@@ -75,6 +93,11 @@
             <div class="card-body">
                 <h2 class="card-title neon-text">Como Funcionam as Aulas?</h2>
                 <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a <strong>teoria e técnica</strong> das músicas. Temos material didático pago à parte fundamental para começar (vídeos e partituras). Convide amigos para aprenderem juntos! 😉</p>
+                <!-- Inserindo o áudio -->
+                <audio controls>
+                    <source src="audio/explications.mp3" type="audio/mp4">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio> 
             </div>
         </section>
 
@@ -123,14 +146,42 @@
                 </div>
             </div>
         </section>
+
+        <!-- Ícone do Robô -->
+        <div id="chat-icon" class="chat-icon">
+            <i class="fas fa-robot"></i>
+            <span class="tooltip">Tire as principais dúvidas comigo</span>
+        </div>
+
+        <!-- Modal do Chat -->
+        <div id="chat-modal" class="chat-modal">
+            <div class="chat-header">
+                <span>Chatbot</span>
+                <button id="close-chat" class="close-chat">&times;</button>
+            </div>
+            <div id="chat-box" class="chat-box"></div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
     </main>
 
     <footer class="neon-footer text-center py-3">
-        <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="gif-container">
+                <img src="assets/cat-on-computer.gif" alt="Gato engraçado" style="width: 150px; height: auto;">
+            </div>
+            <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
+            <a href="https://www.instagram.com/dgmusicguide/" target="_blank" class="neon-text">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="static/script.js"></script>
+    <script src="simple-chatbot/bot.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
     <script>
