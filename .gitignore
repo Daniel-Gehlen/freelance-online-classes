@@ -2,7 +2,7 @@
 .vscode/
 
 # Ignora arquivos de ambiente
-.env
+venv
 
 # Ignora dependências do Node.js
 node_modules/

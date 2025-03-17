@@ -1,9 +1,9 @@
 import os
-import requests
-from bs4 import BeautifulSoup
-from deep_translator import GoogleTranslator
 import random
 from datetime import datetime
+import requests
+from bs4 import BeautifulSoup
+from googletrans import Translator
 
 # Configurar tópicos e URLs de referência
 topics = {
@@ -45,7 +45,7 @@ music_terms = [
 ]
 
 # Nome do arquivo HTML que será atualizado
-file_path = "/teoria-musical-wikipedia.html"
+file_path = "./teoria-musical-wikipedia.html"
 
 # Criar o arquivo HTML inicial, caso não exista
 if not os.path.exists(file_path):
@@ -108,7 +108,7 @@ def get_wikipedia_page(term):
     return None, None
 
 # Inicializar o tradutor
-translator = GoogleTranslator(source='en', target='pt')
+translator = Translator()
 
 # Ler o conteúdo existente do arquivo HTML
 with open(file_path, "r", encoding="utf-8") as file:
@@ -138,7 +138,7 @@ for term in random.sample(music_terms, min(len(music_terms), 5)):  # Seleciona a
 
         # Traduzir e formatar o conteúdo
         translated_paragraphs = [
-            f"<p>{translator.translate(paragraph)}</p>" for paragraph in paragraphs[:2]
+            f"<p>{translator.translate(paragraph, src='en', dest='pt').text}</p>" for paragraph in paragraphs[:2]
         ]
 
         # Criar a estrutura de HTML
@@ -157,10 +157,23 @@ for term in random.sample(music_terms, min(len(music_terms), 5)):  # Seleciona a
         print(f"Erro ao processar o termo {term}: {e}")
         continue
 
-# Adicionar novo conteúdo ao arquivo HTML
+# Adicionar novo conteúdo ao arquivo HTML no local correto
 if new_content:
-    with open(file_path, "a", encoding="utf-8") as file:
-        file.write(new_content)
-    print("Conteúdo atualizado com sucesso!")
+    # Encontrar a posição da tag </body>
+    body_end_index = existing_content.find("</body>")
+    if body_end_index == -1:
+        print("Erro: Tag </body> não encontrada no arquivo HTML.")
+    else:
+        # Inserir o novo conteúdo antes da tag </body>
+        updated_content = (
+            existing_content[:body_end_index]  # Tudo antes de </body>
+            + new_content  # Novo conteúdo
+            + existing_content[body_end_index:]  # Tudo após </body>
+        )
+
+        # Salvar o conteúdo atualizado no arquivo
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(updated_content)
+        print("Conteúdo atualizado com sucesso!")
 else:
     print("Nenhum conteúdo novo foi adicionado.")
