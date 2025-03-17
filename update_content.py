@@ -45,7 +45,7 @@ music_terms = [
 ]
 
 # Nome do arquivo HTML que será atualizado
-file_path = "teoria-musical-wikipedia.html"
+file_path = "pages/teoria-musical-wikipedia.html"
 
 # Criar o arquivo HTML inicial, caso não exista
 if not os.path.exists(file_path):
