@@ -4,6 +4,10 @@ body.dark-theme {
     color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    margin: 0; /* Remove margens padrão */
 }
 
 .neon-header {
@@ -198,6 +202,35 @@ h2.neon-text {
     margin-top: 20px; /* Adiciona espaço entre o conteúdo e o footer */
 }
 
+.footer-content {
+    display: flex; /* Coloca os elementos em linha */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaçamento entre os elementos */
+    color: #E1306C; /* Cor do Instagram */
+    font-size: 12x; /* Tamanho do ícone */
+    margin-left: 10px; /* Espaçamento à esquerda */
+    text-decoration: none; /* Remove o sublinhado do link */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+}
+
+.gif-container {
+    display: inline-block; /* Mantém o GIF na mesma linha */
+}
+
+.neon-text {
+    margin: 0; /* Remove margens padrão do parágrafo */
+}
+
+.fab.fa-instagram {
+    font-size:34px; /* Tamanho do ícone do Instagram */
+    color: #E1306C; /* Cor do Instagram */
+}
+
+.fab.fa-instagram:hover {
+    color: #ffffff; /* Cor ao passar o mouse */
+}
+
 /* Estilo do botão de voltar ao topo */
 .scroll-to-top-btn {
     display: none; /* Esconde o botão inicialmente */
@@ -228,35 +261,6 @@ h2.neon-text {
     display: block;
     text-align: center;
     line-height: 50px; /* Centraliza verticalmente */
-}
-
-.footer-content {
-    display: flex; /* Coloca os elementos em linha */
-    align-items: center; /* Alinha verticalmente ao centro */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 20px; /* Espaçamento entre os elementos */
-    color: #E1306C; /* Cor do Instagram */
-    font-size: 12x; /* Tamanho do ícone */
-    margin-left: 10px; /* Espaçamento à esquerda */
-    text-decoration: none; /* Remove o sublinhado do link */
-    vertical-align: middle; /* Alinha verticalmente com o texto */
-}
-
-.gif-container {
-    display: inline-block; /* Mantém o GIF na mesma linha */
-}
-
-.neon-text {
-    margin: 0; /* Remove margens padrão do parágrafo */
-}
-
-.fab.fa-instagram {
-    font-size:34px; /* Tamanho do ícone do Instagram */
-    color: #E1306C; /* Cor do Instagram */
-}
-
-.fab.fa-instagram:hover {
-    color: #ffffff; /* Cor ao passar o mouse */
 }
 
 .neon-footer a:hover {
