@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,9 @@
     <!-- Links para estilos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../../static/styles.css">
     <link rel="stylesheet" href="../../simple-chatbot/styles/chatbot.css">
 </head>
@@ -31,7 +34,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -46,8 +50,9 @@
                         <a class="nav-link neon-text" href="../../pages/audios-e-videos.html">Áudios e Vídeos</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link neon-text" href="../campos-harmonicos/campos-harmonicos.html">Campo Harmônico</a>
-                  </li>
+                        <a class="nav-link neon-text" href="../campos-harmonicos/campos-harmonicos.html">Campo
+                            Harmônico</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -72,17 +77,6 @@
             <div class="nota-quadrado" data-nota="A#4">Lá#/Sib</div>
             <div class="nota-quadrado" data-nota="B4">Si</div>
         </div>
-        <div class="notas-selecionadas" id="notas-selecionadas">
-            <!-- Notas selecionadas aparecerão aqui -->
-        </div>
-        <button id="gerar-cifra" class="btn-neon">Gerar Intervalos</button>
-        <div class="cifra-container" id="cifra-container">
-            <!-- Cifra gerada aparecerá aqui -->
-        </div>
-
-        <div class="campo-harmonico" id="campo-harmonico">
-            <!-- Acordes enfileirados aparecerão aqui -->
-        </div>
         <div class="botoes">
             <button id="tocar-notas" class="btn-neon">Tocar Notas (Melodicamente)</button>
             <button id="tocar-harmonicamente" class="btn-neon">Tocar Notas (Harmonicamente)</button>
@@ -91,308 +85,410 @@
             <button id="baixar-mp3" class="btn-neon">Baixar Campo (MP3)</button>
             <button id="resetar" class="btn-neon">Resetar</button>
         </div>
-    </div>
 
-<!-- Seção de Educação sobre Intervalos Musicais -->
-<div class="educacao-harmonica">
-  <h2 class="neon-text text-center">Entendendo os Intervalos Musicais</h2>
-  <div class="topico">
-      <h3>1. O que é um Intervalo Musical?</h3>
-      <p>
-          Um intervalo musical é a distância entre duas notas. Ele é medido em tons e semitons e é a base para a construção de escalas, acordes e melodias.
-      </p>
-      <p><strong>Exemplo prático</strong>: O intervalo entre Dó (C) e Mi (E) é uma terça maior.</p>
-  </div>
-  <div class="topico">
-      <h3>2. Tipos de Intervalos</h3>
-      <p>
-          Os intervalos podem ser classificados como:
-      </p>
-      <ul>
-          <li><strong>Intervalos Melódicos</strong>: Quando as notas são tocadas em sequência.</li>
-          <li><strong>Intervalos Harmônicos</strong>: Quando as notas são tocadas ao mesmo tempo.</li>
-      </ul>
-      <p>Além disso, os intervalos são categorizados por sua qualidade (justos, maiores, menores, aumentados, diminutos) e quantidade (uníssono, segunda, terça, etc.).</p>
-  </div>
-  <div class="topico">
-      <h3>3. Exemplos de Intervalos Musicais</h3>
-      <p>
-          Aqui estão alguns exemplos de intervalos musicais com áudios para você ouvir:
-      </p>
-
-      <!-- Exemplo 1: Uníssono -->
-      <div class="explicacao-harmonica">
-          <h4>Uníssono</h4>
-          <p>
-              O uníssono ocorre quando duas notas são iguais. Não há distância entre elas. Ex:<strong> Dó no Piano e Dó no Cello</strong>
-
-          </p>
-          <div class="audio-container">
-            <audio controls>
-                <source src="unissono-piano-cello.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
+        <div class="notas-selecionadas" id="notas-selecionadas">
+            <!-- Notas selecionadas aparecerão aqui -->
+        </div>
+        <button id="gerar-cifra" class="btn-neon">Gerar Intervalos da 1ª Nota selecionada</button>
+        <div class="cifra-container" id="cifra-container">
+            <!-- Cifra gerada aparecerá aqui -->
         </div>
 
-      <!-- Exemplo 2: Segunda Menor -->
-      <div class="explicacao-harmonica">
-          <h4>Segunda Menor</h4>
-          <p>
-              A segunda menor é o intervalo entre duas notas com um semitom de distância, como Dó (C) e Ré bemol (Db). Ex:<strong> segunda menor (2m) ascendente e descendente</strong>
-          </p>
-          <div class="audio-container">
-              <audio controls>
-                  <source src="segunda-menor-asc.mp3" type="audio/mpeg">
-                  Seu navegador não suporta o elemento de áudio.
-              </audio>
-              <audio controls>
-                <source src="segunda-menor-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-          </div>
-      </div>
-
-      <!-- Exemplo 3: Segunda Maior -->
-      <div class="explicacao-harmonica">
-          <h4>Segunda Maior</h4>
-          <p>
-              A segunda maior é o intervalo entre duas notas com um tom de distância, como Dó (C) e Ré (D). Ex:<strong> segunda maior (2M) ascendente e descendente</strong>
-          </p>
-          <div class="audio-container">
-              <audio controls>
-                  <source src="segunda-maior-asc.mp3" type="audio/mpeg">
-                  Seu navegador não suporta o elemento de áudio.
-              </audio>
-              <audio controls>
-                <source src="segunda-maior-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-          </div>
-      </div>
-      
-      <!-- Exemplo 4: Terça Menor -->
-      <div class="explicacao-harmonica">
-        <h4>Terça Menor</h4>
-        <p>
-            A terça menor é o intervalo entre duas notas com um tom e um semitom de distância, como Dó (C) e Mi bemol (Eb). Ex:<strong> terça menor (3m) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="terca-menor-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="terca-menor-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-      <!-- Exemplo 5: Terça Maior -->
-      <div class="explicacao-harmonica">
-        <h4>Terça Maior</h4>
-        <p>
-            A terça maior é o intervalo entre duas notas com dois tons de distância, como Dó (C) e Mi (E). Ex:<strong> terça maior (3M) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="terca-maior-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="terca-maior-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
+        <div class="campo-harmonico" id="campo-harmonico">
+            <!-- Acordes enfileirados aparecerão aqui -->
         </div>
     </div>
-
-      <!-- Exemplo 6: Quarta Justa -->
-      <div class="explicacao-harmonica">
-        <h4>Quarta Justa</h4>
-        <p>
-            A quarta justa é o intervalo entre duas notas com dois tons e um semitom de distância, como Dó (C) e Fá (F). Ex:<strong> quarta justa (4j) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="quarta-justa-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="quarta-justa-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-           <!-- Exemplo 6.1: Quarta Aumentada -->
-           <div class="explicacao-harmonica">
-            <h4>Quarta Aumentada</h4>
+    <!-- Seção de Educação sobre Intervalos Musicais -->
+    <div class="educacao-harmonica">
+        <h2 class="neon-text text-center">Entendendo os Intervalos Musicais</h2>
+        <div class="topico">
+            <h3>1. O que é um Intervalo Musical?</h3>
             <p>
-                A quarta aumentada é o intervalo entre duas notas com três tons de distância, como Dó (C) e Fá# (F#). Ex:<strong> quarta aumentada (4aum) ascendente e descendente</strong>
+                Um intervalo musical é a distância entre duas notas. Ele é medido em tons e semitons e é a base para a
+                construção de escalas, acordes e melodias.
             </p>
-            <div class="audio-container">
-                <audio controls>
-                    <source src="quarta-aum-asc.mp3" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-                <audio controls>
-                    <source src="quarta-aum-desc.mp3" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
+            <p><strong>Exemplo prático</strong>: O intervalo entre Dó (C) e Mi (E) é uma terça maior.</p>
+        </div>
+        <div class="topico">
+            <h3>2. Tipos de Intervalos</h3>
+            <p>
+                Os intervalos podem ser classificados como:
+            </p>
+            <ul>
+                <li><strong>Intervalos Melódicos</strong>: Quando as notas são tocadas em sequência.</li>
+                <li><strong>Intervalos Harmônicos</strong>: Quando as notas são tocadas ao mesmo tempo.</li>
+            </ul>
+            <p>Além disso, os intervalos são categorizados por sua qualidade (justos, maiores, menores, aumentados,
+                diminutos) e quantidade (uníssono, segunda, terça, etc.).</p>
+        </div>
+        <div class="topico">
+            <h3>3. Exemplos de Intervalos Musicais</h3>
+            <p>
+                Aqui estão alguns exemplos dos intervalos musicais básicos com áudios para você ouvir:
+            </p>
+
+            <!-- Exemplo 1: Uníssono -->
+            <div class="explicacao-harmonica">
+                <h4>Uníssono</h4>
+                <p>
+                    O uníssono ocorre quando duas notas são iguais. Não há distância entre elas. Ex:<strong> Dó no Piano
+                        e Dó no Cello - harmônica</strong>
+
+                </p>
+                <div class="audio-container">
+                    <audio controls>
+                        <source src="unissono-piano-cello.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <!-- Exemplo 2: Segunda Menor -->
+                <div class="explicacao-harmonica">
+                    <h4>Segunda Menor</h4>
+                    <p>
+                        A segunda menor é o intervalo entre duas notas com um semitom de distância, como Dó (C) e Ré
+                        bemol (Db). Ex:<strong> segunda menor (2m) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="segunda-menor-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="segunda-menor-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="segunda-menor-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 3: Segunda Maior -->
+                <div class="explicacao-harmonica">
+                    <h4>Segunda Maior</h4>
+                    <p>
+                        A segunda maior é o intervalo entre duas notas com um tom de distância, como Dó (C) e Ré (D).
+                        Ex:<strong> segunda maior (2M) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="segunda-maior-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="segunda-maior-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="segunda-maior-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 4: Terça Menor -->
+                <div class="explicacao-harmonica">
+                    <h4>Terça Menor</h4>
+                    <p>
+                        A terça menor é o intervalo entre duas notas com um tom e um semitom de distância, como Dó (C) e
+                        Mi bemol (Eb). Ex:<strong> terça menor (3m) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="terca-menor-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="terca-menor-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="terca-menor-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 5: Terça Maior -->
+                <div class="explicacao-harmonica">
+                    <h4>Terça Maior</h4>
+                    <p>
+                        A terça maior é o intervalo entre duas notas com dois tons de distância, como Dó (C) e Mi (E).
+                        Ex:<strong> terça maior (3M) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="terca-maior-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="terca-maior-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="terca-maior-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 6: Quarta Justa -->
+                <div class="explicacao-harmonica">
+                    <h4>Quarta Justa</h4>
+                    <p>
+                        A quarta justa é o intervalo entre duas notas com dois tons e um semitom de distância, como Dó
+                        (C) e Fá (F). Ex:<strong> quarta justa (4j) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="quarta-justa-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quarta-justa-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quarta-justa-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 6.1: Quarta Aumentada -->
+                <div class="explicacao-harmonica">
+                    <h4>Quarta Aumentada</h4>
+                    <p>
+                        A quarta aumentada é o intervalo entre duas notas com três tons de distância, como Dó (C) e Fá#
+                        (F#). Ex:<strong> quarta aumentada (4aum) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="quarta-aum-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quarta-aum-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quarta-aum-quinta-dim-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 7: Quinta Diminuta -->
+                <div class="explicacao-harmonica">
+                    <h4>Quinta Diminuta ou Quarta Aumentada</h4>
+                    <p>
+                        A quinta diminuta é o intervalo entre duas notas com dois tons e dois semitons de distância,
+                        como Dó (C) e Sol bemol (Gb). Ex:<strong> quinta diminuta (5dim) ascendente,
+                            descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="quarta-aum-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quarta-aum-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quarta-aum-quinta-dim-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 6.2: Quinta Justa -->
+                <div class="explicacao-harmonica">
+                    <h4>Quinta Justa</h4>
+                    <p>
+                        A quarta aumentada é o intervalo entre duas notas com três tons de distância, como Dó (C) e Sol
+                        (G).
+                        Ex:<strong> quinta justa (5j) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="quinta-justa-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quinta-justa-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="quinta-justa-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 8: Sexta Menor -->
+
+                <div class="explicacao-harmonica">
+                    <h4>Sexta Menor</h4>
+                    <p>
+                        A sexta menor é o intervalo entre duas notas com três tons e dois semitons de distância, como Dó
+                        (C) e Lá bemol (Ab). Ex:<strong> sexta menor (6m) ascendente, descendente e harmônica</strong>
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="sexta-menor-asc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="sexta-menor-desc.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        <audio controls>
+                            <source src="sexta-menor-harm.mp3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Exemplo 9: Sexta Maior -->
+                <div class="explicacao-harmonica">
+                    <div class="explicacao-harmonica">
+                        <h4>Sexta Maior</h4>
+                        <p>
+                            A sexta maior é o intervalo entre duas notas com quatro tons e um semitom de distância, como
+                            Dó (C) e Lá (A). Ex:<strong> sexta maior (6M) ascendente, descendente e harmônica</strong>
+                        </p>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="sexta-maior-asc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="sexta-maior-desc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="sexta-maior-harm.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Exemplo 10: Sétima Menor -->
+                    <div class="explicacao-harmonica">
+                        <h4>Sétima Menor</h4>
+                        <p>
+                            A sétima menor é o intervalo entre duas notas com quatro tons e dois semitons de distância,
+                            como Dó (C) e Si bemol (Bb). Ex:<strong> sétima menor (7m) ascendente, descendente e
+                                harmônica</strong>
+                        </p>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="sexta-maior-asc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="sexta-maior-desc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="setima-menor-harm.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Exemplo 11: Sétima Maior -->
+                    <div class="explicacao-harmonica">
+                        <h4>Sétima Maior</h4>
+                        <p>
+                            A sétima maior é o intervalo entre duas notas com cinco tons e um semitom de distância, como
+                            Dó (C) e Si (B). Ex:<strong> sétima maior (7M) ascendente, descendente e harmônica</strong>
+                        </p>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="setima-maior-asc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="setima-maior-desc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="setima-maior-harm.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <!-- Exemplo 11: Oitava Justa -->
+                    <div class="explicacao-harmonica">
+                        <h4>Oitava Justa</h4>
+                        <p>
+                            A oitava justa é o intervalo entre duas notas com seis tons de distância, como Dó4 (C4) e
+                            Dó5 (C5). Ex:<strong> oitava justa (8j) ascendente, descendente e harmônica</strong>
+                        </p>
+                        <div class="audio-container">
+                            <audio controls>
+                                <source src="oitava-justa-asc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="oitava-justa-desc.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                            <audio controls>
+                                <source src="oitava-justa-harm.mp3" type="audio/mpeg">
+                                Seu navegador não suporta o elemento de áudio.
+                            </audio>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-          </div>
 
-      <!-- Exemplo 7: Quinta Diminuta -->
-      <div class="explicacao-harmonica">
-        <h4>Quinta Diminuta ou Quarta Aumentada</h4>
-        <p>
-            A quinta diminuta é o intervalo entre duas notas com dois tons e dois semitons de distância, como Dó (C) e Sol bemol (Gb). Ex:<strong> quinta diminuta (5dim) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="quarta-aum-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="quarta-aum-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-      <!-- Exemplo 8: Sexta Menor -->
-
-      <div class="explicacao-harmonica">
-        <h4>Sexta Menor</h4>
-        <p>
-            A sexta menor é o intervalo entre duas notas com três tons e dois semitons de distância, como Dó (C) e Lá bemol (Ab). Ex:<strong> sexta menor (6m) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="sexta-menor-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="sexta-menor-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-      <!-- Exemplo 9: Sexta Maior -->
-      <div class="explicacao-harmonica">
-        <div class="explicacao-harmonica">
-          <h4>Sexta Maior</h4>
-          <p>
-              A sexta maior é o intervalo entre duas notas com quatro tons e um semitom de distância, como Dó (C) e Lá (A). Ex:<strong> sexta maior (6M) ascendente e descendente</strong>
-          </p>
-          <div class="audio-container">
-              <audio controls>
-                  <source src="sexta-maior-asc.mp3" type="audio/mpeg">
-                  Seu navegador não suporta o elemento de áudio.
-              </audio>
-              <audio controls>
-                <source src="sexta-maior-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-          </div>
-        </div>
-
-      <!-- Exemplo 10: Sétima Menor -->
-      <div class="explicacao-harmonica">
-        <h4>Sétima Menor</h4>
-        <p>
-            A sétima menor é o intervalo entre duas notas com quatro tons e dois semitons de distância, como Dó (C) e Si bemol (Bb). Ex:<strong> sétima menor (7m) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="sexta-maior-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="sexta-maior-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-      <!-- Exemplo 11: Sétima Maior -->
-      <div class="explicacao-harmonica">
-        <h4>Sétima Maior</h4>
-        <p>
-            A sétima maior é o intervalo entre duas notas com cinco tons e um semitom de distância, como Dó (C) e Si (B). Ex:<strong> sétima maior (7M) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="setima-maior-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="setima-maior-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-      <!-- Exemplo 11: Sétima Maior -->
-      <div class="explicacao-harmonica">
-        <h4>Oitava Justa</h4>
-        <p>
-            A oitava justa é o intervalo entre duas notas com seis tons de distância, como Dó4 (C4) e Dó5 (C5). Ex:<strong> soitava justa (8j) ascendente e descendente</strong>
-        </p>
-        <div class="audio-container">
-            <audio controls>
-                <source src="oitava-justa-asc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <audio controls>
-                <source src="oitava-justa-desc.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-        </div>
-      </div>
-
-  </div>
-</div>
-
-    <!-- Ícone do Robô -->
-    <div id="chat-icon" class="chat-icon">
-        <i class="fas fa-robot"></i>
-        <span class="tooltip">Tire as principais dúvidas comigo</span>
-    </div>
-
-    <!-- Modal do Chat -->
-    <div id="chat-modal" class="chat-modal">
-        <div class="chat-header">
-            <span>Chatbot</span>
-            <button id="close-chat" class="close-chat">&times;</button>
-        </div>
-        <div id="chat-box" class="chat-box"></div>
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
-    </div>
-
-    <!-- Rodapé -->
-    <footer class="neon-footer text-center py-3">
-        <div class="footer-content">
-            <div class="gif-container">
-                <img src="../../assets/cat-on-computer.gif" alt="Gato engraçado" style="width: 150px; height: auto;">
+            <!-- Ícone do Robô -->
+            <div id="chat-icon" class="chat-icon">
+                <i class="fas fa-robot"></i>
+                <span class="tooltip">Tire as principais dúvidas comigo</span>
             </div>
-            <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
-            <a href="https://www.instagram.com/dgmusicguide/" target="_blank" class="neon-text">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="intervalos-musicais.js"></script>
-    <script src="../../simple-chatbot/bot.js"></script>
+            <!-- Modal do Chat -->
+            <div id="chat-modal" class="chat-modal">
+                <div class="chat-header">
+                    <span>Chatbot</span>
+                    <button id="close-chat" class="close-chat">&times;</button>
+                </div>
+                <div id="chat-box" class="chat-box"></div>
+                <div class="input-container">
+                    <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+
+            <!-- Rodapé -->
+            <footer class="neon-footer text-center py-3">
+                <div class="footer-content">
+                    <div class="gif-container">
+                        <img src="../../assets/cat-on-computer.gif" alt="Gato engraçado"
+                            style="width: 150px; height: auto;">
+                    </div>
+                    <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
+                    <a href="https://www.instagram.com/dgmusicguide/" target="_blank" class="neon-text">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </footer>
+
+            <!-- Scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="intervalos-musicais.js"></script>
+            <script src="../../simple-chatbot/bot.js"></script>
 </body>
+
 </html>

@@ -319,6 +319,7 @@ h2.neon-text {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .notas-selecionadas .nota-selecionada {
