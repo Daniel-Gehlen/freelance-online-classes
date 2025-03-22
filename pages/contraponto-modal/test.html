@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VexFlow Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/vexflow@4.0.0/build/cjs/vexflow-debug.js"></script>
+</head>
+
+<body>
+  <canvas id="test-canvas" width="800" height="200"></canvas>
+  <script>
+    const { Factory, Renderer } = VexFlow;
+
+    // Configuração do Canvas
+    const canvas = document.getElementById('test-canvas');
+    const renderer = new Renderer(canvas, Renderer.Backends.CANVAS);
+    renderer.resize(800, 200);
+    const context = renderer.getContext();
+
+    // Criar sistema e notas
+    const factory = new Factory({ renderer: { context } });
+    const score = factory.EasyScore();
+    const system = factory.System({ width: 750, systemStartX: 25, systemStartY: 40 });
+
+    // Adicionar pentagrama com notas
+    system.addStave({
+      voices: [score.voice(score.notes('C5/q, D5/q, E5/q, F5/q', { stem: 'up' }))]
+    }).addClef('treble');
+
+    // Renderizar o sistema
+    system.draw();
+  </script>
+</body>
+
+</html>

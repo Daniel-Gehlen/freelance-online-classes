@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contraponto Modal</title>
+  <!-- Meta Tags Open Graph -->
+  <meta property="og:title" content="Contraponto Modal - Aulas de Música Online">
+  <meta property="og:description"
+    content="Aprenda as cinco espécies de contraponto modal com exemplos práticos e exercícios.">
+  <meta property="og:image" content="https://daniel-gehlen.github.io/freelance-online-classes/logo.jpg">
+  <meta property="og:url" content="https://daniel-gehlen.github.io/freelance-online-classes/contraponto-modal.html">
+  <meta property="og:type" content="website">
+
+  <!-- Links e estilos -->
+  <link rel="stylesheet" href="../../static/styles.css">
+  <link rel="stylesheet" href="../../simple-chatbot/styles/chatbot.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+
+  <!-- Tone.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <!-- Bibliotecas para gravação e codificação MP3 -->
+  <script src="https://cdn.jsdelivr.net/npm/recorderjs@1.0.1/dist/recorder.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.0/lame.min.js"></script>
+</head>
+
+<body class="dark-theme">
+  <!-- Cabeçalho com Logo -->
+  <header class="neon-header">
+    <div class="logo-link">
+      <img src="../../assets/logo.jpg" alt="Logo" class="logo-img" onerror="this.src=''; this.alt='';">
+    </div>
+    <h1 class="neon-text">🎵 Contraponto Modal 🎵</h1>
+    <p>Aprenda as cinco espécies de contraponto modal com exemplos práticos e exercícios.</p>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link neon-text" href="../../index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link neon-text" href="../../teoria-musical-wikipedia.html">Teoria Musical</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link neon-text" href="../../pages/audios-e-videos.html">Áudios e Vídeos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link neon-text" href="../intervalos-musicais/intervalos-musicais.html">Intervalos Musicais</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link neon-text" href="../campos-harmonicos/campos-harmonicos.html">Campo
+              Harmônico</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="container my-5">
+    <!-- Seção de Introdução -->
+    <section>
+      <h2 class="neon-text text-center">Introdução ao Contraponto Modal</h2>
+      <p class="neon-text">
+        O contraponto modal é uma técnica de composição que utiliza modos antigos (como o Dórico, Frígio, etc.) para
+        criar linhas melódicas independentes que se harmonizam entre si. As cinco espécies de contraponto são:
+      </p>
+      <ul class="neon-text">
+        <li><strong>Primeira Espécie:</strong> Nota contra nota.</li>
+        <li><strong>Segunda Espécie:</strong> Duas notas contra uma.</li>
+        <li><strong>Terceira Espécie:</strong> Quatro notas contra uma.</li>
+        <li><strong>Quarta Espécie:</strong> Sincopado.</li>
+        <li><strong>Quinta Espécie:</strong> Ritmo livre contra cantus firmus.</li>
+      </ul>
+
+      <h3 class="neon-text">O que são Modos Antigos?</h3>
+      <p class="neon-text">
+        Os modos antigos, também conhecidos como modos eclesiásticos ou modos gregorianos, são escalas musicais que
+        precederam o sistema tonal maior-menor. Eles são derivados da música medieval e renascentista e são baseados em
+        diferentes padrões de intervalos. Cada modo tem uma sonoridade única e é construído a partir de uma nota
+        fundamental (tônica) e um padrão específico de tons e semitons.
+      </p>
+
+      <h3 class="neon-text">Modos no Campo Harmônico de Dó Maior</h3>
+      <p class="neon-text">
+        Tomando como ponto de partida o campo harmônico de Dó Maior (C D E F G A B), podemos derivar os seguintes modos:
+      </p>
+      <ul class="neon-text">
+        <li><strong>Jônio (Dó Maior = C):</strong> Dó Ré Mi Fá Sol Lá Si</li>
+        <li><strong>Dórico (Ré Dórico = Dm):</strong> Ré Mi Fá Sol Lá Si Dó</li>
+        <li><strong>Frígio (Mi Frígio = Em):</strong> Mi Fá Sol Lá Si Dó Ré</li>
+        <li><strong>Lídio (Fá Lídio = F):</strong> Fá Sol Lá Si Dó Ré Mi</li>
+        <li><strong>Mixolídio (Sol Mixolídio = G7):</strong> Sol Lá Si Dó Ré Mi Fá</li>
+        <li><strong>Eólio (Lá Menor Natural = Am):</strong> Lá Si Dó Ré Mi Fá Sol</li>
+        <li><strong>Lócrio (Si Lócrio = Bm(b5)/7):</strong> Si Dó Ré Mi Fá Sol Lá</li>
+      </ul>
+
+      <h3 class="neon-text">Exemplo de Contraponto Modal</h3>
+      <p class="neon-text">
+        Vamos criar um exemplo de contraponto modal utilizando o modo Dórico (Ré Dórico). A escala de Ré Dórico é:
+        Ré Mi Fá Sol Lá Si Dó. Podemos criar uma linha melódica simples nesse modo e adicionar uma segunda voz que siga
+        as
+        regras
+        do contraponto modal.
+      </p>
+      <pre class="neon-text">
+        Voz 1 (Cantus Firmus): Ré - Mi - Fá - Sol - Lá - Si - Dó
+        Voz 2 (Contraponto):   Lá - Sol - Fá - Mi - Ré - Dó - Si
+      </pre>
+      <p class="neon-text">
+        Neste exemplo, a segunda voz segue as regras da primeira espécie de contraponto, onde cada nota do cantus firmus
+        é acompanhada por uma única nota na voz contrapontística, mantendo consonância perfeita.
+      </p>
+    </section>
+
+    <!-- Seção de Pentagrama -->
+    <section>
+      <h2 class="neon-text text-center">Composição de Contraponto</h2>
+      <p class="neon-text">
+        Use o pentagrama abaixo para compor seu contraponto. Clique no pentagrama para adicionar notas.
+      </p>
+
+      <!-- Editor de Partitura -->
+      <div class="music-editor-container">
+        <div class="music-editor-controls">
+          <div class="control-group">
+            <button id="clear-notes" class="btn btn-neon">Limpar</button>
+            <button id="play-composition" class="btn btn-neon">Tocar</button>
+            <button id="download-image" class="btn btn-neon">Salvar Imagem</button>
+            <button id="download-mp3" class="btn btn-neon">Baixar MP3</button>
+          </div>
+
+          <div class="control-group">
+            <label for="note-duration" class="neon-text">Duração da Nota:</label>
+            <div class="duration-buttons">
+              <button id="whole" class="btn btn-neon duration-btn">Semibreve</button>
+              <button id="half" class="btn btn-neon duration-btn">Mínima</button>
+              <button id="quarter" class="btn btn-neon duration-btn active">Semínima</button>
+              <button id="eighth" class="btn btn-neon duration-btn">Colcheia</button>
+              <button id="sixteenth" class="btn btn-neon duration-btn">Semicolcheia</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="voice-selector" class="neon-text">Voz:</label>
+            <div class="voice-buttons">
+              <button id="first-voice" class="btn btn-neon voice-btn active">Primeira Voz</button>
+              <button id="second-voice" class="btn btn-neon voice-btn">Segunda Voz</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="staff-container" class="staff-container">
+          <canvas id="music-staff" width="800" height="300"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seções para Cada Espécie de Contraponto -->
+    <section>
+      <h2 class="neon-text text-center">Espécies de Contraponto</h2>
+
+      <!-- Primeira Espécie -->
+      <div class="especie-contraponto">
+        <h3 class="neon-text">Primeira Espécie: Nota contra Nota</h3>
+        <p class="neon-text">
+          Na primeira espécie, cada nota do cantus firmus é acompanhada por uma única nota na voz contrapontística. Essa
+          espécie é a base de todas as outras e exige consonância perfeita entre as notas.
+        </p>
+      </div>
+
+      <!-- Segunda Espécie -->
+      <div class="especie-contraponto">
+        <h3 class="neon-text">Segunda Espécie: Duas Notas contra Nota</h3>
+        <p class="neon-text">
+          Na segunda espécie, cada nota do cantus firmus é acompanhada por duas notas na voz contrapontística. A
+          primeira nota deve ser consonante, e a segunda pode ser dissonante, desde que resolvida corretamente.
+        </p>
+      </div>
+
+      <!-- Terceira Espécie -->
+      <div class="especie-contraponto">
+        <h3 class="neon-text">Terceira Espécie: Quatro Notas contra Nota</h3>
+        <p class="neon-text">
+          Na terceira espécie, cada nota do cantus firmus é acompanhada por quatro notas na voz contrapontística. Essa
+          espécie permite maior liberdade rítmica e melódica.
+        </p>
+      </div>
+
+      <!-- Quarta Espécie -->
+      <div class="especie-contraponto">
+        <h3 class="neon-text">Quarta Espécie: Sincopado</h3>
+        <p class="neon-text">
+          Na quarta espécie, as notas da voz contrapontística são sincopadas, criando um efeito rítmico interessante. A
+          dissonância é permitida apenas em tempos fracos.
+        </p>
+      </div>
+
+      <!-- Quinta Espécie -->
+      <div class="especie-contraponto">
+        <h3 class="neon-text">Quinta Espécie: Ritmo Livre</h3>
+        <p class="neon-text">
+          Na quinta espécie, a voz contrapontística utiliza ritmos livres, combinando elementos das espécies anteriores.
+          Essa espécie é a mais avançada e permite maior criatividade.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="neon-footer text-center py-3">
+    <div class="footer-content">
+      <div class="gif-container">
+        <img src="../../assets/cat-on-computer.gif" alt="Gato engraçado" style="width: 150px; height: auto;">
+      </div>
+      <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
+      <a href="https://www.instagram.com/dgmusicguide/" target="_blank" class="neon-text">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Ícone do Robô -->
+  <div id="chat-icon" class="chat-icon">
+    <i class="fas fa-robot"></i>
+    <span class="tooltip">Tire as principais dúvidas comigo</span>
+  </div>
+
+  <!-- Modal do Chat -->
+  <div id="chat-modal" class="chat-modal">
+    <div class="chat-header">
+      <span>Chatbot</span>
+      <button id="close-chat" class="close-chat">&times;</button>
+    </div>
+    <div id="chat-box" class="chat-box"></div>
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../../static/script.js"></script>
+  <script src="contraponto-modal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../../simple-chatbot/bot.js"></script>
+</body>
+
+</html>

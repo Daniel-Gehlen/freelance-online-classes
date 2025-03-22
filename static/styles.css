@@ -445,6 +445,105 @@ h2.neon-text {
     filter: invert(1); /* Inverte as cores dos ícones para melhor visibilidade */
 }
 
+
+/* Estilos para a seção de áudio */
+.audio-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.audio-container audio {
+    width: 100%;
+    max-width: 300px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.audio-container audio::-webkit-media-controls-panel {
+    background-color: #333;
+}
+
+.audio-container audio::-webkit-media-controls-play-button,
+.audio-container audio::-webkit-media-controls-mute-button {
+    filter: invert(1);
+}
+
+/* Estilos para os botões de notas */
+.botoes-notas {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botoes-notas .btn-neon {
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.botoes-notas .btn-neon:hover {
+    background-color: #00cc99;
+}
+
+/* Music Editor Styles */
+.music-editor-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #0ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  }
+  
+  .music-editor-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .control-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .staff-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    overflow: auto;
+  }
+  
+  #music-staff {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  
+  .duration-buttons, .voice-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .duration-btn, .voice-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .duration-btn.active, .voice-btn.active {
+    background-color: #0ff;
+    color: #000;
+    box-shadow: 0 0 10px #0ff;
+  }
+  
+
 /* Estilos responsivos para telas menores */
 @media (max-width: 768px) {
     h1 {
@@ -566,6 +665,24 @@ h2.neon-text {
         font-size: 14px;
     }
 }
+
+.music-editor-controls {
+    flex-direction: column;
+  }
+  
+  .control-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .duration-buttons, .voice-buttons {
+    width: 100%;
+  }
+  
+  .duration-btn, .voice-btn {
+    flex: 1;
+    text-align: center;
+  }
 
 /* Ajustes específicos para dispositivos com largura de 340px */
 @media (max-width: 340px) {
