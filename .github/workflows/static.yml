@@ -21,30 +21,24 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"
+          python-version: "3.10"
 
       # Passo 3: Instalar dependências
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install beautifulsoup4 requests googletrans==4.0.0-rc1
 
       # Passo 4: Executar o script de atualização
       - name: Executar o script de atualização
-        id: run-script
-        run: |
-          python update_content.py
-          # Verifica se o conteúdo gerado é igual ao conteúdo atual
-          if git diff --quiet; then
-            echo "Nenhuma alteração detectada. Executando o script novamente para buscar novos conteúdos."
-            python update_content.py
-          fi
+        run: python update_content.py
 
       # Passo 5: Verificar se há alterações
       - name: Verificar se há alterações
         id: changes
         run: |
-          if git diff --quiet; then
+          git add teoria-musical-wikipedia.html
+          if git diff --staged --quiet; then
             echo "changes=false" >> $GITHUB_OUTPUT
           else
             echo "changes=true" >> $GITHUB_OUTPUT
@@ -56,9 +50,8 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          git add teoria-musical-wikipedia.html
           git commit -m "Atualização automática dos conteúdos da Wikipedia"
-          git push origin main
+          git push
 
   deploy:
     runs-on: ubuntu-latest
@@ -73,4 +66,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Diretório raiz do site
+          publish_dir: ./
+          publish_branch: gh-pages
+          keep_files: true
