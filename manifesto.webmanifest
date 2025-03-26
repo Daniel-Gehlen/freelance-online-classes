@@ -1,0 +1,15 @@
+{
+  "name": "Teoria Musical Interativa",
+  "short_name": "TeoriaMusical",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2d3436",
+  "theme_color": "#2d3436",
+  "icons": [
+    {
+      "src": "/assets/logo.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    }
+  ]
+}

@@ -14,6 +14,7 @@
   <!-- Outros links e estilos -->
   <link rel="stylesheet" href="static/styles.css">
   <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
+  <link rel="stylesheet" href="popups/popup-acept-terms/age-gate.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link
@@ -23,6 +24,18 @@
 </head>
 
 <body class="dark-theme">
+
+  <!-- Popup de Verificação de Idade - DEVE SER O PRIMEIRO ELEMENTO -->
+  <div id="age-gate">
+    <div id="age-gate-content">
+      <h2>Aviso de Conteúdo Musical</h2>
+      <p>Este site contém material educacional sobre teoria musical. Você confirma que está ciente desta natureza
+        do conteúdo?</p>
+      <button id="confirm-age" class="age-btn">Sim, entendi</button>
+      <button id="deny-age" class="age-btn">Não, quero sair</button>
+      <small>Conteúdo educativo conforme LGPD Art. 14</small>
+    </div>
+  </div>
   <!-- Sidebar -->
   <div class="sidebar">
     <h2>Data</h2>
@@ -62,7 +75,8 @@
             <a class="navbar-brand neon-text" href="pages/audios-e-videos.html">Áudios e Vídeos</a>
           </li>
           <li class="nav-item">
-            <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo Harmônico</a>
+            <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo
+              Harmônico</a>
           </li>
           <li class="nav-item">
             <a class="nav-link neon-text" href="pages/intervalos-musicais/intervalos-musicais.html">Intervalos
@@ -266,7 +280,8 @@
         <p class="post-topic">Projetos Sociais e Culturais e Educação Musical</p>
         <p>Além dos quatro principais métodos internacionais descritos acima, outras abordagens foram influentes.
           Métodos menos conhecidos são descritos abaixo:</p>
-        <p>Algumas escolas e organizações promovem a integração de aulas de artes, como música, com outras disciplinas,
+        <p>Algumas escolas e organizações promovem a integração de aulas de artes, como música, com outras
+          disciplinas,
           como matemática, ciências ou inglês, acreditando que a integração dos diferentes currículos ajudará cada
           disciplina a se desenvolver mutuamente, melhorando a qualidade geral da educação.</p>
         <p><a href="https://en.wikipedia.org/wiki/Music_education" target="_blank">Fonte:
@@ -312,27 +327,33 @@
         <p>Blues é um gênero musical[3] e forma musical que se originou entre os afro-americanos no sul profundo dos
           Estados Unidos por volta da década de 1860.[2] O blues incorporou spirituals, canções de trabalho, gritos de
           campo, gritos, cânticos e baladas narrativas simples rimadas da cultura afro-americana. A forma do blues é
-          onipresente no jazz, rhythm and blues e rock and roll, e é caracterizada pelo padrão de chamada e resposta, a
+          onipresente no jazz, rhythm and blues e rock and roll, e é caracterizada pelo padrão de chamada e resposta,
+          a
           escala de blues e progressões de acordes específicas, das quais o blues de doze compassos é o mais comum. As
           notas azuis (ou "notas preocupadas"), geralmente terças, quintas ou sétimas achatadas no tom, também são uma
-          parte essencial do som. Os shuffles de blues ou o walking bass reforçam o ritmo semelhante ao transe e formam
+          parte essencial do som. Os shuffles de blues ou o walking bass reforçam o ritmo semelhante ao transe e
+          formam
           um efeito repetitivo conhecido como groove.</p>
         <p>A música blues é caracterizada por suas letras, linhas de baixo e instrumentação. Os primeiros versos
           tradicionais de blues consistiam em uma única linha repetida quatro vezes. Foi somente nas primeiras décadas
-          do século XX que a estrutura atual mais comum se tornou padrão: o padrão AAB, consistindo em uma linha cantada
-          nos quatro primeiros compassos, sua repetição nos quatro seguintes e, então, uma linha de conclusão mais longa
+          do século XX que a estrutura atual mais comum se tornou padrão: o padrão AAB, consistindo em uma linha
+          cantada
+          nos quatro primeiros compassos, sua repetição nos quatro seguintes e, então, uma linha de conclusão mais
+          longa
           nos últimos compassos. O blues antigo frequentemente assumia a forma de uma narrativa solta, muitas vezes
           relacionando a discriminação racial e outros desafios enfrentados pelos afro-americanos.[4]</p>
         <p class="post-date">26/01/2025</p>
 
-        <p><a href="https://en.wikipedia.org/wiki/blues" target="_blank">Fonte: https://en.wikipedia.org/wiki/blues</a>
+        <p><a href="https://en.wikipedia.org/wiki/blues" target="_blank">Fonte:
+            https://en.wikipedia.org/wiki/blues</a>
         </p>
       </div>
     </section>
     <section class="card neon-card mb-5">
       <div class="card-body">
         <h2 class="card-title neon-text">Dynamics</h2>
-        <p>Dinâmica (do grego δυναμικός dynamikos "poderoso", de δύναμις dynamis "poder") ou dinâmica pode referir-se a:
+        <p>Dinâmica (do grego δυναμικός dynamikos "poderoso", de δύναμις dynamis "poder") ou dinâmica pode referir-se
+          a:
         </p>
         <p>Internet</p>
         <p class="post-date">26/01/2025</p>
@@ -345,22 +366,29 @@
       <div class="card-body">
         <h2 class="card-title neon-text">Music composition</h2>
         <p>Composição musical pode se referir a uma peça original ou trabalho musical,[1] vocal ou instrumental, a
-          estrutura de uma peça musical ou ao processo de criação ou escrita de uma nova peça musical. Pessoas que criam
-          novas composições são chamadas de compositores. Compositores principalmente de canções são geralmente chamados
+          estrutura de uma peça musical ou ao processo de criação ou escrita de uma nova peça musical. Pessoas que
+          criam
+          novas composições são chamadas de compositores. Compositores principalmente de canções são geralmente
+          chamados
           de compositores; com canções, a pessoa que escreve letras para uma canção é o letrista. Em muitas culturas,
           incluindo a música clássica ocidental, o ato de compor normalmente inclui a criação de notação musical, como
-          uma "partitura" de partitura, que é então executada pelo compositor ou por outros músicos. Na música popular e
+          uma "partitura" de partitura, que é então executada pelo compositor ou por outros músicos. Na música popular
+          e
           na música tradicional, a composição pode envolver a criação de um esboço básico da canção, chamado de
           partitura principal, que define a melodia, a letra e a progressão de acordes. Na música clássica, a
           orquestração (escolher os instrumentos de um grande conjunto musical, como uma orquestra, que tocará as
           diferentes partes da música, como a melodia, o acompanhamento, a contramelodia, a linha de baixo e assim por
           diante) é normalmente feita pelo compositor, mas no teatro musical e na música pop, os compositores podem
-          contratar um arranjador para fazer a orquestração. Em alguns casos, um compositor pop ou tradicional pode não
+          contratar um arranjador para fazer a orquestração. Em alguns casos, um compositor pop ou tradicional pode
+          não
           usar notação escrita e, em vez disso, compor a música em sua mente e, em seguida, tocá-la, cantá-la ou
-          gravá-la de memória. No jazz e na música popular, gravações sonoras notáveis ​​por artistas influentes recebem
+          gravá-la de memória. No jazz e na música popular, gravações sonoras notáveis ​​por artistas influentes
+          recebem
           o peso que as partituras escritas ou impressas desempenham na música clássica.</p>
-        <p>Embora uma composição musical frequentemente use notação musical e tenha um único autor, nem sempre é esse o
-          caso. Uma obra musical pode ter vários compositores, o que geralmente ocorre na música popular quando todos os
+        <p>Embora uma composição musical frequentemente use notação musical e tenha um único autor, nem sempre é esse
+          o
+          caso. Uma obra musical pode ter vários compositores, o que geralmente ocorre na música popular quando todos
+          os
           membros de uma banda colaboram para escrever uma canção ou no teatro musical, quando uma pessoa escreve as
           melodias, uma segunda pessoa escreve as letras e uma terceira pessoa orquestra as canções.</p>
         <p class="post-date">26/01/2025</p>
@@ -375,14 +403,18 @@
         <p>A indústria musical se refere aos indivíduos e organizações que ganham dinheiro escrevendo músicas e
           composições musicais, criando e vendendo músicas gravadas e partituras, apresentando concertos, bem como as
           organizações que auxiliam, treinam, representam e fornecem criadores musicais. Entre os muitos indivíduos e
-          organizações que operam na indústria estão: os compositores e compositores que escrevem músicas e composições
+          organizações que operam na indústria estão: os compositores e compositores que escrevem músicas e
+          composições
           musicais; os cantores, músicos, maestros e líderes de banda que executam a música; as gravadoras, editoras
-          musicais, estúdios de gravação, produtores musicais, engenheiros de áudio, lojas de varejo e de música digital
+          musicais, estúdios de gravação, produtores musicais, engenheiros de áudio, lojas de varejo e de música
+          digital
           e organizações de direitos de execução que criam e vendem músicas gravadas e partituras; e os agentes de
-          reservas, promotores, casas de shows, equipe de estrada e engenheiros de áudio que ajudam a organizar e vender
+          reservas, promotores, casas de shows, equipe de estrada e engenheiros de áudio que ajudam a organizar e
+          vender
           concertos.</p>
         <p>A indústria também inclui uma gama de profissionais que auxiliam cantores e músicos em suas carreiras
-          musicais. Isso inclui gerentes de talentos, artistas e gerentes de repertório, gerentes de negócios, advogados
+          musicais. Isso inclui gerentes de talentos, artistas e gerentes de repertório, gerentes de negócios,
+          advogados
           de entretenimento; aqueles que transmitem conteúdo musical de áudio ou vídeo (satélite, estações de rádio da
           Internet, estações de rádio e TV); jornalistas musicais e críticos musicais; DJs; educadores e professores
           musicais; fabricantes de instrumentos musicais e equipamentos musicais; assim como muitos outros. Além das
@@ -401,9 +433,11 @@
       <div class="card-body">
         <h2 class="card-title neon-text">Musical analysis</h2>
         <p>Análise musical é o estudo da estrutura musical em composições ou performances.[1] De acordo com o teórico
-          musical Ian Bent, a análise musical "é o meio de responder diretamente à pergunta 'Como isso funciona?'".[2] O
+          musical Ian Bent, a análise musical "é o meio de responder diretamente à pergunta 'Como isso funciona?'".[2]
+          O
           método empregado para responder a essa pergunta, e de fato exatamente o que se quer dizer com a pergunta,
-          difere de analista para analista, e de acordo com o propósito da análise. De acordo com Bent, "seu surgimento
+          difere de analista para analista, e de acordo com o propósito da análise. De acordo com Bent, "seu
+          surgimento
           como uma abordagem e método pode ser rastreado até a década de 1750. No entanto, ele existiu como uma
           ferramenta acadêmica, embora auxiliar, da Idade Média em diante."[3]</p>
         <p>O princípio da análise tem sido criticado de várias maneiras, especialmente por compositores, como a
@@ -419,19 +453,24 @@
       <div class="card-body">
         <h2 class="card-title neon-text">Music production</h2>
         <p>Um produtor musical ou produtor musical é um supervisor geral de um projeto de criação musical cujas
-          responsabilidades podem envolver uma série de papéis de liderança criativa e técnica. Normalmente, o trabalho
+          responsabilidades podem envolver uma série de papéis de liderança criativa e técnica. Normalmente, o
+          trabalho
           envolve supervisão prática de sessões de gravação; garantindo que os artistas entreguem performances
           aceitáveis ​​e de qualidade, supervisionando a engenharia técnica da gravação e coordenando a equipe e o
           processo de produção. O envolvimento do produtor em um projeto musical pode variar em profundidade e escopo.
-          Às vezes, em gêneros populares, o produtor pode criar todo o som e estrutura da gravação.[1][2][3] No entanto,
+          Às vezes, em gêneros populares, o produtor pode criar todo o som e estrutura da gravação.[1][2][3] No
+          entanto,
           na gravação de música clássica, por exemplo, o produtor serve mais como um elo entre o maestro e a equipe de
           engenharia. O papel é frequentemente comparado ao de um diretor de cinema, embora haja diferenças
-          importantes.[1][3] É diferente do papel de um produtor executivo, que está principalmente envolvido no projeto
+          importantes.[1][3] É diferente do papel de um produtor executivo, que está principalmente envolvido no
+          projeto
           de gravação em um nível administrativo, e do engenheiro de áudio que opera a tecnologia de gravação.</p>
-        <p>Variando de acordo com o projeto, o produtor pode ou não escolher todos os artistas.[4][3] Se empregar apenas
+        <p>Variando de acordo com o projeto, o produtor pode ou não escolher todos os artistas.[4][3] Se empregar
+          apenas
           instrumentação sintetizada ou sampleada, o produtor pode ser o único artista.[3] Por outro lado, alguns
           artistas fazem sua própria produção.[3] Alguns produtores são seus próprios engenheiros,[5] operando a
-          tecnologia em todo o projeto: pré-produção, gravação, mixagem e masterização. Os precursores dos produtores de
+          tecnologia em todo o projeto: pré-produção, gravação, mixagem e masterização. Os precursores dos produtores
+          de
           discos eram "homens de A&R", que também podiam misturar papéis empreendedores, criativos e técnicos,[2] mas
           frequentemente exerciam escassa influência criativa,[6] já que a produção de discos ainda se concentrava, na
           década de 1950, em simplesmente melhorar a correspondência sonora do disco com a performance ao vivo dos
@@ -453,13 +492,17 @@
           princípios gerais na música". A abordagem musicológica da teoria difere da análise musical "na medida em que
           leva como ponto de partida, não o trabalho ou desempenho individual, mas os materiais fundamentais a partir
           dos quais é construído". [1]</p>
-        <p>A teoria musical é frequentemente preocupada em descrever como músicos e compositores fazem música, incluindo
-          sistemas de ajuste e métodos de composição, entre outros tópicos. Devido à concepção em constante expansão do
+        <p>A teoria musical é frequentemente preocupada em descrever como músicos e compositores fazem música,
+          incluindo
+          sistemas de ajuste e métodos de composição, entre outros tópicos. Devido à concepção em constante expansão
+          do
           que constitui música, uma definição mais inclusiva pode ser a consideração de qualquer fenômeno sônico,
           incluindo o silêncio. Esta não é uma diretriz absoluta, no entanto; Por exemplo, o estudo da "música" no
-          currículo da Quadrivium Liberal Arts University, que era comum na Europa medieval, era um sistema abstrato de
+          currículo da Quadrivium Liberal Arts University, que era comum na Europa medieval, era um sistema abstrato
+          de
           proporções que foi cuidadosamente estudado à distância da prática musical real. [N 1] Mas essa disciplina
-          medieval tornou -se a base para os sistemas de ajuste nos séculos posteriores e geralmente é incluído na bolsa
+          medieval tornou -se a base para os sistemas de ajuste nos séculos posteriores e geralmente é incluído na
+          bolsa
           de estudos moderna sobre a história da teoria musical. [N 2]</p>
         <p class="post-date">09/02/2025</p>
 
@@ -473,21 +516,27 @@
         <p>A indústria da música refere -se aos indivíduos e organizações que ganham dinheiro escrevendo músicas e
           composições musicais, criando e vendendo música gravada e partituras, apresentando shows, bem como as
           organizações que ajudam, treinam, representam e fornecem criadores de música. Entre os muitos indivíduos e
-          organizações que operam na indústria estão: os compositores e compositores que escrevem músicas e composições
-          musicais; os cantores, músicos, condutores e líderes de bandas que tocam a música; Os gravadores, editores de
+          organizações que operam na indústria estão: os compositores e compositores que escrevem músicas e
+          composições
+          musicais; os cantores, músicos, condutores e líderes de bandas que tocam a música; Os gravadores, editores
+          de
           música, estúdios de gravação, produtores musicais, engenheiros de áudio, lojas de música e música digital e
           organizações de direitos de performance que criam e vendem música gravada e partituras; e os agentes de
           reserva, promotores, locais de música, equipe de estrada e engenheiros de áudio que ajudam a organizar e
           vender concertos.</p>
         <p>A indústria também inclui uma variedade de profissionais que ajudam cantores e músicos com suas carreiras
-          musicais. Isso inclui gerentes de talentos, artistas e gerentes de repertório, gerentes de negócios, advogados
-          de entretenimento; aqueles que transmitem conteúdo de áudio ou vídeo (satélite, estações de rádio na Internet,
+          musicais. Isso inclui gerentes de talentos, artistas e gerentes de repertório, gerentes de negócios,
+          advogados
+          de entretenimento; aqueles que transmitem conteúdo de áudio ou vídeo (satélite, estações de rádio na
+          Internet,
           estações de rádio e TV de transmissão); Jornalistas de música e críticos de música; DJs; educadores e
-          professores musicais; fabricantes de instrumentos musicais e equipamentos musicais; assim como muitos outros.
+          professores musicais; fabricantes de instrumentos musicais e equipamentos musicais; assim como muitos
+          outros.
           Além dos negócios e artistas, existem organizações que também desempenham um papel importante, incluindo os
           sindicatos do músico (por exemplo, Federação Americana de Músicos), organizações sem fins lucrativos (por
           exemplo, Sociedade Americana de Compositores, Autores e Editores) e outros Associações (por exemplo, Aliança
-          Internacional para Mulheres na Música, uma organização sem fins lucrativos que defende mulheres compositores e
+          Internacional para Mulheres na Música, uma organização sem fins lucrativos que defende mulheres compositores
+          e
           músicos).</p>
         <p class="post-date">09/02/2025</p>
 
@@ -501,7 +550,8 @@
         <p>Na música, um arranjo é uma adaptação musical de uma composição existente. [1] As diferenças em relação à
           composição original podem incluir reilarmonização, parafraseamento melódico, orquestração ou desenvolvimento
           formal. A organização difere da orquestração, pois o último processo é limitado à atribuição de notas a
-          instrumentos de desempenho por uma orquestra, banda de concertos ou outro conjunto musical. Organizar "envolve
+          instrumentos de desempenho por uma orquestra, banda de concertos ou outro conjunto musical. Organizar
+          "envolve
           a adição de técnicas de composição, como novo material temático para introduções, transições ou modulações e
           finais. Organização é a arte de dar uma variedade musical de melodia existente". [2] No jazz, um arranjo
           memorizado (não escrito) de uma composição nova ou pré-existente é conhecida como arranjo de cabeça. [3]</p>
@@ -518,7 +568,8 @@
         <p>Um serviço de streaming de música é um tipo de serviço de mídia de streaming on -line que se concentra
           principalmente na música e, às vezes, em outras formas de conteúdo de áudio digital, como podcasts. Esses
           serviços geralmente são serviços baseados em assinatura, permitindo que os usuários transmitam músicas de
-          direitos autorais digitais restritos sob demanda de uma biblioteca centralizada fornecida pelo serviço. Alguns
+          direitos autorais digitais restritos sob demanda de uma biblioteca centralizada fornecida pelo serviço.
+          Alguns
           serviços podem oferecer níveis gratuitos com limitações, como publicidade e limites de uso. Eles normalmente
           incorporam um sistema de recomendação para ajudar os usuários a descobrir outras músicas que podem desfrutar
           com base em seu histórico de audição e outros fatores, bem como na capacidade de criar e compartilhar listas
@@ -527,7 +578,8 @@
         <p>Os serviços de streaming viram um ritmo significativo de crescimento durante os anos 2010, ultrapassando o
           download digital como a maior fonte de receita da indústria da música dos Estados Unidos em 2015, [2] e
           representando a maioria desde 2016. [3] Como resultado de sua ascensão, os serviços de streaming (juntamente
-          com fluxos de conteúdo relacionado à música nas plataformas de compartilhamento de vídeos) foram incorporados
+          com fluxos de conteúdo relacionado à música nas plataformas de compartilhamento de vídeos) foram
+          incorporados
           às metodologias dos principais gráficos de discos; A "Unidade Equivalente ao Álbum" também foi desenvolvida
           como uma métrica alternativa para o consumo de álbuns, para explicar música digital e streaming. [4] Também
           causou uma mudança cultural para os consumidores alugando em vez de comprar música completamente. [5]</p>
@@ -547,9 +599,12 @@
           quase sempre pontuadas para uma orquestra composta por uma seção de cordas (violino, viola, violoncelo e
           contrabaixo), instrumentos de bronze, sopro de sopro e percussão, que numeram cerca de 30 a 100 músicos. As
           sinfonias são anotadas em uma pontuação musical, que contém todas as partes do instrumento. Os músicos
-          orquestrais tocam de partes que contêm apenas a música notada para seu próprio instrumento. Algumas sinfonias
-          também contêm partes vocais (por exemplo, a nona sinfonia de Beethoven, ou a Segunda Sinfonia de Mahler).</p>
-        <p>A palavra sinfonia é derivada da palavra grega συμφωνία (Symphōnía), que significa "acordo ou concordância do
+          orquestrais tocam de partes que contêm apenas a música notada para seu próprio instrumento. Algumas
+          sinfonias
+          também contêm partes vocais (por exemplo, a nona sinfonia de Beethoven, ou a Segunda Sinfonia de Mahler).
+        </p>
+        <p>A palavra sinfonia é derivada da palavra grega συμφωνία (Symphōnía), que significa "acordo ou concordância
+          do
           som", "concerto de música vocal ou instrumental", de σύμφωνος (sýmphōnos), "harmonioso". [1] A palavra se
           referiu a uma variedade de conceitos diferentes antes de se estabelecer em seu significado atual, designando
           uma forma musical.</p>
@@ -562,12 +617,14 @@
     <section class="card neon-card mb-5">
       <div class="card-body">
         <h2 class="card-title neon-text">Live sound</h2>
-        <p>A mistura de som ao vivo é a mistura de várias fontes de som por um engenheiro de áudio usando um console ou
+        <p>A mistura de som ao vivo é a mistura de várias fontes de som por um engenheiro de áudio usando um console
+          ou
           software de mixagem. Os sons misturados incluem aqueles de instrumentos e vozes que são captadas por
           microfones (para kit de bateria, vocais principais e instrumentos acústicos como piano ou saxofone e
           captadores para instrumentos como baixo elétrico) e material pré-gravado, como músicas em cd ou um player de
           áudio digital. Fontes individuais são normalmente equalizadas para ajustar a resposta dos graves e agudos e
-          roteadas para efetivar os processadores para serem amplificados e reproduzidos por meio de um sistema de alto
+          roteadas para efetivar os processadores para serem amplificados e reproduzidos por meio de um sistema de
+          alto
           -falante. [1] O engenheiro de som ao vivo escuta e equilibra as várias fontes de áudio de uma maneira que
           melhor atenda às necessidades do evento. [2]</p>
         <p>O equipamento de áudio geralmente é conectado em uma sequência conhecida como cadeia de sinal. Em situações
@@ -575,7 +632,8 @@
           dispositivos são conectados, geralmente por cabo multicore, a canais individuais de um console de mistura.
           Cada canal em um console de mixagem normalmente possui uma "faixa de canal" vertical, que é uma coluna de
           botões e botões que são usados ​​para ajustar o nível e o baixo, o registro médio e o triplo do sinal. O
-          console de áudio também normalmente permite que o engenheiro adicione unidades de efeitos a cada canal (adição
+          console de áudio também normalmente permite que o engenheiro adicione unidades de efeitos a cada canal
+          (adição
           de reverb etc.) antes de serem somados eletricamente (misturados). Um mixer de som de áudio ao vivo mistura
           basicamente vários sinais diferentes e envia esse sinal misturado para saídas (alto -falantes).</p>
         <p class="post-date">23/02/2025</p>
@@ -587,22 +645,28 @@
     <section class="card neon-card mb-5">
       <div class="card-body">
         <h2 class="card-title neon-text">Conducting</h2>
-        <p>Conduzir é a arte de dirigir uma performance musical, como um concerto orquestral ou coral. Foi definido como
+        <p>Conduzir é a arte de dirigir uma performance musical, como um concerto orquestral ou coral. Foi definido
+          como
           "a arte de dirigir o desempenho simultâneo de vários jogadores ou cantores pelo uso do gesto". , defina o
-          ritmo, verifique se as entradas corretas dos membros do conjunto e "moldam" o fraseado, quando apropriado. [2]
+          ritmo, verifique se as entradas corretas dos membros do conjunto e "moldam" o fraseado, quando apropriado.
+          [2]
           Os condutores se comunicam com seus músicos principalmente através de gestos manuais, geralmente com a ajuda
           de um bastão, e podem usar outros gestos ou sinais, como expressão facial e contato visual. [3] Um condutor
           geralmente complementa sua direção com instruções verbais para seus músicos em ensaio. [3]</p>
-        <p>O condutor normalmente fica em um pódio elevado com um grande suporte musical para a pontuação completa, que
+        <p>O condutor normalmente fica em um pódio elevado com um grande suporte musical para a pontuação completa,
+          que
           contém a notação musical para todos os instrumentos ou vozes. Desde meados do século XIX, a maioria dos
-          condutores não joga um instrumento ao conduzir, embora em períodos anteriores da história da música clássica,
+          condutores não joga um instrumento ao conduzir, embora em períodos anteriores da história da música
+          clássica,
           liderar um conjunto enquanto tocava um instrumento era comum. Na música barroca, o grupo normalmente seria
           liderado pelo cravo ou primeiro violinista (mestre de concertos), uma abordagem que nos tempos modernos foi
-          revivida por vários diretores de música para música desse período. A realização de tocar piano ou sintetizador
+          revivida por vários diretores de música para música desse período. A realização de tocar piano ou
+          sintetizador
           também pode ser feita com orquestras de pit de teatro musical. Os instrumentistas podem realizar trabalhos
           desafiadores enquanto conduzem - por exemplo, não é incomum ver um pianista realizar um concerto enquanto
           também conduzia a orquestra. A comunicação geralmente não é verbal durante uma apresentação. No entanto, nos
-          ensaios, as interrupções frequentes permitem que o condutor dê instruções verbais sobre como a música deve ser
+          ensaios, as interrupções frequentes permitem que o condutor dê instruções verbais sobre como a música deve
+          ser
           executada.</p>
         <p class="post-date">23/02/2025</p>
 
@@ -628,10 +692,13 @@
       <div class="card-body">
         <h2 class="card-title neon-text">Orchestra</h2>
         <p>Uma orquestra (/ˈɔːrkɪstrə/; ou-ki-strpt) [1] é um grande conjunto instrumental típico da música clássica,
-          que combina instrumentos de diferentes famílias. Normalmente existem quatro seções principais de instrumentos:
+          que combina instrumentos de diferentes famílias. Normalmente existem quatro seções principais de
+          instrumentos:
         </p>
-        <p>Outros instrumentos, como piano, cravo, órgão de tubos e Celesta, às vezes podem aparecer em uma quinta seção
-          do teclado ou podem permanecer sozinhos como instrumentos solistas, assim como o concerto e, para performances
+        <p>Outros instrumentos, como piano, cravo, órgão de tubos e Celesta, às vezes podem aparecer em uma quinta
+          seção
+          do teclado ou podem permanecer sozinhos como instrumentos solistas, assim como o concerto e, para
+          performances
           de algumas composições modernas, instrumentos eletrônicos e guitarras. [Nota 1]</p>
         <p class="post-date">09/03/2025</p>
 
@@ -649,25 +716,31 @@
           existem conjuntos nos quais instrumentistas e cantores se apresentam, como a banda de rock ou o grupo de
           câmara barroco para Basso Continuo (cravo e violoncelo) e um ou mais cantores. Na música clássica, trios ou
           quartetos misturam os sons de famílias de instrumentos musicais (como piano, cordas e instrumentos de vento)
-          ou instrumentos de grupo da mesma família de instrumentos, como conjuntos de cordas (por exemplo, quarteto de
+          ou instrumentos de grupo da mesma família de instrumentos, como conjuntos de cordas (por exemplo, quarteto
+          de
           cordas) ou conjuntos de vento (por exemplo, quinteto de vento). Alguns conjuntos misturam os sons de uma
-          variedade de famílias de instrumentos, como a orquestra, que usa uma seção de cordas, instrumentos de bronze,
+          variedade de famílias de instrumentos, como a orquestra, que usa uma seção de cordas, instrumentos de
+          bronze,
           sopros de madeira e instrumentos de percussão, ou a banda de concertos, que usa bronze, sopro de madeira e
           percussão.
           Em conjuntos de jazz ou combos, os instrumentos normalmente incluem instrumentos de vento (um ou mais
           saxofones, trompetes etc.), um ou dois instrumentos de "comutação" de acordal (guitarra elétrica, guitarra
           acústica, piano ou órgão de Hammond), um instrumento de baixo (guitarra ou bass) e um batimento ou um
           pércussionista. Os conjuntos de jazz podem ser apenas instrumentais, ou podem consistir em um grupo de
-          instrumentos que acompanham um ou mais cantores. Em conjuntos de rock e pop, geralmente chamados de bandas de
+          instrumentos que acompanham um ou mais cantores. Em conjuntos de rock e pop, geralmente chamados de bandas
+          de
           rock ou bandas pop, geralmente existem guitarras e teclados (piano, piano elétrico, órgão de Hammond,
           sintetizador, etc.), um ou mais cantores e uma seção de ritmo composta por um kit de baixo e tambor.</p>
         <p>Conjuntos musicais normalmente têm um líder. Nas bandas de jazz, grupos de rock e pop e conjuntos
           semelhantes, este é o líder da banda. Na música clássica, orquestras, bandas de concertos e coros são
           liderados por um condutor. Na orquestra, o mestre de concertos (o primeiro jogador de violino) é o líder
-          instrumentista da orquestra. Nas orquestras, as seções individuais também têm líderes, normalmente chamados de
+          instrumentista da orquestra. Nas orquestras, as seções individuais também têm líderes, normalmente chamados
+          de
           "principal" da seção (por exemplo, o líder da seção Viola é chamado de "Viola principal"). Os condutores
-          também são usados ​​em grandes bandas de jazz e em alguns conjuntos de rock ou pop muito grandes (por exemplo,
-          um concerto de rock que inclui uma seção de cordas, uma seção de buzina e um coral que acompanha a performance
+          também são usados ​​em grandes bandas de jazz e em alguns conjuntos de rock ou pop muito grandes (por
+          exemplo,
+          um concerto de rock que inclui uma seção de cordas, uma seção de buzina e um coral que acompanha a
+          performance
           de uma banda de rock).</p>
         <p class="post-date">09/03/2025</p>
 
@@ -683,14 +756,17 @@
           forma de praticar, para garantir que todos os detalhes do desempenho subsequente sejam adequadamente
           preparados e coordenados. O termo ensaio normalmente se refere a atividades de conjunto realizadas por um
           grupo de pessoas. Por exemplo, quando um músico está preparando um concerto para piano em seu estúdio de
-          música, isso é chamado de praticar, mas quando o pratica com uma orquestra, isso é chamado de ensaio. O ensaio
+          música, isso é chamado de praticar, mas quando o pratica com uma orquestra, isso é chamado de ensaio. O
+          ensaio
           musical ocorre em um espaço de ensaio musical.</p>
-        <p>Um ensaio pode envolver apenas duas pessoas, como em uma pequena peça para dois atores, uma música de arte de
+        <p>Um ensaio pode envolver apenas duas pessoas, como em uma pequena peça para dois atores, uma música de arte
+          de
           um cantor e pianista ou uma dupla folclórica de um cantor e guitarrista. No outro extremo do espectro, um
           ensaio pode ser realizado para uma orquestra muito grande com mais de 100 artistas e um coro. Um ensaio pode
           envolver apenas artistas de um tipo, como em um show de coral de cappella, no qual um grupo de cantores se
           apresenta sem acompanhamento instrumental ou uma peça envolvendo apenas atores de teatro; Pode envolver
-          artistas de instrumentos diferentes, como em uma orquestra, banda de rock ou jazz "big band"; Artistas vocais
+          artistas de instrumentos diferentes, como em uma orquestra, banda de rock ou jazz "big band"; Artistas
+          vocais
           e instrumentais, como nas obras de ópera e coral acompanhadas pela orquestra; ou uma mistura de atores,
           vocalistas, instrumentistas e dançarinos, como no teatro musical.</p>
         <p class="post-date">09/03/2025</p>
@@ -707,10 +783,13 @@
           inclui qualquer música artística que seja executada por um pequeno número de artistas, com um artista de uma
           parte (em contraste com a música orquestral, na qual cada parte da corda é tocada por vários artistas). No
           entanto, por convenção, geralmente não inclui performances de instrumentos solo.</p>
-        <p>Por causa de sua natureza íntima, a música de câmara foi descrita como "a música dos amigos". [1] Por mais de
-          100 anos, a música de câmara foi tocada principalmente por músicos amadores em suas casas, e até hoje, quando
+        <p>Por causa de sua natureza íntima, a música de câmara foi descrita como "a música dos amigos". [1] Por mais
+          de
+          100 anos, a música de câmara foi tocada principalmente por músicos amadores em suas casas, e até hoje,
+          quando
           a performance da música de câmara migrou da casa para a sala de concertos, muitos músicos, amadores e
-          profissionais, ainda tocam música de câmara por seu próprio prazer. Tocar música de câmara requer habilidades
+          profissionais, ainda tocam música de câmara por seu próprio prazer. Tocar música de câmara requer
+          habilidades
           especiais, musicais e sociais, que diferem das habilidades necessárias para tocar obras solo ou sinfônicas.
           [2]</p>
         <p class="post-date">09/03/2025</p>
@@ -726,10 +805,12 @@
         <p>Na tradição da música clássica ocidental, mentiu (/ liːd, liːt/ leed, leet, alemão: [liːt] ⓘ; pl. Lieder/
           ˈliːdər/ lee-dər, alemão: [ˈliːdɐ] ⓘ; lit. 'música') [1] [2] [3] é um termo para cenário para classes para
           classes; O termo é usado para qualquer tipo de música no alemão e holandês contemporâneo, mas entre falantes
-          de inglês e francês, mentiu é frequentemente usado de forma intercambiável com "Art Song" para abranger obras
+          de inglês e francês, mentiu é frequentemente usado de forma intercambiável com "Art Song" para abranger
+          obras
           que a tradição também inspirou em outros idiomas. Os poemas que foram transformados em Lieder geralmente
           centram -se em temas pastorais ou temas de amor romântico. [5]</p>
-        <p>O primeiro mentiu data do final do século XIV ou início do século XV, e pode até se referir a Minnesang desde
+        <p>O primeiro mentiu data do final do século XIV ou início do século XV, e pode até se referir a Minnesang
+          desde
           os séculos XII e XIII. [6] Mais tarde, chegou especialmente a se referir a cenários de poesia romântica
           durante o final do século XVIII e XIX, e no início do século XX. Exemplos incluem configurações de Joseph
           Haydn, Wolfgang Amadeus Mozart, Ludwig Van Beethoven, Franz Schubert, Robert Schumann, Johannes Brahms, Hugo
@@ -745,12 +826,14 @@
         <h2 class="card-title neon-text">Harmony</h2>
         <p>Na música, Harmony é o conceito de combinar sons diferentes para criar novas idéias musicais distintas. [1]
           As teorias da harmonia buscam descrever ou explicar os efeitos criados por arremessos ou tons distintos que
-          coincidem um com o outro; Objetos harmônicos como acordes, texturas e tonalidades são identificados, definidos
+          coincidem um com o outro; Objetos harmônicos como acordes, texturas e tonalidades são identificados,
+          definidos
           e categorizados no desenvolvimento dessas teorias. A harmonia é amplamente compreendida como envolver uma
           dimensão "vertical" (espaço de frequência) e uma dimensão "horizontal" (espaço de tempo), e geralmente se
           sobrepõe a conceitos musicais relacionados, como melodia, timbre e forma. [2]</p>
         <p>Uma ênfase particular na harmonia é um dos principais conceitos subjacentes à teoria e prática da música
-          ocidental. [3] O estudo da harmonia envolve a justaposição de arremessos individuais para criar acordes e, por
+          ocidental. [3] O estudo da harmonia envolve a justaposição de arremessos individuais para criar acordes e,
+          por
           sua vez, a justaposição de acordes para criar progressões de acordes maiores. Os princípios de conexão que
           governam essas estruturas têm sido objeto de séculos de trabalho teórico e prática vernacular. [4]</p>
         <p class="post-date">17/03/2025</p>
@@ -768,7 +851,8 @@
           culturalmente é encapsulada na descrição do gênero da revista Roots como "música local de lá". [1] [2]</p>
         <p>Música que não segue "Tradições pop e folclóricas norte -americanas ou britânicas" [3] recebeu o termo
           "música mundial" pelas indústrias musicais na Europa e na América do Norte. [4] O termo foi popularizado na
-          década de 1980 como uma categoria de marketing para música tradicional não ocidental. [5] [6] Ele cresceu para
+          década de 1980 como uma categoria de marketing para música tradicional não ocidental. [5] [6] Ele cresceu
+          para
           incluir subgêneros como fusão étnica (Clannad, Ry Cooder, Enya, etc.) [7] e Worldbeat. [8] [9]</p>
         <p class="post-date">17/03/2025</p>
 
@@ -780,17 +864,22 @@
       <div class="card-body">
         <h2 class="card-title neon-text">Music history</h2>
         <p>A história da música, às vezes chamada de musicologia histórica, é um subcampo altamente diversificado da
-          disciplina mais ampla da musicologia que estuda música de um ponto de vista histórico. Em teoria, a "história
+          disciplina mais ampla da musicologia que estuda música de um ponto de vista histórico. Em teoria, a
+          "história
           da música" poderia se referir ao estudo da história de qualquer tipo ou gênero de música (por exemplo, a
-          história da música nigeriana ou a história do rock); Na prática, esses tópicos de pesquisa são frequentemente
+          história da música nigeriana ou a história do rock); Na prática, esses tópicos de pesquisa são
+          frequentemente
           categorizados como parte da etnomusicologia ou estudos culturais, sejam ou não etnograficamente baseados. Os
-          termos "história da música" e "musicologia histórica" ​​geralmente se referem à história da música notada das
+          termos "história da música" e "musicologia histórica" ​​geralmente se referem à história da música notada
+          das
           elites ocidentais, às vezes chamada de "música artística" (por analogia à história da arte, que tende a se
           concentrar na arte de elite).</p>
-        <p>Os métodos da história da música incluem estudos de origem (esp. Estudos manuscritos), paleografia, filologia
+        <p>Os métodos da história da música incluem estudos de origem (esp. Estudos manuscritos), paleografia,
+          filologia
           (especialmente crítica textual), crítica de estilo, historiografia (a escolha do método histórico), análise
           musical e iconografia. A aplicação da análise musical para promover esses objetivos geralmente faz parte da
-          história da música, embora seja mais provável que a análise pura ou o desenvolvimento de novas ferramentas de
+          história da música, embora seja mais provável que a análise pura ou o desenvolvimento de novas ferramentas
+          de
           análise musical seja vista no campo da teoria musical. Alguns dos produtos intelectuais dos historiadores da
           música incluem artigos revisados ​​por pares em periódicos, livros de história da música publicada pela
           University, livros didáticos da universidade, novas edições de obras musicais, biografias de compositores e
@@ -805,18 +894,21 @@
     <section class="card neon-card mb-5">
       <div class="card-body">
         <h2 class="card-title neon-text">Digital audio</h2>
-        <p>O Audio Digital é uma representação do som gravado ou convertido em formato digital.No áudio digital, a onda
+        <p>O Audio Digital é uma representação do som gravado ou convertido em formato digital.No áudio digital, a
+          onda
           sonora do sinal de áudio é normalmente codificada como amostras numéricas em uma sequência contínua.Por
           exemplo, no áudio do CD, as amostras são coletadas 44.100 vezes por segundo, cada uma com resolução de 16
           bits.O Audio Digital também é o nome para toda a tecnologia de gravação e reprodução de som usando sinais de
           áudio que foram codificados em forma digital.Após avanços significativos na tecnologia de áudio digital
-          durante as décadas de 1970 e 1980, ele substituiu gradualmente a tecnologia de áudio analógico em muitas áreas
+          durante as décadas de 1970 e 1980, ele substituiu gradualmente a tecnologia de áudio analógico em muitas
+          áreas
           de engenharia de áudio, produção recorde e telecomunicações nas décadas de 1990 e 2000.</p>
         <p>Em um sistema de áudio digital, um sinal elétrico analógico que representa o som é convertido com um
           conversor analógico-digital (ADC) em um sinal digital, normalmente usando a modulação do código de pulso
           (PCM).Esse sinal digital pode ser gravado, editado, modificado e copiado usando computadores, máquinas de
           reprodução de áudio e outras ferramentas digitais.Para a reprodução, um conversor digital para análise (DAC)
-          executa o processo reverso, convertendo um sinal digital de volta em um sinal analógico, que é enviado através
+          executa o processo reverso, convertendo um sinal digital de volta em um sinal analógico, que é enviado
+          através
           de um amplificador de energia de áudio e, finalmente, para um alto-falante.</p>
         <p class="post-date">26/03/2025</p>
 
@@ -827,12 +919,15 @@
     <section class="card neon-card mb-5">
       <div class="card-body">
         <h2 class="card-title neon-text">Folk music</h2>
-        <p>A música folclórica é um gênero musical que inclui música folclórica tradicional e o gênero contemporâneo que
-          evoluiu do primeiro durante o renascimento folclórico do século XX.Alguns tipos de música folclórica podem ser
+        <p>A música folclórica é um gênero musical que inclui música folclórica tradicional e o gênero contemporâneo
+          que
+          evoluiu do primeiro durante o renascimento folclórico do século XX.Alguns tipos de música folclórica podem
+          ser
           chamados de música mundial.A música folclórica tradicional foi definida de várias maneiras: como a música
           transmitida por via oral, música com compositores desconhecidos, música tocada em instrumentos tradicionais,
           música sobre identidade cultural ou nacional, música que muda entre gerações (processo folclórico), música
-          associada ao folclore de um povo ou música executada por um longo período de tempo.Foi contrastado com estilos
+          associada ao folclore de um povo ou música executada por um longo período de tempo.Foi contrastado com
+          estilos
           comerciais e clássicos.O termo se originou no século XIX, mas a música folclórica se estende além disso.</p>
         <p>A partir de meados do século XX, uma nova forma de música folclórica popular evoluiu da música folclórica
           tradicional.Esse processo e período são chamados de (segundo) renascimento folclórico e atingiu um zênite na
@@ -857,13 +952,16 @@
           da música" poderia se referir ao estudo da história de qualquer tipo ou gênero de música (por exemplo, a
           história da música nigeriana ou a história do rock);Na prática, esses tópicos de pesquisa são frequentemente
           categorizados como parte da etnomusicologia ou estudos culturais, sejam ou não etnograficamente baseados.Os
-          termos "história da música" e "musicologia histórica" ​​geralmente se referem à história da música notada das
+          termos "história da música" e "musicologia histórica" ​​geralmente se referem à história da música notada
+          das
           elites ocidentais, às vezes chamada de "música artística" (por analogia à história da arte, que tende a se
           concentrar na arte de elite).</p>
-        <p>Os métodos da história da música incluem estudos de origem (esp. Estudos manuscritos), paleografia, filologia
+        <p>Os métodos da história da música incluem estudos de origem (esp. Estudos manuscritos), paleografia,
+          filologia
           (especialmente crítica textual), crítica de estilo, historiografia (a escolha do método histórico), análise
           musical e iconografia.A aplicação da análise musical para promover esses objetivos geralmente faz parte da
-          história da música, embora seja mais provável que a análise pura ou o desenvolvimento de novas ferramentas de
+          história da música, embora seja mais provável que a análise pura ou o desenvolvimento de novas ferramentas
+          de
           análise musical seja vista no campo da teoria musical.Alguns dos produtos intelectuais dos historiadores da
           música incluem artigos revisados ​​por pares em periódicos, livros de história da música publicada pela
           University, livros didáticos da universidade, novas edições de obras musicais, biografias de compositores e
@@ -878,18 +976,24 @@
     <section class="card neon-card">
       <div class="card-body">
         <h2 class="card-title neon-text">Romantic music</h2>
-        <p>A música romântica é um movimento estilístico na música clássica ocidental associada ao período do século XIX
-          comumente chamado de era romântica (ou período romântico).Está intimamente relacionado ao conceito mais amplo
-          de romantismo - o movimento intelectual, artístico e literário que se tornou proeminente na cultura ocidental
+        <p>A música romântica é um movimento estilístico na música clássica ocidental associada ao período do século
+          XIX
+          comumente chamado de era romântica (ou período romântico).Está intimamente relacionado ao conceito mais
+          amplo
+          de romantismo - o movimento intelectual, artístico e literário que se tornou proeminente na cultura
+          ocidental
           de 1798 até 1837. [1]</p>
         <p>Os compositores românticos procuraram criar músicas individualistas, emocionais, dramáticas e muitas vezes
-          programáticas;refletindo tendências mais amplas dentro dos movimentos da literatura romântica, poesia, arte e
+          programáticas;refletindo tendências mais amplas dentro dos movimentos da literatura romântica, poesia, arte
+          e
           filosofia.A música romântica era frequentemente inspirada ostensivamente por (ou então procurou evocar)
-          estímulos não musicais, como a natureza, [2] literatura, [2] poesia, [2] elementos super-naturais ou as artes
+          estímulos não musicais, como a natureza, [2] literatura, [2] poesia, [2] elementos super-naturais ou as
+          artes
           plásticas.Incluiu recursos como aumento do cromaticismo e se afastou das formas tradicionais. [3]</p>
         <p class="post-date">Atualizado em: 26/03/2025 08:21</p>
 
-        <p><a href="https://en.wikipedia.org/wiki/romantic_music" target="_blank">Fonte: Wikipedia (romantic music)</a>
+        <p><a href="https://en.wikipedia.org/wiki/romantic_music" target="_blank">Fonte: Wikipedia (romantic
+            music)</a>
         </p>
       </div>
     </section>
@@ -907,18 +1011,23 @@
           reserva, promotores, locais de música, equipe de estrada e engenheiros de áudio que ajudam a organizar e
           vender concertos.</p>
         <p>A indústria também inclui uma variedade de profissionais que ajudam cantores e músicos com suas carreiras
-          musicais.Isso inclui gerentes de talentos, artistas e gerentes de repertório, gerentes de negócios, advogados
-          de entretenimento;aqueles que transmitem conteúdo de áudio ou vídeo (satélite, estações de rádio na Internet,
-          estações de rádio e TV de transmissão);Jornalistas de música e críticos de música;DJs;educadores e professores
+          musicais.Isso inclui gerentes de talentos, artistas e gerentes de repertório, gerentes de negócios,
+          advogados
+          de entretenimento;aqueles que transmitem conteúdo de áudio ou vídeo (satélite, estações de rádio na
+          Internet,
+          estações de rádio e TV de transmissão);Jornalistas de música e críticos de música;DJs;educadores e
+          professores
           musicais;fabricantes de instrumentos musicais e equipamentos musicais;assim como muitos outros.Além dos
-          negócios e artistas, existem organizações que também desempenham um papel importante, incluindo os sindicatos
+          negócios e artistas, existem organizações que também desempenham um papel importante, incluindo os
+          sindicatos
           do músico (por exemplo, Federação Americana de Músicos), organizações sem fins lucrativos de
           performance-direitos (por exemplo, Sociedade Americana de Compositores, Authors and Publishers) e outras
           associações (por exemplo, aliança internacional para mulheres na música, uma organização não-profeta que
           defende que a organização que advoga)</p>
         <p class="post-date">Atualizado em: 26/03/2025 08:21</p>
 
-        <p><a href="https://en.wikipedia.org/wiki/music_business" target="_blank">Fonte: Wikipedia (music business)</a>
+        <p><a href="https://en.wikipedia.org/wiki/music_business" target="_blank">Fonte: Wikipedia (music
+            business)</a>
         </p>
       </div>
     </section>
@@ -930,14 +1039,17 @@
         <p>Orquestração é o estudo ou prática de escrever música para uma orquestra (ou, mais vagamente, para qualquer
           conjunto musical, como uma banda de concertos) ou de adaptação de música composta para outro meio para uma
           orquestra.Também chamado de "instrumentação", a orquestração é a atribuição de diferentes instrumentos para
-          tocar as diferentes partes (por exemplo, melodia, linha de baixo etc.) de um trabalho musical.Por exemplo, um
-          trabalho para piano solo poderia ser adaptado e orquestrado para que uma orquestra pudesse realizar a peça, ou
+          tocar as diferentes partes (por exemplo, melodia, linha de baixo etc.) de um trabalho musical.Por exemplo,
+          um
+          trabalho para piano solo poderia ser adaptado e orquestrado para que uma orquestra pudesse realizar a peça,
+          ou
           uma peça de banda de concerto poderia ser orquestrada para uma orquestra sinfônica.</p>
         <p>Na música clássica, os compositores historicamente orquestraram sua própria música.Somente gradualmente ao
           longo da história da música a orquestração passou a ser considerada como uma arte e profissão de composição
           separadas em si.Na música clássica moderna, os compositores quase invariavelmente orquestram seu próprio
           trabalho.Duas exceções notáveis ​​a isso são a orquestração de Ravel das fotos de trabalho de piano solo de
-          Mussorgsky em uma exposição [1] e da orquestração de Malcolm Arnold do quarteto de cordas de William Walton em
+          Mussorgsky em uma exposição [1] e da orquestração de Malcolm Arnold do quarteto de cordas de William Walton
+          em
           um menor, produzindo a sonata para as strings. [2]</p>
         <p class="post-date">Atualizado em: 26/03/2025 08:25</p>
 
@@ -953,10 +1065,12 @@
           história e o conteúdo emocional de um musical - humor, pathos, amor, raiva - são comunicados através de
           palavras, música, movimento e aspectos técnicos do entretenimento como um todo integrado.Embora o teatro
           musical se sobreponha a outras formas teatrais, como ópera e dança, pode ser distinguido pela igual
-          importância dada à música em comparação com o diálogo, o movimento e outros elementos.Desde o início do século
+          importância dada à música em comparação com o diálogo, o movimento e outros elementos.Desde o início do
+          século
           XX, as obras de teatro musical geralmente são chamadas, simplesmente, musicais.</p>
         <p>Embora a música faça parte das apresentações dramáticas desde os tempos antigos, o teatro musical ocidental
-          moderno surgiu durante o século XIX, com muitos elementos estruturais estabelecidos pelas obras de ópera leve
+          moderno surgiu durante o século XIX, com muitos elementos estruturais estabelecidos pelas obras de ópera
+          leve
           de Jacques Offenbach, na França, Gilbert e Sullivan, na Grã -Bretanha e nas obras de Harrigan e Hart, na
           América.Estes foram seguidos por comédias musicais eduardianas, que surgiram na Grã -Bretanha, e as obras de
           teatro musical de criadores americanos como George M. Cohan na virada do século XX.Os Musicais do Teatro da
@@ -1008,6 +1122,8 @@
   <!-- Scripts -->
   <script src="static/script.js"></script>
   <script src="simple-chatbot/bot.js"></script>
+  <script src="popups/popup-acept-terms/age-gate.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 

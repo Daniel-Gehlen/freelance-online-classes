@@ -14,6 +14,8 @@
     <!-- Outros links e estilos -->
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
+    <!-- Inclui o CSS do popup -->
+    <link rel="stylesheet" href="popups/popup-acept-terms/age-gate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
@@ -23,6 +25,18 @@
 </head>
 
 <body class="dark-theme">
+
+    <!-- Popup de Verificação de Idade - DEVE SER O PRIMEIRO ELEMENTO -->
+    <div id="age-gate">
+        <div id="age-gate-content">
+            <h2>Aviso de Conteúdo Musical</h2>
+            <p>Este site contém material educacional sobre teoria musical. Você confirma que está ciente desta natureza
+                do conteúdo?</p>
+            <button id="confirm-age" class="age-btn">Sim, entendi</button>
+            <button id="deny-age" class="age-btn">Não, quero sair</button>
+            <small>Conteúdo educativo conforme LGPD Art. 14</small>
+        </div>
+    </div>
     <!-- Cabeçalho com Logo -->
     <header class="neon-header">
         <div class="logo-link">
@@ -110,9 +124,11 @@
                 <h2 class="card-title neon-text">Como Funcionam as Aulas?</h2>
                 <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com
                     <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que
-                    você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a <strong>teoria e
+                    você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a
+                    <strong>teoria e
                         técnica</strong> das músicas. Temos material didático pago à parte fundamental para começar
-                    (vídeos e partituras). Convide amigos para aprenderem juntos! 😉</p>
+                    (vídeos e partituras). Convide amigos para aprenderem juntos! 😉
+                </p>
                 <!-- Inserindo o áudio -->
                 <audio controls>
                     <source src="audio/explications.mp3" type="audio/mp4">
@@ -129,13 +145,16 @@
                     <div class="col-md-6">
                         <h3 class="card-title neon-text">Modalidade Anual (12 meses)</h3>
                         <ul>
-                            <li><strong>Aula Individual:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com desconto
+                            <li><strong>Aula Individual:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com
+                                desconto
                                 de pontualidade)</li>
-                            <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno (<strong>R$ 225/mês</strong> por
+                            <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno (<strong>R$ 225/mês</strong>
+                                por
                                 aluno com desconto de pontualidade)</li>
                             <li><strong>Encontros Musicais em janeiro e fevereiro incluídos (com manutenção do mesmo
                                     valor mensal)🎉</strong></li>
-                            <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com manutenção do
+                            <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com manutenção
+                                    do
                                     mesmo valor mensal do anual) 🏖️</strong></li>
                         </ul>
                     </div>
@@ -150,7 +169,8 @@
                                 <li>Sem desconto de pontualidade</li>
                                 <li>Sem Encontros Musicais incluídos</li>
                                 <li>Sem mensalidade em janeiro e fevereiro</li>
-                                <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com manutenção
+                                <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com
+                                        manutenção
                                         do mesmo valor mensal) 🏖️</strong></li>
                                 <li><strong>O pagamento é possível até o dia 15 de cada mês.</strong></li>
                             </ul>
@@ -210,6 +230,8 @@
     <!-- Scripts -->
     <script src="static/script.js"></script>
     <script src="simple-chatbot/bot.js"></script>
+    <script src="popups/popup-acept-terms/age-gate.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
     <script>

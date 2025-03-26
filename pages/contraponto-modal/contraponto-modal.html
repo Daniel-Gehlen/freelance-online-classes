@@ -16,6 +16,7 @@
   <!-- Links e estilos -->
   <link rel="stylesheet" href="../../static/styles.css">
   <link rel="stylesheet" href="../../simple-chatbot/styles/chatbot.css">
+  <link rel="stylesheet" href="../../popups/popup-acept-terms/age-gate.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link
@@ -31,6 +32,17 @@
 </head>
 
 <body class="dark-theme">
+
+  <div id="age-gate">
+    <div id="age-gate-content">
+      <h2>Aviso de Conteúdo Musical</h2>
+      <p>Este site contém material educacional sobre teoria musical. Você confirma que está ciente desta natureza do
+        conteúdo?</p>
+      <button id="confirm-age" class="age-btn">Sim, entendi</button>
+      <button id="deny-age" class="age-btn">Não, quero sair</button>
+      <small>Conteúdo educativo conforme LGPD Art. 14</small>
+    </div>
+  </div>
   <!-- Cabeçalho com Logo -->
   <header class="neon-header">
     <div class="logo-link">
@@ -59,7 +71,8 @@
             <a class="nav-link neon-text" href="../../pages/audios-e-videos.html">Áudios e Vídeos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link neon-text" href="../intervalos-musicais/intervalos-musicais.html">Intervalos Musicais</a>
+            <a class="nav-link neon-text" href="../intervalos-musicais/intervalos-musicais.html">Intervalos
+              Musicais</a>
           </li>
           <li class="nav-item">
             <a class="nav-link neon-text" href="../campos-harmonicos/campos-harmonicos.html">Campo
@@ -76,7 +89,8 @@
     <section class="educacao-harmonica">
       <h2 class="neon-text text-center">Introdução ao Contraponto Modal</h2>
       <p class="topico">
-        O contraponto modal é uma técnica de composição que utiliza os modos antigos (ou modos eclesiásticos) para criar
+        O contraponto modal é uma técnica de composição que utiliza os modos antigos (ou modos eclesiásticos) para
+        criar
         linhas melódicas independentes que se harmonizam entre si. Esses modos incluem:
       </p>
       <ul class="topico">
@@ -93,7 +107,8 @@
       <p class="topico">
         As cinco espécies de contraponto foram categorizadas por <strong>Johann Joseph Fux</strong> (1660–1741), um
         compositor e teórico musical austríaco do período barroco. Ele escreveu o tratado <strong>"Gradus ad
-          Parnassum"</strong> (1725), que se tornou uma referência fundamental para o estudo do contraponto. As espécies
+          Parnassum"</strong> (1725), que se tornou uma referência fundamental para o estudo do contraponto. As
+        espécies
         são:
       </p>
       <ul class="topico">
@@ -101,21 +116,25 @@
           outra, em ritmo igual.</li>
         <li><strong>Segunda Espécie (Duas notas contra uma):</strong> Uma melodia tem duas notas para cada nota da
           outra.</li>
-        <li><strong>Terceira Espécie (Quatro notas contra uma):</strong> Uma melodia tem quatro notas para cada nota da
+        <li><strong>Terceira Espécie (Quatro notas contra uma):</strong> Uma melodia tem quatro notas para cada nota
+          da
           outra.</li>
         <li><strong>Quarta Espécie (Síncopes ou Notas Ligadas):</strong> As melodias se movem em síncopes, criando
           suspensões.</li>
-        <li><strong>Quinta Espécie (Florida ou Contraponto Livre):</strong> Combinações livres das espécies anteriores,
+        <li><strong>Quinta Espécie (Florida ou Contraponto Livre):</strong> Combinações livres das espécies
+          anteriores,
           com maior variedade rítmica e melódica.</li>
       </ul>
 
       <h3 class="topico">Regras de Movimento Contrário e Paralelo</h3>
       <p class="topico">
-        No contraponto, o movimento das vozes é fundamental para garantir independência e interesse melódico. As regras
+        No contraponto, o movimento das vozes é fundamental para garantir independência e interesse melódico. As
+        regras
         principais incluem:
       </p>
       <ul class="topico">
-        <li><strong>Movimento Contrário (Prioridade):</strong> As vozes se movem em direções opostas (uma sobe enquanto
+        <li><strong>Movimento Contrário (Prioridade):</strong> As vozes se movem em direções opostas (uma sobe
+          enquanto
           a outra desce). Esse movimento é preferido porque aumenta a independência das linhas melódicas.</li>
         <li><strong>Movimento Paralelo:</strong> As vozes se movem na mesma direção, mantendo o mesmo intervalo. Esse
           movimento é permitido em terças e sextas, mas deve ser usado com moderação para evitar monotonia.</li>
@@ -135,7 +154,8 @@
       <h3 class="topico">Movimento de Terças</h3>
       <p class="topico">
         O movimento de terças é permitido e até encorajado, mas deve ser variado. Mais de três movimentos consecutivos
-        em terças podem tornar a textura monótona. A alternância com sextas, quintas ou outros intervalos é recomendada
+        em terças podem tornar a textura monótona. A alternância com sextas, quintas ou outros intervalos é
+        recomendada
         para manter o interesse musical.
       </p>
     </section>
@@ -191,7 +211,8 @@
       <div class="especie-contraponto">
         <h3 class="neon-text">O que é o Cantus Firmus?</h3>
         <p class="topico">
-          O <strong>cantus firmus</strong> (do latim, "canto firme") é uma melodia preexistente que serve como base para
+          O <strong>cantus firmus</strong> (do latim, "canto firme") é uma melodia preexistente que serve como base
+          para
           a construção de uma composição contrapontística. Geralmente, é uma linha melódica simples, muitas vezes
           retirada de cantos gregorianos ou outras fontes antigas, e é usada como ponto de partida para a criação de
           vozes adicionais.
@@ -216,7 +237,8 @@
       <div class="especie-contraponto">
         <h3 class="neon-text">Primeira Espécie: Nota contra Nota</h3>
         <p class="topico">
-          Na primeira espécie, cada nota do cantus firmus é acompanhada por uma única nota na voz contrapontística. Essa
+          Na primeira espécie, cada nota do cantus firmus é acompanhada por uma única nota na voz contrapontística.
+          Essa
           espécie é a base de todas as outras e exige consonância perfeita entre as notas.
         </p>
       </div>
@@ -243,7 +265,8 @@
       <div class="especie-contraponto">
         <h3 class="neon-text">Quarta Espécie: Sincopado</h3>
         <p class="topico">
-          Na quarta espécie, as notas da voz contrapontística são sincopadas, criando um efeito rítmico interessante. A
+          Na quarta espécie, as notas da voz contrapontística são sincopadas, criando um efeito rítmico interessante.
+          A
           dissonância é permitida apenas em tempos fracos.
         </p>
       </div>
@@ -252,7 +275,8 @@
       <div class="especie-contraponto">
         <h3 class="neon-text">Quinta Espécie: Ritmo Livre</h3>
         <p class="topico">
-          Na quinta espécie, a voz contrapontística utiliza ritmos livres, combinando elementos das espécies anteriores.
+          Na quinta espécie, a voz contrapontística utiliza ritmos livres, combinando elementos das espécies
+          anteriores.
           Essa espécie é a mais avançada e permite maior criatividade.
         </p>
       </div>
@@ -296,6 +320,8 @@
   <script src="contraponto-modal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../../simple-chatbot/bot.js"></script>
+  <script src="../../popups/popup-acept-terms/age-gate.js"></script>
+
 </body>
 
 </html>

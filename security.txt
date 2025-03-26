@@ -1,0 +1,3 @@
+Contact: mailto:https://daniel-gehlen.github.io/freelance-online-classes
+Encryption: https://daniel-gehlen.github.io/freelance-online-classes/pgp.txt
+Acknowledgments: https://daniel-gehlen.github.io/freelance-online-classes/security-hall-of-fame.html
