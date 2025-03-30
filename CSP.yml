@@ -1,0 +1,62 @@
+# Content Security Policy (CSP) Configuration
+# Política de Segurança de Conteúdo para sites de teoria musical
+
+default-src:
+  - "self"
+  - "unsafe-inline" # Necessário para alguns widgets musicais
+  - "unsafe-eval" # Requerido por algumas bibliotecas de áudio (ex: Tone.js)
+
+script-src:
+  - "self"
+  - "unsafe-inline"
+  - "unsafe-eval"
+  - https://cdnjs.cloudflare.com
+  - https://ajax.googleapis.com
+  - https://*.music-notation.org
+
+style-src:
+  - "self"
+  - "unsafe-inline"
+  - https://fonts.googleapis.com
+
+img-src:
+  - "self"
+  - data:
+  - https://*.openmusicnotation.org
+  - https://*.music-theory.org
+
+font-src:
+  - "self"
+  - https://fonts.gstatic.com
+  - data:
+
+connect-src:
+  - "self"
+  - https://api.music-theory.com
+  - wss://*.websocket.org
+
+media-src:
+  - "self"
+  - data:
+  - https://*.soundcloud.com
+  - https://*.spotify.com
+
+frame-src:
+  - https://www.youtube.com
+  - https://player.vimeo.com
+  - https://*.music-embed.org
+
+worker-src:
+  - "self"
+  - blob:
+
+report-uri: https://daniel-gehlen.github.io/freelance-online-classes/csp-report-endpoint
+report-to: csp-endpoint
+
+# Configurações específicas para Web Audio API
+require-trusted-types-for:
+  - "script"
+
+trusted-types:
+  - audio-worklet
+  - default

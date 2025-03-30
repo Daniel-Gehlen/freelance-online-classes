@@ -1,0 +1,9 @@
+/* TEAM */
+Desenvolvedor: Daniel Gehlen
+Site: https://matrix-portfolio-v2.vercel.app/
+Linkedin: https://www.linkedin.com/in/daniel-gehlen/
+
+/* SITE */
+Last update: 2025/03/25
+Standards: HTML5, CSS3, ES6
+Components: Web Vitals, PWA

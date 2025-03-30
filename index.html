@@ -14,13 +14,29 @@
     <!-- Outros links e estilos -->
     <link rel="stylesheet" href="static/styles.css">
     <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
+    <!-- Inclui o CSS do popup -->
+    <link rel="stylesheet" href="popups/popup-acept-terms/age-gate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
 </head>
 
 <body class="dark-theme">
+
+    <!-- Popup de Verificação de Idade - DEVE SER O PRIMEIRO ELEMENTO -->
+    <div id="age-gate">
+        <div id="age-gate-content">
+            <h2>Aviso de Conteúdo Musical</h2>
+            <p>Este site contém material educacional sobre teoria musical. Você confirma que está ciente desta natureza
+                do conteúdo?</p>
+            <button id="confirm-age" class="age-btn">Sim, entendi</button>
+            <button id="deny-age" class="age-btn">Não, quero sair</button>
+            <small>Conteúdo educativo conforme LGPD Art. 14</small>
+        </div>
+    </div>
     <!-- Cabeçalho com Logo -->
     <header class="neon-header">
         <div class="logo-link">
@@ -30,34 +46,44 @@
         <p>Aprenda no seu ritmo, com aulas personalizadas e flexíveis!</p>
     </header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
-    <div class="container-fluid">
-        <!-- Botão de toggle (menu hambúrguer) -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
+        <div class="container-fluid">
+            <!-- Botão de toggle (menu hambúrguer) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Conteúdo do navbar -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="navbar-brand neon-text" href="index.html">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar-brand neon-text" href="pages/teoria-musical-wikipedia.html">Teoria Musical</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar-brand neon-text" href="pages/audios-e-videos.html">Áudios e Vídeos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo Harmônico</a>
-                </li>
-            </li>
-            </ul>
+            <!-- Conteúdo do navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="navbar-brand neon-text" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand neon-text" href="teoria-musical-wikipedia.html">Teoria Musical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand neon-text" href="pages/audios-e-videos.html">Áudios e Vídeos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo
+                            Harmônico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link neon-text"
+                            href="pages/intervalos-musicais/intervalos-musicais.html">Intervalos Muiscais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link neon-text" href="pages/contraponto-modal/contraponto-modal.html">Contraponto
+                            Modal</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
     <main class="container my-5">
@@ -66,7 +92,10 @@
             <div class="card-body">
                 <h2 class="card-title neon-text">🎵 Saudações Musicais</h2>
                 <p class="card-text">INSCRIÇÕES ABERTAS</p>
-                <p class="card-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100% adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e comece já sua jornada musical!</p>
+                <p class="card-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100%
+                    adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem
+                    perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e
+                    comece já sua jornada musical!</p>
                 <!-- Inserindo o áudio -->
                 <audio controls>
                     <source src="audio/anuncio-inicio-com-fundo-musical.m4a" type="audio/mp4">
@@ -78,7 +107,8 @@
         <!-- Novo Card para o GIF -->
         <section class="card neon-card mb-5">
             <div class="card-body text-center">
-                <img src="assets/aula-online.gif" alt="Aulas Online" class="img-fluid" style="max-width: 100%; height: auto;">
+                <img src="assets/aula-online.gif" alt="Aulas Online" class="img-fluid"
+                    style="max-width: 100%; height: auto;">
             </div>
 
             <!-- Inserindo o áudio -->
@@ -92,12 +122,18 @@
         <section class="card neon-card mb-5">
             <div class="card-body">
                 <h2 class="card-title neon-text">Como Funcionam as Aulas?</h2>
-                <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a <strong>teoria e técnica</strong> das músicas. Temos material didático pago à parte fundamental para começar (vídeos e partituras). Convide amigos para aprenderem juntos! 😉</p>
+                <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com
+                    <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que
+                    você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a
+                    <strong>teoria e
+                        técnica</strong> das músicas. Temos material didático pago à parte fundamental para começar
+                    (vídeos e partituras). Convide amigos para aprenderem juntos! 😉
+                </p>
                 <!-- Inserindo o áudio -->
                 <audio controls>
                     <source src="audio/explications.mp3" type="audio/mp4">
                     Seu navegador não suporta o elemento de áudio.
-                </audio> 
+                </audio>
             </div>
         </section>
 
@@ -109,14 +145,22 @@
                     <div class="col-md-6">
                         <h3 class="card-title neon-text">Modalidade Anual (12 meses)</h3>
                         <ul>
-                            <li><strong>Aula Individual:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com desconto de pontualidade)</li>
-                            <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno (<strong>R$ 225/mês</strong> por aluno com desconto de pontualidade)</li>
-                            <li><strong>Encontros Musicais em janeiro e fevereiro incluídos (com manutenção do mesmo valor mensal)🎉</strong></li>
-                            <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com manutenção do mesmo valor mensal do anual) 🏖️</strong></li>
+                            <li><strong>Aula Individual:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com
+                                desconto
+                                de pontualidade)</li>
+                            <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno (<strong>R$ 225/mês</strong>
+                                por
+                                aluno com desconto de pontualidade)</li>
+                            <li><strong>Encontros Musicais em janeiro e fevereiro incluídos (com manutenção do mesmo
+                                    valor mensal)🎉</strong></li>
+                            <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com manutenção
+                                    do
+                                    mesmo valor mensal do anual) 🏖️</strong></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="card-title neon-text">Modalidade Mensal (não anual) - 📅<strong>Pagamento até dia 15</strong></h3>
+                        <h3 class="card-title neon-text">Modalidade Mensal (não anual) - 📅<strong>Pagamento até dia
+                                15</strong></h3>
                         <ul>
                             <li><strong>Aula Individual:</strong> R$ 330/mês</li>
                             <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno</li>
@@ -125,7 +169,9 @@
                                 <li>Sem desconto de pontualidade</li>
                                 <li>Sem Encontros Musicais incluídos</li>
                                 <li>Sem mensalidade em janeiro e fevereiro</li>
-                                <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com manutenção do mesmo valor mensal) 🏖️</strong></li>
+                                <li><strong>Férias de duas semanas em julho e duas semanas em dezembro (com
+                                        manutenção
+                                        do mesmo valor mensal) 🏖️</strong></li>
                                 <li><strong>O pagamento é possível até o dia 15 de cada mês.</strong></li>
                             </ul>
                         </ul>
@@ -139,7 +185,9 @@
             <div class="card-body">
                 <h2 class="card-title neon-text">Agende sua Aula Experimental, 🎸 Vagas limitadas!</h2>
                 <div id="calendar-embed">
-                    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30Hdl55N7KMklV6JmmWTzasbOJRDh0LLvowzekOURx2EPBlIQXWvv2ElBtVYagXH_F6szTnnIL?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+                    <iframe
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30Hdl55N7KMklV6JmmWTzasbOJRDh0LLvowzekOURx2EPBlIQXWvv2ElBtVYagXH_F6szTnnIL?gv=true"
+                        style="border: 0" width="100%" height="600" frameborder="0"></iframe>
                 </div>
                 <div id="calendar-button" class="mt-3">
                     <!-- Botão de Agendamento do Google Calendar -->
@@ -182,6 +230,8 @@
     <!-- Scripts -->
     <script src="static/script.js"></script>
     <script src="simple-chatbot/bot.js"></script>
+    <script src="popups/popup-acept-terms/age-gate.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
     <script>

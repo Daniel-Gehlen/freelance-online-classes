@@ -1,9 +1,9 @@
 import os
-import requests
-from bs4 import BeautifulSoup
-from deep_translator import GoogleTranslator
 import random
 from datetime import datetime
+import requests
+from bs4 import BeautifulSoup
+from googletrans import Translator
 
 # Configurar tópicos e URLs de referência
 topics = {
@@ -50,65 +50,74 @@ file_path = "teoria-musical-wikipedia.html"
 # Criar o arquivo HTML inicial, caso não exista
 if not os.path.exists(file_path):
     with open(file_path, "w", encoding="utf-8") as file:
-        file.write("""
-        <!DOCTYPE html>
-        <html lang="pt">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Teoria Musical - Conteúdos</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    line-height: 1.6;
-                    margin: 20px;
-                    max-width: 800px;
-                }
-                h1, h2 {
-                    color: #333;
-                }
-                a {
-                    color: #1a73e8;
-                    text-decoration: none;
-                }
-                a:hover {
-                    text-decoration: underline;
-                }
-                .card {
-                    border: 1px solid #ddd;
-                    border-radius: 8px;
-                    padding: 20px;
-                    margin-bottom: 20px;
-                }
-                .card-title {
-                    font-size: 1.5em;
-                    color: #333;
-                }
-                .neon-card {
-                    background-color: #f4f4f9;
-                }
-                .neon-text {
-                    color: #28a745;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Teoria Musical - Conteúdos</h1>
-        </body>
-        </html>
-        """)
+        file.write("""<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Musical - Conteúdos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 800px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .neon-card {
+            background-color: #f4f4f9;
+        }
+        .neon-text {
+            color: #28a745;
+        }
+        .post-date {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teoria Musical - Conteúdos</h1>
+    <main>
+        <!-- CONTEÚDO SERÁ INSERIDO AQUI -->
+    </main>
+</body>
+</html>""")
 
 # Função para buscar conteúdo na Wikipedia
 def get_wikipedia_page(term):
     query = term.replace(" ", "_")
     search_url = f"https://en.wikipedia.org/wiki/{query}"
-    response = requests.get(search_url)
-    if response.status_code == 200:
-        return search_url, response.content
+    try:
+        response = requests.get(search_url, timeout=10)
+        if response.status_code == 200:
+            return search_url, response.content
+    except Exception as e:
+        print(f"Erro ao acessar Wikipedia para {term}: {e}")
     return None, None
 
 # Inicializar o tradutor
-translator = GoogleTranslator(source='en', target='pt')
+translator = Translator()
 
 # Ler o conteúdo existente do arquivo HTML
 with open(file_path, "r", encoding="utf-8") as file:
@@ -117,8 +126,10 @@ with open(file_path, "r", encoding="utf-8") as file:
 # Processar os termos musicais
 new_content = ""
 for term in random.sample(music_terms, min(len(music_terms), 5)):  # Seleciona até 5 termos aleatórios
-    if term in existing_content:  # Ignora termos já processados
+    if term.lower() in existing_content.lower():  # Ignora termos já processados (case insensitive)
+        print(f"Termo {term} já existe no conteúdo. Pulando...")
         continue
+    
     try:
         # Buscar conteúdo na Wikipedia
         url, page_content = get_wikipedia_page(term)
@@ -128,8 +139,7 @@ for term in random.sample(music_terms, min(len(music_terms), 5)):  # Seleciona a
 
         # Processar o conteúdo
         soup = BeautifulSoup(page_content, "html.parser")
-        paragraphs = soup.find_all("p")
-        paragraphs = [p.get_text().strip() for p in paragraphs if p.get_text().strip()]
+        paragraphs = [p.get_text().strip() for p in soup.find_all("p") if p.get_text().strip()]
 
         # Garantir que há conteúdo suficiente
         if len(paragraphs) < 2:
@@ -137,30 +147,59 @@ for term in random.sample(music_terms, min(len(music_terms), 5)):  # Seleciona a
             continue
 
         # Traduzir e formatar o conteúdo
-        translated_paragraphs = [
-            f"<p>{translator.translate(paragraph)}</p>" for paragraph in paragraphs[:2]
-        ]
+        translated_paragraphs = []
+        for paragraph in paragraphs[:2]:  # Pegar apenas os 2 primeiros parágrafos
+            try:
+                translated = translator.translate(paragraph, src='en', dest='pt').text
+                translated_paragraphs.append(f"<p>{translated}</p>")
+            except Exception as e:
+                print(f"Erro ao traduzir parágrafo para {term}: {e}")
+                translated_paragraphs.append(f"<p>{paragraph}</p>")  # Usa o original se falhar a tradução
 
         # Criar a estrutura de HTML
         term_content = (
-            f'<section class="card neon-card mb-5">\n'
+            f'<section class="card neon-card">\n'
             f'  <div class="card-body">\n'
             f'    <h2 class="card-title neon-text">{term.capitalize()}</h2>\n'
             + "\n".join(translated_paragraphs)
-            + f'\n    <p class="post-date">{datetime.now().strftime("%d/%m/%Y")}</p>\n'
-            + f'\n    <p><a href="{url}" target="_blank">Fonte: {url}</a></p>\n'
+            + f'\n    <p class="post-date">Atualizado em: {datetime.now().strftime("%d/%m/%Y %H:%M")}</p>\n'
+            + f'\n    <p><a href="{url}" target="_blank">Fonte: Wikipedia ({term})</a></p>\n'
             f'  </div>\n'
-            f'</section>\n'
+            f'</section>\n\n'
         )
         new_content += term_content
     except Exception as e:
         print(f"Erro ao processar o termo {term}: {e}")
         continue
 
-# Adicionar novo conteúdo ao arquivo HTML
+# Adicionar novo conteúdo ao arquivo HTML no local correto
 if new_content:
-    with open(file_path, "a", encoding="utf-8") as file:
-        file.write(new_content)
-    print("Conteúdo atualizado com sucesso!")
+    # Encontrar a posição de fechamento do main
+    main_end_pos = existing_content.find("</main>")
+    if main_end_pos == -1:
+        # Se não encontrar </main>, criar a tag main antes de </body>
+        body_end_pos = existing_content.find("</body>")
+        if body_end_pos == -1:
+            # Se não encontrar </body>, adicionar no final do arquivo
+            updated_content = existing_content + "\n<main>\n" + new_content + "</main>\n"
+        else:
+            updated_content = (
+                existing_content[:body_end_pos] +
+                "\n<main>\n" + new_content + "</main>\n" +
+                existing_content[body_end_pos:]
+            )
+        print("Aviso: Tag </main> não encontrada. Criada nova estrutura main.")
+    else:
+        # Inserir o conteúdo antes de </main>
+        updated_content = (
+            existing_content[:main_end_pos] +
+            new_content +
+            existing_content[main_end_pos:]
+        )
+    
+    # Salvar o conteúdo atualizado no arquivo
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(updated_content)
+    print(f"Conteúdo atualizado com sucesso! {len(new_content)} caracteres adicionados.")
 else:
     print("Nenhum conteúdo novo foi adicionado.")

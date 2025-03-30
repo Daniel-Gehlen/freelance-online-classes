@@ -1,0 +1,16 @@
+# Security Policy for Music Theory Interactive
+# https://www.ietf.org/rfc/rfc9116.txt
+
+Contact: mailto:security@seusite.com
+Contact: https://daniel-gehlen.github.io/freelance-online-classes/security-hall-of-fame.html
+Encryption: https://daniel-gehlen.github.io/freelance-online-classes/pgp.txt
+Acknowledgments: https://daniel-gehlen.github.io/freelance-online-classes/security-hall-of-fame.html
+Policy: https://daniel-gehlen.github.io/freelance-online-classes/politica-privacidade.html
+Preferred-Languages: en, pt
+Canonical: https://daniel-gehlen.github.io/freelance-online-classes/.well-known/security.txt
+Expires: 2026-03-25T18:00:00.000Z
+
+# For vulnerability reporting, please include:
+# - Detailed reproduction steps
+# - Impact analysis
+# - Suggested fix (if applicable)
