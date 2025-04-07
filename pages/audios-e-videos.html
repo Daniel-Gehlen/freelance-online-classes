@@ -453,7 +453,31 @@
                         <div id="listaConteudos" style="display: none;">
                             <h6>Conteúdos do Curso:</h6>
                             <ul class="list-unstyled">
-                                <!-- Lista de conteúdos omitida para brevidade -->
+                                <li><strong>01</strong> - 1º Módulo - iniciação prática musical</li>
+                                <li><strong>02</strong> - 2º Módulo - divisão rítmica</li>
+                                <li><strong>03</strong> - 3º Módulo - i, m, a, nas três cordas abaixo</li>
+                                <li><strong>04</strong> - 4º Módulo - polegar nas três cordas acima</li>
+                                <li><strong>05</strong> - 5º Módulo - Início: Notas presas na 6ª, na 5ª e na 4ª
+                                    corda</li>
+                                <li><strong>06</strong> - 6ª Corda</li>
+                                <li><strong>07</strong> - 5ª corda</li>
+                                <li><strong>08</strong> - 4ª Corda</li>
+                                <li><strong>09</strong> - Módulo 5 - Final</li>
+                                <li><strong>10</strong> - 6º Módulo - Início: Notas presas na 3ª, na 2ª e na 1ª
+                                    corda</li>
+                                <li><strong>11</strong> - 3ª Corda</li>
+                                <li><strong>12</strong> - 2ª Corda</li>
+                                <li><strong>13</strong> - 1ª Corda</li>
+                                <li><strong>14</strong> - Final do Módulo 6</li>
+                                <li><strong>15</strong> - 7º Módulo - Sustenido e bemol: notas alteradas</li>
+                                <li><strong>16</strong> - 8º Módulo - Partitura a duas vozes</li>
+                                <li><strong>17</strong> - 9º Módulo - Acompanhamentos rítmicos</li>
+                                <li><strong>18</strong> - 10º Módulo - Oitavas</li>
+                                <li><strong>19</strong> - 11º Módulo - Colcheias</li>
+                                <li><strong>20</strong> - Solfejando</li>
+                                <li><strong>21</strong> - Tocando</li>
+                                <li><strong>22</strong> - 12º Módulo - Músicas Instrumentais</li>
+                                <li><strong>23</strong> - Bônus - Doze Dicas Pontuais de Estudos</li>
                             </ul>
                         </div>
 
@@ -489,50 +513,6 @@
                             <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Comprar no HotMart"
                                 style="max-width: 100%; height: auto;">
                         </a>
-                        <!-- Script do Confetti -->
-                        <script
-                            src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-                        <script>
-                            document.addEventListener('DOMContentLoaded', function () {
-                                function triggerConfetti() {
-                                    confetti({
-                                        particleCount: 1300,
-                                        spread: 180,
-                                        origin: { y: 0.6 },
-                                        gravity: 0.5,
-                                        ticks: 200,
-                                        colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
-                                    });
-                                    const canvas = document.querySelector('canvas');
-                                    if (canvas) {
-                                        canvas.style.position = 'fixed';
-                                        canvas.style.zIndex = '2147483647';
-                                        canvas.style.pointerEvents = 'none';
-                                    }
-                                }
-                                document.getElementById('hotmart-button').addEventListener('click', function (event) {
-                                    event.preventDefault();
-                                    triggerConfetti();
-                                    if (window.matchMedia('(min-width: 768px)').matches) {
-                                        const iframe = document.getElementById('hotmartIframe');
-                                        iframe.src = "https://pay.hotmart.com/T41807997K?checkoutMode=2&bid=1741882425824";
-                                        const modal = new bootstrap.Modal(document.getElementById('hotmartModal'));
-                                        modal.show();
-                                    } else {
-                                        setTimeout(function () {
-                                            window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2&bid=1741882425824";
-                                        }, 1500);
-                                    }
-                                });
-
-                                // Limpar o iframe ao fechar o modal
-                                const modalElement = document.getElementById('hotmartModal');
-                                modalElement.addEventListener('hidden.bs.modal', function () {
-                                    const iframe = document.getElementById('hotmartIframe');
-                                    iframe.src = ''; // Limpa o iframe
-                                });
-                            });
-                        </script>
                         <!-- Botão "Acessar na Hotmart" -->
                         <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K"
                             target="_blank" class="btn mb-3 btn-primary w-100">Acessar na Hotmart</a>
@@ -553,23 +533,6 @@
                         <button id="udemyButton" class="btn btn-primary">Acessar Udemy</button>
                     </div>
                 </div>
-
-                <script>
-                    // Adiciona um evento de clique ao botão
-                    document.getElementById('udemyButton').addEventListener('click', function () {
-                        // Dispara os confetes
-                        confetti({
-                            particleCount: 1300, // Quantidade de confetes
-                            spread: 140,         // Quão espalhados os confetes estarão
-                            origin: { y: 0.6 }  // Origem do efeito (0.6 = 60% da altura da tela)
-                        });
-
-                        // Redireciona após 1 segundo (1000 milissegundos)
-                        setTimeout(function () {
-                            window.location.href = 'https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR';
-                        }, 1000);
-                    });
-                </script>
             </div>
         </section>
         <!-- Ícone do Robô -->
@@ -621,6 +584,63 @@
     <script src="../popups/popup-acept-terms/age-gate.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script do Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        // Função para disparar confetes
+        function triggerConfetti() {
+            confetti({
+                particleCount: 1300,
+                spread: 180,
+                origin: { y: 0.6 },
+                gravity: 0.5,
+                ticks: 200,
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+            });
+            const canvas = document.querySelector('canvas');
+            if (canvas) {
+                canvas.style.position = 'fixed';
+                canvas.style.zIndex = '2147483647';
+                canvas.style.pointerEvents = 'none';
+            }
+        }
+
+        // Configuração do botão Hotmart
+        document.addEventListener('DOMContentLoaded', function () {
+            const hotmartButton = document.getElementById('hotmart-button');
+
+            if (hotmartButton) {
+                hotmartButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    triggerConfetti();
+
+                    if (window.matchMedia('(min-width: 768px)').matches) {
+                        const iframe = document.getElementById('hotmartIframe');
+                        iframe.src = "https://pay.hotmart.com/T41807997K?checkoutMode=2&bid=1741882425824";
+                        const modal = new bootstrap.Modal(document.getElementById('hotmartModal'));
+                        modal.show();
+                    } else {
+                        setTimeout(function () {
+                            window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2&bid=1741882425824";
+                        }, 1500);
+                    }
+                });
+            }
+
+            // Configuração do botão Udemy
+            const udemyButton = document.getElementById('udemyButton');
+            if (udemyButton) {
+                udemyButton.addEventListener('click', function () {
+                    triggerConfetti();
+                    setTimeout(function () {
+                        window.location.href = 'https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR';
+                    }, 1000);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
