@@ -566,6 +566,307 @@
             });
         </script>
 
+        <!-- ========== POPUP HOTMART FINAL ========== -->
+        <div id="hotmart-popup-container"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 9999; overflow-y: auto;">
+            <div
+                style="position: relative; min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 40px 20px;">
+                <div
+                    style="width: 100%; max-width: 600px; background-color: #1a1a2e; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0,255,255,0.5); margin: 20px 0;">
+                    <div class="card" style="background: #16213e; border: 1px solid #0ff; border-radius: 8px;">
+                        <div class="card-body text-center" style="padding: 20px;">
+                            <img src="assets/eu-rotmart.jpeg" alt="HotMart Preview"
+                                style="max-width: 100%; height: auto; border-radius: 5px; margin-bottom: 15px;">
+                            <h5 style="color: #0ff; margin-bottom: 15px;">Compre por aqui</h5>
+                            <p style="color: #fff; margin-bottom: 20px;">ou Acesse o material completo na HotMart.</p>
+
+                            <button id="mostrarConteudosPopup"
+                                style="width: 100%; padding: 12px; background: #0d6efd; color: white; border: none; border-radius: 5px; margin-bottom: 15px; cursor: pointer; font-weight: bold;">Mostrar
+                                Conteúdos</button>
+
+                            <div id="listaConteudosPopup"
+                                style="display: none; max-height: 50vh; overflow-y: auto; margin: 15px 0; color: white; text-align: left; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 5px; scrollbar-width: thin; scrollbar-color: #0ff #1a1a2e;">
+                                <!-- Lista de conteúdos aqui -->
+                                <h6>Conteúdos do Curso:</h6>
+                                <ul class="list-unstyled">
+                                    <li><strong>01</strong> - 1º Módulo - iniciação prática musical</li>
+                                    <li><strong>02</strong> - 2º Módulo - divisão rítmica</li>
+                                    <li><strong>03</strong> - 3º Módulo - i, m, a, nas três cordas abaixo</li>
+                                    <li><strong>04</strong> - 4º Módulo - polegar nas três cordas acima</li>
+                                    <li><strong>05</strong> - 5º Módulo - Início: Notas presas na 6ª, na 5ª e na 4ª
+                                        corda</li>
+                                    <li><strong>06</strong> - 6ª Corda</li>
+                                    <li><strong>07</strong> - 5ª corda</li>
+                                    <li><strong>08</strong> - 4ª Corda</li>
+                                    <li><strong>09</strong> - Módulo 5 - Final</li>
+                                    <li><strong>10</strong> - 6º Módulo - Início: Notas presas na 3ª, na 2ª e na 1ª
+                                        corda</li>
+                                    <li><strong>11</strong> - 3ª Corda</li>
+                                    <li><strong>12</strong> - 2ª Corda</li>
+                                    <li><strong>13</strong> - 1ª Corda</li>
+                                    <li><strong>14</strong> - Final do Módulo 6</li>
+                                    <li><strong>15</strong> - 7º Módulo - Sustenido e bemol: notas alteradas</li>
+                                    <li><strong>16</strong> - 8º Módulo - Partitura a duas vozes</li>
+                                    <li><strong>17</strong> - 9º Módulo - Acompanhamentos rítmicos</li>
+                                    <li><strong>18</strong> - 10º Módulo - Oitavas</li>
+                                    <li><strong>19</strong> - 11º Módulo - Colcheias</li>
+                                    <li><strong>20</strong> - Solfejando</li>
+                                    <li><strong>21</strong> - Tocando</li>
+                                    <li><strong>22</strong> - 12º Módulo - Músicas Instrumentais</li>
+                                    <li><strong>23</strong> - Bônus - Doze Dicas Pontuais de Estudos</li>
+                                </ul>
+
+                                <div
+                                    style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 2px solid #00ffff; border-radius: 15px; padding: 25px; box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3); max-width: 800px; margin: 30px auto; font-family: 'Roboto', sans-serif; color: white; position: relative; overflow: hidden;">
+
+                                    <!-- Efeito de brilho sutil -->
+                                    <div
+                                        style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, rgba(0,0,0,0) 70%); transform: rotate(30deg); pointer-events: none;">
+                                    </div>
+
+                                    <!-- Cabeçalho -->
+                                    <div style="text-align: center; margin-bottom: 25px;">
+                                        <h2
+                                            style="color: #00ffff; font-size: 2.2em; margin-bottom: 10px; font-weight: 700; text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);">
+                                            DESENVOLVA HABILIDADES NO VIOLÃO</h2>
+                                        <p style="font-size: 1.1em; opacity: 0.9;">Com <strong>Daniel Gehlen</strong> -
+                                            25+ anos transformando iniciantes em músicos</p>
+                                    </div>
+
+                                    <!-- Destaques -->
+                                    <div
+                                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                                        <div
+                                            style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #00ffff;">
+                                            <h3 style="color: #00ffff; margin-top: 0;">🎸 12 Módulos Completos</h3>
+                                            <p>Do absoluto zero até técnicas intermediárias em um caminho progressivo
+                                            </p>
+                                        </div>
+                                        <div
+                                            style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #00ffff;">
+                                            <h3 style="color: #00ffff; margin-top: 0;">🎥 Vídeoaulas Práticas</h3>
+                                            <p>Instruções claras + dicas exclusivas que aceleram seu aprendizado</p>
+                                        </div>
+                                        <div
+                                            style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #00ffff;">
+                                            <h3 style="color: #00ffff; margin-top: 0;">⏱️ Seu Ritmo</h3>
+                                            <p>Sem pressão - estude quando e onde quiser, no seu tempo</p>
+                                        </div>
+                                        <div
+                                            style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #00ffff;">
+                                            <h3 style="color: #00ffff; margin-top: 0;">🔑 Conhecimento Exclusivo</h3>
+                                            <p>Atalhos que normalmente levariam anos para descobrir</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Destaque Principal -->
+                                    <div
+                                        style="background: rgba(0, 255, 255, 0.15); padding: 20px; border-radius: 10px; border: 1px dashed #00ffff; margin-bottom: 25px; text-align: center;">
+                                        <p style="font-size: 1.2em; margin: 0;"><strong>Não é um curso
+                                                profissionalizante</strong>, mas <span style="color: #00ffff;">a base
+                                                perfeita</span> para iniciantes e entusiastas que desejam uma fundação
+                                            sólida no violão!</p>
+                                    </div>
+
+                                    <!-- Chamada Final -->
+                                    <div style="text-align: center;">
+                                        <p style="font-size: 1.3em; margin-bottom: 25px;">Transforme seu desejo de tocar
+                                            violão em realidade!</p>
+                                        <!-- Botão modificado -->
+                                        <button id="jornada-musical-btn" style="background: linear-gradient(to right, #00ffff, #0088ff); 
+               border: none; 
+               color: black; 
+               padding: 15px 30px; 
+               font-size: 1.1em; 
+               border-radius: 50px; 
+               font-weight: bold; 
+               cursor: pointer; 
+               box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4); 
+               transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 20px rgba(0, 255, 255, 0.6)';"
+                                            onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0, 255, 255, 0.4)';">
+                                            INICIE SUA JORNADA MUSICAL AGORA
+                                        </button>
+
+                                        <!-- Script para o botão -->
+                                        <script>
+                                            document.getElementById('jornada-musical-btn').addEventListener('click', function (e) {
+                                                e.preventDefault();
+
+                                                // Dispara confetti (mesmo efeito do botão original)
+                                                confetti({
+                                                    particleCount: 1300,
+                                                    spread: 180,
+                                                    origin: { y: 0.6 },
+                                                    gravity: 0.5,
+                                                    ticks: 200,
+                                                    colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'],
+                                                    zIndex: 99999
+                                                });
+
+                                                // Abre o popup da Hotmart após 800ms (mesmo comportamento)
+                                                setTimeout(() => {
+                                                    document.getElementById('hotmart-popup-container').style.display = 'none'; // Fecha o popup atual
+
+                                                    if (window.matchMedia('(min-width: 768px)').matches) {
+                                                        const iframe = document.getElementById('hotmartIframe');
+                                                        iframe.src = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+                                                        const modal = new bootstrap.Modal(document.getElementById('hotmartModal'));
+                                                        modal.show();
+                                                    } else {
+                                                        window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+                                                    }
+                                                }, 800);
+                                            });
+                                        </script>
+                                    </div>
+
+                                    <!-- Rodapé -->
+                                    <div style="margin-top: 30px; text-align: center; font-size: 0.9em; opacity: 0.8;">
+                                        <p>Obrigado por ler até aqui! Estou genuinamente animado para guiá-lo nessa
+                                            jornada musical.</p>
+                                        <p style="color: #00ffff; font-style: italic;">"Um violão, um sonho e a
+                                            orientação certa - essa é a fórmula para começar."</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Botão Comprar Agora com confetti integrado -->
+                            <button id="hotmart-button-popup"
+                                style="display: block; width: 100%; padding: 0; margin-bottom: 15px; background: none; border: none; cursor: pointer;">
+                                <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar no HotMart"
+                                    style="max-width: 100%; height: auto;">
+                            </button>
+
+                            <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K"
+                                target="_blank"
+                                style="display: block; width: 100%; padding: 12px; background: #0d6efd; color: white; text-align: center; border-radius: 5px; margin-bottom: 15px; text-decoration: none; font-weight: bold;">Acessar
+                                na Hotmart</a>
+
+                            <button id="udemyButtonPopup"
+                                style="display: block; width: 100%; padding: 12px; background: #ffc107; color: #000; text-align: center; border-radius: 5px; margin-bottom: 15px; text-decoration: none; font-weight: bold; border: none; cursor: pointer;">Acessar
+                                Udemy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Hotmart (será injetado pelo script) -->
+        <div id="hotmartModal" class="modal fade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="background: transparent; border: none;">
+                    <div class="modal-body p-0">
+                        <iframe id="hotmartIframe" src="" style="width: 100%; height: 80vh; border: none;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script do Confetti -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <!-- Bootstrap para o modal -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            // Função de confetti IDÊNTICA ao seu código original
+            function triggerConfetti() {
+                confetti({
+                    particleCount: 1300, // Mesma quantidade do seu código
+                    spread: 180,         // Mesmo spread do seu código
+                    origin: { y: 0.6 },  // Mesma posição de origem
+                    gravity: 0.5,        // Mesma gravidade
+                    ticks: 200,          // Mesma duração
+                    colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'] // Mesmas cores
+                });
+
+                // Configuração do canvas igual ao seu código
+                const canvas = document.querySelector('canvas');
+                if (canvas) {
+                    canvas.style.position = 'fixed';
+                    canvas.style.zIndex = '2147483647';
+                    canvas.style.pointerEvents = 'none';
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Configurações do popup (abrir/fechar)
+                const popup = document.getElementById('hotmart-popup-container');
+                const closeBtn = document.getElementById('close-hotmart-popup');
+
+                // Mostrar popup quando mouse sai do topo
+                document.addEventListener('mouseout', function (e) {
+                    if (e.clientY < 50) {
+                        popup.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+
+                // Controle da lista de conteúdos
+                const mostrarBtn = document.getElementById('mostrarConteudosPopup');
+                const conteudos = document.getElementById('listaConteudosPopup');
+
+                mostrarBtn.addEventListener('click', function () {
+                    if (conteudos.style.display === 'none' || !conteudos.style.display) {
+                        conteudos.style.display = 'block';
+                        mostrarBtn.textContent = 'Ocultar Conteúdos';
+                        setTimeout(() => conteudos.scrollTo({ top: 0, behavior: 'smooth' }), 50);
+                    } else {
+                        conteudos.style.display = 'none';
+                        mostrarBtn.textContent = 'Mostrar Conteúdos';
+                    }
+                });
+
+                // Configuração do botão Hotmart no popup - COMPORTAMENTO MODIFICADO
+                const hotmartButtonPopup = document.getElementById('hotmart-button-popup');
+                if (hotmartButtonPopup) {
+                    hotmartButtonPopup.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        triggerConfetti(); // Dispara confetti igual ao original
+
+                        // Substitui o popup atual pelo checkout da Hotmart (sem redirecionamento)
+                        setTimeout(() => {
+                            // Fecha o popup atual
+                            popup.style.display = 'none';
+
+                            // Cria e mostra o modal com o iframe da Hotmart
+                            const iframe = document.getElementById('hotmartIframe');
+                            iframe.src = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
+
+                            const modal = new bootstrap.Modal(document.getElementById('hotmartModal'));
+                            modal.show();
+
+                            // Fecha o modal quando o usuário finaliza a compra (opcional)
+                            window.addEventListener('message', function (event) {
+                                if (event.data === 'closeModal') {
+                                    modal.hide();
+                                }
+                            });
+                        }, 800); // Mesmo delay do seu código original
+                    });
+                }
+
+                // Configuração do botão Udemy no popup
+                const udemyButtonPopup = document.getElementById('udemyButtonPopup');
+                if (udemyButtonPopup) {
+                    udemyButtonPopup.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        triggerConfetti();
+                        setTimeout(() => {
+                            window.open('https://www.udemy.com/course/violao-pratico-aprenda-principais-acordes-e-ritmos-basicos/?couponCode=KEEPLEARNINGBR', '_blank');
+                        }, 1000);
+                    });
+                }
+            });
+
+            // Limpar o flag quando a página é recarregada (opcional)
+            window.addEventListener('beforeunload', function () {
+                localStorage.removeItem('popupClosed');
+            });
+        </script>
+        <!-- ========== FIM DO POPUP HOTMART ========== -->
+
     </main>
     <footer class="neon-footer text-center py-3">
         <div class="footer-content">
