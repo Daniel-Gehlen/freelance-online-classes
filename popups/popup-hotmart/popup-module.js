@@ -10,7 +10,7 @@ class HotmartPopupLoader {
   async loadResources() {
     try {
       // Carrega CSS
-      await this.loadCSS('/popups/popup-hotmart/popup-hotmart.css');
+      await this.loadCSS('./popups/popup-hotmart/popup-hotmart.css');
       await this.loadCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
 
       // Carrega HTML direto
