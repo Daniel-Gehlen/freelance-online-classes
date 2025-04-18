@@ -9,22 +9,75 @@ class HotmartPopupLoader {
   }
 
   detectBasePath() {
-    // Detecta automaticamente o caminho base correto
-    const path = window.location.pathname;
-    if (path.includes('/pages/')) {
-      return '../../'; // Para páginas dentro de /pages/
+    // Enhanced path detection for GitHub Pages
+    const scriptElements = document.getElementsByTagName('script');
+    let scriptPath = '';
+
+    // Find the current script path
+    for (let i = 0; i < scriptElements.length; i++) {
+      const src = scriptElements[i].src;
+      if (src && src.includes('popup-module.js')) {
+        scriptPath = src;
+        break;
+      }
     }
-    return '/'; // Para páginas na raiz (absoluto)
+
+    // Extract base path from script path
+    if (scriptPath) {
+      const urlObj = new URL(scriptPath);
+      const pathParts = urlObj.pathname.split('/');
+      // Remove 'popups/popup-hotmart/popup-module.js' from the path
+      const baseParts = pathParts.slice(0, pathParts.length - 3);
+      return `${urlObj.origin}${baseParts.join('/')}/`;
+    }
+
+    // Fallback detection
+    const path = window.location.pathname;
+    const repoName = this.getRepositoryName();
+
+    // Check if we're on GitHub Pages
+    if (window.location.hostname.includes('github.io')) {
+      // For GitHub Pages with custom domain or username.github.io/repo format
+      if (repoName) {
+        return `/${repoName}/`; // e.g., /your-repo/
+      }
+      return '/'; // For username.github.io (root level)
+    }
+
+    // Local development path detection
+    if (path.includes('/pages/')) {
+      return '../../'; // For pages in /pages/ directory
+    }
+    return '/'; // For pages at root
+  }
+
+  getRepositoryName() {
+    // Extract repository name from GitHub Pages URL
+    const hostname = window.location.hostname;
+    const pathname = window.location.pathname;
+
+    if (hostname.endsWith('github.io')) {
+      // Get the first directory in the path (repo name)
+      const parts = pathname.split('/').filter(p => p);
+      if (parts.length > 0) {
+        return parts[0];
+      }
+    }
+    return '';
   }
 
   async loadResources() {
     try {
+      console.log("Loading Hotmart popup with base path:", this.basePath);
+
       // Carrega CSS com caminho corrigido
       await this.loadCSS(`${this.basePath}popups/popup-hotmart/popup-hotmart.css`);
       await this.loadCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
 
       // Obtém HTML e corrige caminhos das imagens
       let popupHTML = this.getPopupHTML();
+
+      // Fix image paths with absolute URLs when applicable
       popupHTML = popupHTML.replace(/src="assets\//g, `src="${this.basePath}assets/`);
       popupHTML = popupHTML.replace(/src="popups\//g, `src="${this.basePath}popups/`);
 
@@ -58,10 +111,13 @@ class HotmartPopupLoader {
       const link = document.createElement('link');
       link.rel = 'stylesheet';
       link.href = href;
-      link.onload = resolve;
+      link.onload = () => {
+        console.log(`CSS loaded successfully: ${href}`);
+        resolve();
+      };
       link.onerror = () => {
         console.warn(`Falha ao carregar CSS: ${href}`);
-        resolve();
+        resolve(); // Resolve anyway to continue loading
       };
       document.head.appendChild(link);
     });
@@ -77,10 +133,13 @@ class HotmartPopupLoader {
 
       const script = document.createElement('script');
       script.src = src;
-      script.onload = resolve;
+      script.onload = () => {
+        console.log(`Script loaded successfully: ${src}`);
+        resolve();
+      };
       script.onerror = () => {
         console.warn(`Falha ao carregar script: ${src}`);
-        resolve();
+        resolve(); // Resolve anyway to continue loading
       };
       document.body.appendChild(script);
     });
@@ -360,6 +419,13 @@ class HotmartPopupLoader {
   }
 }
 
+// Debug info for path detection
+console.log("Loading popup module script...");
+console.log("Current URL:", window.location.href);
+console.log("Current Pathname:", window.location.pathname);
+console.log("Current Hostname:", window.location.hostname);
+
+// Initialize the popup loader
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => new HotmartPopupLoader());
 } else {
