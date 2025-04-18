@@ -79,7 +79,7 @@ class HotmartPopupLoader {
         <div class="popup-content">
           <div class="popup-card">
             <div class="popup-card-body">
-              <img src="./assets/eu-hotmart.jpeg" alt="HotMart Preview" class="popup-image">
+              <img src="assets/eu-hotmart.jpeg" alt="HotMart Preview" class="popup-image">
               <h5 class="popup-title">Compre por aqui</h5>
               <p class="popup-subtitle">ou Acesse o material completo na HotMart.</p>
 
