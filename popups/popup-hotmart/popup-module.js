@@ -3,26 +3,40 @@ class HotmartPopupLoader {
   constructor() {
     if (!window.hotmartPopupLoaded) {
       window.hotmartPopupLoaded = true;
+      this.basePath = this.detectBasePath();
       this.loadResources();
     }
   }
 
+  detectBasePath() {
+    // Detecta automaticamente o caminho base correto
+    const path = window.location.pathname;
+    if (path.includes('/pages/')) {
+      return '../../'; // Para páginas dentro de /pages/
+    }
+    return '/'; // Para páginas na raiz (absoluto)
+  }
+
   async loadResources() {
     try {
-      // Carrega CSS
-      await this.loadCSS('popups/popup-hotmart/popup-hotmart.css');
+      // Carrega CSS com caminho corrigido
+      await this.loadCSS(`${this.basePath}popups/popup-hotmart/popup-hotmart.css`);
       await this.loadCSS('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
 
-      // Carrega HTML direto
+      // Obtém HTML e corrige caminhos das imagens
+      let popupHTML = this.getPopupHTML();
+      popupHTML = popupHTML.replace(/src="assets\//g, `src="${this.basePath}assets/`);
+      popupHTML = popupHTML.replace(/src="popups\//g, `src="${this.basePath}popups/`);
+
       const container = document.createElement('div');
-      container.innerHTML = this.getPopupHTML();
+      container.innerHTML = popupHTML;
       document.body.appendChild(container);
 
-      // Carrega scripts em sequência
+      // Carrega scripts externos
       await this.loadScriptAsync('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js');
       await this.loadScriptAsync('https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js');
 
-      // Carregue o script do popup no final para garantir que os outros recursos estejam disponíveis
+      // Injeta o JavaScript do popup
       const popupScript = document.createElement('script');
       popupScript.textContent = this.getPopupJS();
       document.body.appendChild(popupScript);
@@ -47,7 +61,7 @@ class HotmartPopupLoader {
       link.onload = resolve;
       link.onerror = () => {
         console.warn(`Falha ao carregar CSS: ${href}`);
-        resolve(); // Resolve anyway to continue loading
+        resolve();
       };
       document.head.appendChild(link);
     });
@@ -66,7 +80,7 @@ class HotmartPopupLoader {
       script.onload = resolve;
       script.onerror = () => {
         console.warn(`Falha ao carregar script: ${src}`);
-        resolve(); // Resolve anyway to continue loading
+        resolve();
       };
       document.body.appendChild(script);
     });
@@ -115,13 +129,12 @@ class HotmartPopupLoader {
                 </ul>
               </div>
 
-                <div class="popup-highlight">
+              <div class="popup-highlight">
                 <div class="highlight-glow-effect"></div>
 
                 <div class="highlight-header">
                   <h2 class="highlight-title">DESENVOLVA HABILIDADES NO VIOLÃO</h2>
-                  <p class="highlight-subtitle">Com <strong>Daniel Gehlen</strong> - 25+ anos transformando iniciantes em
-                    músicos</p>
+                  <p class="highlight-subtitle">Com <strong>Daniel Gehlen</strong> - 25+ anos transformando iniciantes em músicos</p>
                 </div>
 
                 <div class="highlight-features">
@@ -144,8 +157,7 @@ class HotmartPopupLoader {
                 </div>
 
                 <div class="highlight-main">
-                  <p><strong>Não é um curso profissionalizante</strong>, mas <span class="highlight-text">a base
-                      perfeita</span> para iniciantes e entusiastas que desejam uma fundação sólida no violão!</p>
+                  <p><strong>Não é um curso profissionalizante</strong>, mas <span class="highlight-text">a base perfeita</span> para iniciantes e entusiastas que desejam uma fundação sólida no violão!</p>
                 </div>
 
                 <div class="highlight-cta">
@@ -155,29 +167,27 @@ class HotmartPopupLoader {
 
                 <div class="highlight-footer">
                   <p>Obrigado por ler até aqui! Estou genuinamente animado para guiá-lo nessa jornada musical.</p>
-                  <p class="highlight-quote">"Um violão, um sonho e a orientação certa - essa é a fórmula para começar."
-                  </p>
+                  <p class="highlight-quote">"Um violão, um sonho e a orientação certa - essa é a fórmula para começar."</p>
                 </div>
               </div>
             </div>
 
-              <button id="hotmart-button-popup" class="popup-img-btn">
-                <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar no HotMart">
-              </button>
+            <button id="hotmart-button-popup" class="popup-img-btn">
+              <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar no HotMart">
+            </button>
 
-              <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K"
-                target="_blank" class="popup-btn btn-primary">
-                Acessar na Hotmart
-              </a>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/o-caminho-para-tocar-violao/T41807997K"
+              target="_blank" class="popup-btn btn-primary">
+              Acessar na Hotmart
+            </a>
 
-              <button id="udemyButtonPopup" class="popup-btn btn-udemy">
-                Acessar Udemy
-              </button>
-              
-              <button id="jornada-musical-btn" class="popup-btn btn-primary">
-                Iniciar Jornada Musical
-              </button>
-            </div>
+            <button id="udemyButtonPopup" class="popup-btn btn-udemy">
+              Acessar Udemy
+            </button>
+            
+            <button id="jornada-musical-btn" class="popup-btn btn-primary">
+              Iniciar Jornada Musical
+            </button>
           </div>
         </div>
       </div>
@@ -198,17 +208,15 @@ class HotmartPopupLoader {
   getPopupJS() {
     return `
     document.addEventListener('DOMContentLoaded', function () {
-      // Verifica se o popup existe
       const popupContainer = document.getElementById('hotmart-popup-container');
       if (!popupContainer) {
         console.error('Popup container não encontrado');
         return;
       }
 
-      let popupShown = false; // Controle de estado do popup
-      let mouseLeaveEnabled = true; // Habilitar/desabilitar detecção de mouseleave
+      let popupShown = false;
+      let mouseLeaveEnabled = true;
 
-      // Função de confetti
       const triggerConfetti = () => {
         if (typeof confetti === 'function') {
           confetti({
@@ -224,7 +232,6 @@ class HotmartPopupLoader {
         }
       };
 
-      // Mostrar/ocultar popup
       const showPopup = () => {
         if (!popupShown) {
           popupContainer.style.display = 'block';
@@ -237,25 +244,18 @@ class HotmartPopupLoader {
         popupContainer.style.display = 'none';
         document.body.style.overflow = 'auto';
         popupShown = false;
-
-        // Reativar a detecção de mouseleave após um pequeno intervalo
         mouseLeaveEnabled = false;
-        setTimeout(() => {
-          mouseLeaveEnabled = true;
-        }, 1000);
+        setTimeout(() => { mouseLeaveEnabled = true; }, 1000);
       };
 
-      // Evento quando mouse sai pelo topo
       document.addEventListener('mouseleave', (e) => {
         if (e.clientY < 0 && mouseLeaveEnabled) {
           showPopup();
         }
       });
 
-      // Fechar ao clicar em qualquer lugar da página
       document.addEventListener('click', (e) => {
         if (popupShown) {
-          // Verificar se o clique foi dentro do conteúdo do popup
           const popupContent = document.querySelector('.popup-content');
           if (popupContent && !popupContent.contains(e.target)) {
             hidePopup();
@@ -263,12 +263,11 @@ class HotmartPopupLoader {
         }
       });
 
-      // Configuração dos botões
       const initButton = (selector, callback) => {
         const btn = document.querySelector(selector);
         if (btn) {
           btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Impedir que o clique no botão feche o popup
+            e.stopPropagation();
             callback(e);
           });
         } else {
@@ -276,7 +275,6 @@ class HotmartPopupLoader {
         }
       };
 
-      // Botão Mostrar Conteúdos
       initButton('#mostrarConteudosPopup', function (e) {
         e.stopPropagation();
         const conteudos = document.getElementById('listaConteudosPopup');
@@ -287,7 +285,6 @@ class HotmartPopupLoader {
         }
       });
 
-      // Impedir que cliques dentro da lista de conteúdos fechem o popup
       const conteudosList = document.getElementById('listaConteudosPopup');
       if (conteudosList) {
         conteudosList.addEventListener('click', (e) => {
@@ -295,12 +292,10 @@ class HotmartPopupLoader {
         });
       }
 
-      // Botão Hotmart
       initButton('#hotmart-button-popup', (e) => {
         e.preventDefault();
         e.stopPropagation();
         triggerConfetti();
-
         setTimeout(() => {
           hidePopup();
           const iframe = document.getElementById('hotmartIframe');
@@ -310,14 +305,12 @@ class HotmartPopupLoader {
             if (modal && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
               new bootstrap.Modal(modal).show();
             } else {
-              console.warn('Bootstrap modal não inicializado, redirecionando para página externa');
               window.open("https://pay.hotmart.com/T41807997K?checkoutMode=2", "_blank");
             }
           }
         }, 800);
       });
 
-      // Botão Udemy
       initButton('#udemyButtonPopup', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -328,12 +321,10 @@ class HotmartPopupLoader {
         }, 1000);
       });
 
-      // Botão Jornada Musical
       initButton('#jornada-musical-btn', (e) => {
         e.preventDefault();
         e.stopPropagation();
         triggerConfetti();
-
         setTimeout(() => {
           hidePopup();
           if (window.matchMedia('(min-width: 768px)').matches) {
@@ -344,7 +335,6 @@ class HotmartPopupLoader {
               if (modal && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
                 new bootstrap.Modal(modal).show();
               } else {
-                console.warn('Bootstrap modal não inicializado, redirecionando');
                 window.location.href = "https://pay.hotmart.com/T41807997K?checkoutMode=2";
               }
             }
@@ -354,7 +344,6 @@ class HotmartPopupLoader {
         }, 800);
       });
 
-      // Impedir propagação de cliques dentro do conteúdo do popup
       const popupContent = document.querySelector('.popup-content');
       if (popupContent) {
         popupContent.addEventListener('click', (e) => {
@@ -363,7 +352,6 @@ class HotmartPopupLoader {
       }
     });
 
-    // Se o DOM já estiver carregado, inicialize imediatamente
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
       const event = new Event('DOMContentLoaded');
       document.dispatchEvent(event);
@@ -372,7 +360,6 @@ class HotmartPopupLoader {
   }
 }
 
-// Inicializa o loader
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => new HotmartPopupLoader());
 } else {
