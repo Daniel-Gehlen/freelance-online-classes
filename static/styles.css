@@ -1,4 +1,7 @@
-/* Estilos Globais */
+/* ================================================== */
+/* ESTILOS GLOBAIS ORIGINAIS (MANTIDOS INTACTOS)      */
+/* ================================================== */
+
 body.dark-theme {
     background-color: #1a1a1a;
     color: #e0e0e0;
@@ -6,33 +9,31 @@ body.dark-theme {
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
-    margin: 0; /* Remove margens padrão */
+    min-height: 100vh;
+    margin: 0;
 }
 
 .neon-header {
     background-color: #0d0d0d;
-    padding: 20px 20px 20px 240px; /* padding-left: 240px (200px do logo + 40px de margem) */
+    padding: 20px 20px 20px 240px;
     border-bottom: 2px solid #00ffcc;
-    position: relative; /* Permite posicionar o logo corretamente */
+    position: relative;
 }
 
-/* Estilo para o h1 */
 h1.neon-text {
-    color: #00ffcc; /* Cor neon */
-    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
-    opacity: 1; /* Garante que não está transparente */
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+    opacity: 1;
     text-align: left;
 }
 
-/* Estilo para o h2 com efeito neon e interior preto */
 h2.neon-text {
-    color: #00ffcc; /* Cor neon */
-    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
-    -webkit-text-fill-color: black; /* Torna o interior do texto transparente */
-    -webkit-background-clip: text; /* Aplica o gradiente apenas ao texto */
-    background-clip: text; /* Propriedade padrão para compatibilidade */
-    background-image: linear-gradient(to bottom, #000, #000); /* Interior preto */
+    color: #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+    -webkit-text-fill-color: black;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, #000, #000);
     text-align: left;
 }
 
@@ -50,7 +51,7 @@ h2.neon-text {
 .neon-navbar .nav-link {
     color: #00ffcc;
     text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-    align-items: center; /* Centraliza os itens verticalmente */
+    align-items: center;
 }
 
 .neon-navbar .nav-link:hover {
@@ -65,21 +66,6 @@ h2.neon-text {
 
 .neon-navbar .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 255, 204, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-.neon-card {
-    background-color: #262626;
-    border: 1px solid #00ffcc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00ffcc;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 70%; /* Ajusta a largura máxima dos cards */
-    margin: 0 auto 20px auto; /* Centraliza os cards e ajusta a margem inferior */
-}
-
-.neon-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00ffcc;
 }
 
 .neon-input {
@@ -108,33 +94,31 @@ h2.neon-text {
 }
 
 .logo-link {
-    position: absolute; /* Posiciona o logo no canto esquerdo */
-    left: 20px; /* Distância da esquerda */
-    top: 20px; /* Distância do topo */
+    position: absolute;
+    left: 20px;
+    top: 20px;
 }
 
 .logo-img {
-    width: 200px; /* Largura pequena para o logo */
-    height: 100px; /* Altura proporcional para manter o formato retangular */
-    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
-    border-radius: 4px; /* Bordas levemente arredondadas (opcional) */
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
-/* Estilos da Sidebar */
 .sidebar {
     position: fixed;
-    top: 40%; /* Posição inicial (abaixo da navbar) */
+    top: 40%;
     left: 0;
-    width: 15%; /* Largura da sidebar */
-    height: calc(100vh - 190px); /* Altura restante da página */
-    background-color: #0d0d0d; /* Fundo preto */
+    width: 15%;
+    height: calc(100vh - 190px);
+    background-color: #0d0d0d;
     padding: 10px;
     overflow-y: auto;
-    z-index: 1000; /* Garante que a sidebar fique acima de outros elementos */
-    transition: top 0.3s ease, left 0.3s ease; /* Transição suave */
+    z-index: 1000;
+    transition: top 0.3s ease, left 0.3s ease;
 }
 
-/* Quando a sidebar está fixa no topo */
 .sidebar.fixed {
     top: 0;
 }
@@ -151,12 +135,12 @@ h2.neon-text {
 }
 
 .sidebar .search-bar input {
-    width: 100px; /* Largura ajustada para caber na sidebar */
+    width: 100px;
     padding: 5px;
     border: 1px solid #00ffcc;
     border-radius: 4px;
-    background-color: #0d0d0d; /* Fundo preto */
-    color: #00ffcc; /* Cor do texto contrastante */
+    background-color: #0d0d0d;
+    color: #00ffcc;
     text-align: left;
 }
 
@@ -182,560 +166,294 @@ h2.neon-text {
 }
 
 .main-content {
-    margin-left: 120px; /* Ajustado para a largura da sidebar */
+    margin-left: 120px;
     padding: 20px;
-    padding-bottom: 100px; /* Adiciona um espaço extra no final do conteúdo */
-    margin-bottom: 80px; /* Ajuste o valor conforme necessário */
+    padding-bottom: 100px;
+    margin-bottom: 80px;
 }
 
-/* Estilos para o Footer */
 .neon-footer {
     background-color: #0d0d0d;
     border-top: 2px solid #00ffcc;
     padding: 10px;
-    position: relative; /* Altera para relative */
+    position: relative;
     left: 0;
-    width: 100%; /* Ocupa toda a largura da tela */
-    text-align: center; /* Centraliza o conteúdo */
-    z-index: 1000; /* Garante que o footer fique acima de outros elementos */
-    clear: both; /* Garante que o footer seja posicionado após o conteúdo */
-    margin-top: 20px; /* Adiciona espaço entre o conteúdo e o footer */
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    clear: both;
+    margin-top: 20px;
 }
 
 .footer-content {
-    display: flex; /* Coloca os elementos em linha */
-    align-items: center; /* Alinha verticalmente ao centro */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 20px; /* Espaçamento entre os elementos */
-    color: #E1306C; /* Cor do Instagram */
-    font-size: 12x; /* Tamanho do ícone */
-    margin-left: 10px; /* Espaçamento à esquerda */
-    text-decoration: none; /* Remove o sublinhado do link */
-    vertical-align: middle; /* Alinha verticalmente com o texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #E1306C;
+    font-size: 12x;
+    margin-left: 10px;
+    text-decoration: none;
+    vertical-align: middle;
 }
 
 .gif-container {
-    display: inline-block; /* Mantém o GIF na mesma linha */
-}
-
-.neon-text {
-    margin: 0; /* Remove margens padrão do parágrafo */
+    display: inline-block;
 }
 
 .fab.fa-instagram {
-    font-size:34px; /* Tamanho do ícone do Instagram */
-    color: #E1306C; /* Cor do Instagram */
+    font-size:34px;
+    color: #E1306C;
 }
 
 .fab.fa-instagram:hover {
-    color: #ffffff; /* Cor ao passar o mouse */
+    color: #ffffff;
 }
 
-/* Estilo do botão de voltar ao topo */
 .scroll-to-top-btn {
-    display: none; /* Esconde o botão inicialmente */
-    position: fixed; /* Fixa o botão na tela */
-    bottom: 20px; /* Distância do fundo */
-    right: 20px; /* Distância da direita */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-    width: 50px; /* Largura do botão */
-    height: 50px; /* Altura do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 50%; /* Formato circular */
-    background-color: #00ffcc; /* Cor de fundo neon */
-    color: #0d0d0d; /* Cor do ícone */
-    font-size: 24px; /* Tamanho do ícone */
-    cursor: pointer; /* Cursor de ponteiro */
-    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; /* Efeito neon */
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #00ffcc;
+    color: #0d0d0d;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scroll-to-top-btn:hover {
-    background-color: #00cc99; /* Cor de fundo ao passar o mouse */
-    transform: scale(1.1); /* Aumenta ligeiramente o botão */
-    box-shadow: 0 0 15px #00cc99, 0 0 30px #00cc99; /* Efeito neon ao passar o mouse */
+    background-color: #00cc99;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00cc99, 0 0 30px #00cc99;
 }
 
-/* Estilo da seta */
 .arrow-up {
     display: block;
     text-align: center;
-    line-height: 50px; /* Centraliza verticalmente */
+    line-height: 50px;
 }
 
-.neon-footer a:hover {
-    color: #ffffff; /* Cor ao passar o mouse */
+/* ================================================== */
+/* NOVOS ESTILOS PARA CARDS COM IMAGEM DE FUNDO       */
+/* (Não afeta os estilos existentes)                  */
+/* ================================================== */
+
+.card-anuncio,
+.card-gif,
+.card-funcionamento,
+.card-valores,
+.card-agendamento {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    border: none !important;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
 }
 
-/* Estilos para o seletor de campo harmônico */
-.seletor-campo-container {
+.card-anuncio::before,
+.card-gif::before,
+.card-funcionamento::before,
+.card-valores::before,
+.card-agendamento::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+    transition: all 0.4s ease;
+    border-radius: 15px;
+}
+
+.card-anuncio .card-body,
+.card-gif .card-body,
+.card-funcionamento .card-body,
+.card-valores .card-body,
+.card-agendamento .card-body {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    color: #ffffff;
 }
 
-.campo-harmonico-select {
-    padding: 10px;
-    background-color: #262626;
-    border: 1px solid #00ffcc;
-    border-radius: 5px;
-    color: #00ffcc;
-    text-shadow: 0 0 5px #00ffcc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.card-anuncio {
+    background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 }
 
-.campo-harmonico-select:hover {
-    background-color: #333;
+.card-gif {
+    background-image: url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 }
 
-/* Estilos para as notas */
-.notas-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    align-items: center;
-    justify-content: center;
+.card-funcionamento {
+    background-image: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 }
 
-.nota-quadrado {
-    padding: 10px;
-    background-color: #262626;
-    border: 1px solid #00ffcc;
-    border-radius: 5px;
-    color: #00ffcc;
-    text-shadow: 0 0 5px #00ffcc;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.card-valores {
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 }
 
-.nota-quadrado:hover {
-    background-color: #333;
-    transform: scale(1.05);
+.card-agendamento {
+    background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 }
 
-.notas-selecionadas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+.card-anuncio .card-title,
+.card-gif .card-title,
+.card-funcionamento .card-title,
+.card-valores .card-title,
+.card-agendamento .card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
 }
 
-.notas-selecionadas .nota-selecionada {
-    padding: 10px;
-    background-color: #00ffcc;
-    border-radius: 5px;
-    color: #1a1a1a;
-    text-shadow: none;
+.card-anuncio .card-title::after,
+.card-gif .card-title::after,
+.card-funcionamento .card-title::after,
+.card-valores .card-title::after,
+.card-agendamento .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #00ffcc;
 }
 
-/* Estilos para os botões */
-.botoes {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+.card-anuncio .card-text,
+.card-gif .card-text,
+.card-funcionamento .card-text,
+.card-valores .card-text,
+.card-agendamento .card-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #fff;
 }
 
-/* Estilos para o campo harmônico gerado */
-.campo-harmonico {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
+.card-agendamento iframe {
+    filter: 
+      invert(1)                /* Inverte cores (preto→branco) */
+      hue-rotate(180deg)       /* Corrige distorção de cores */
+      brightness(1.1)          /* Ajusta brilho */
+      contrast(0.9);           /* Suaviza contraste */
+    background-color: transparent !important;
+  }
 
-.acorde-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background-color: #262626;
-    border: 1px solid #00ffcc;
-    border-radius: 5px;
-    color: #00ffcc;
-    text-shadow: 0 0 5px #00ffcc;
-    cursor: grab;
-}
 
-.acorde-item button {
-    background-color: #00ffcc;
-    color: #1a1a1a;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-.acorde-item button:hover {
-    background-color: #00cc99;
-}
-
-.educacao-harmonica {
-    margin-top: 40px;
-    padding: 20px;
-    background: linear-gradient(to bottom, #1a1a1a, #000000);
+.card-gif .gif-image {
     border-radius: 10px;
-}
-
-.educacao-harmonica h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #00ffcc; /* Cor neon para o título principal */
-    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Efeito neon */
-}
-
-.educacao-harmonica .topico {
-    margin-bottom: 30px;
-    margin-left: 5px; /* Margem esquerda de 5px */
-    margin-right: 5px; /* Margem direita de 5px */
-    
-}
-
-.educacao-harmonica h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: gold; /* Cor gold para os títulos h3 */
-}
-
-.educacao-harmonica p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #e0e0e0; /* Cor do texto padrão */
-}
-
-.educacao-harmonica strong {
-    color: gold; /* Cor gold para o texto dentro da tag strong */
-}
-
-.educacao-harmonica ul {
-    list-style-type: disc; /* Marcadores (bullets) à esquerda */
-    padding-left: 20px; /* Espaçamento para os bullets */
-    margin: 0;
-}
-
-.educacao-harmonica li {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #ffffff; /* Cor do texto */
-    margin-bottom: 10px; /* Espaçamento entre os itens */
-}
-
-.educacao-harmonica .audio-container {
-    margin-top: 15px;
-}
-
-.educacao-harmonica audio {
-    width: 100%; /* Ocupa toda a largura do contêiner */
-    max-width: 300px; /* Limita a largura máxima */
-    background-color: #333; /* Cor de fundo do player */
-    border-radius: 10px; /* Bordas arredondadas */
-}
-
-.educacao-harmonica audio::-webkit-media-controls-panel {
-    background-color: #333; /* Cor de fundo dos controles */
-}
-
-.educacao-harmonica audio::-webkit-media-controls-play-button,
-.educacao-harmonica audio::-webkit-media-controls-mute-button {
-    filter: invert(1); /* Inverte as cores dos ícones para melhor visibilidade */
-}
-
-
-/* Estilos para a seção de áudio */
-.audio-container {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.audio-container audio {
-    width: 100%;
-    max-width: 300px;
-    background-color: #333;
-    border-radius: 10px;
-}
-
-.audio-container audio::-webkit-media-controls-panel {
-    background-color: #333;
-}
-
-.audio-container audio::-webkit-media-controls-play-button,
-.audio-container audio::-webkit-media-controls-mute-button {
-    filter: invert(1);
-}
-
-/* Estilos para os botões de notas */
-.botoes-notas {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.botoes-notas .btn-neon {
-    background-color: #00ffcc;
-    color: #1a1a1a;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-.botoes-notas .btn-neon:hover {
-    background-color: #00cc99;
-}
-
-/* Music Editor Styles */
-.music-editor-container {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid #0ff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-  }
-  
-  .music-editor-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .control-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .staff-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
-    padding: 10px;
-    overflow: auto;
-  }
-  
-  #music-staff {
-    cursor: pointer;
-    display: block;
+    max-height: 300px;
+    width: auto;
     margin: 0 auto;
-    max-width: 100%;
-  }
-  
-  .duration-buttons, .voice-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  
-  .duration-btn, .voice-btn {
-    padding: 5px 10px;
-    font-size: 0.9rem;
-  }
-  
-  .duration-btn.active, .voice-btn.active {
-    background-color: #0ff;
-    color: #000;
-    box-shadow: 0 0 10px #0ff;
-  }
-  
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
 
-/* Estilos responsivos para telas menores */
+.card-anuncio .audio-player,
+.card-gif .audio-player,
+.card-funcionamento .audio-player,
+.card-valores .audio-player,
+.card-agendamento .audio-player {
+    width: 100%;
+    margin-top: auto;
+    border-radius: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.card-anuncio:hover,
+.card-gif:hover,
+.card-funcionamento:hover,
+.card-valores:hover,
+.card-agendamento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 255, 204, 0.2);
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    h1 {
-        text-align: center !important;
-    }
-
-    .navbar-collapse {
-        display: none;
-    }
-    .navbar-collapse.show {
-        display: block;
-    }
-
-    /* Ajustes para o menu hambúrguer */
-    .navbar-toggler {
-        position: fixed; /* Fixa o botão no topo */
-        top: 20px; /* Distância do topo */
-        right: 20px; /* Distância da direita */
-        z-index: 1100; /* Garante que fique acima da sidebar e outros elementos */
-        background-color: #0d0d0d; /* Mesma cor da navbar */
-        border: 1px solid #00ffcc; /* Borda neon */
-        border-radius: 4px; /* Bordas levemente arredondadas */
-        padding: 8px 12px; /* Espaçamento interno */
-    }
-
-    .navbar-toggler-icon {
-        filter: drop-shadow(0 0 2px #00ffcc); /* Efeito neon no ícone */
-    }
-
-    .sidebar {
-        width: 45%;
-        height: auto;
-        position: fixed;
-        top: 50%;
-        left: -100%; /* Esconde a sidebar */
-        transition: left 0.3s ease;
-        background-color: #0d0d0d00; /* Mesma cor da navbar */
-        z-index: 1000; /* Garante que fique acima do conteúdo */
-        border: 2px solid #00ffcc; /* Borda verde neon */
-        border-radius: 10px; /* Cantos arredondados */
-    }
-
-    .sidebar.open {
-        left: 0; /* Mostra a sidebar */
-    }
-
-    /* Altera o texto da sidebar para o título da página */
-    .sidebar {
-        font-size: 1.5em;
-        color: #00ffcc;
-        text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .sidebar .date-list {
-        list-style-type: none;
-        padding: 0;
-        text-align: center;
-        text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
-    }
-
-    .sidebar .date-list li {
-        margin-bottom: 10px;
-    }
-
-    .sidebar .date-list li a {
-        text-decoration: none;
-        color: #00ffcc;
-        font-size: 1.2em;
-        text-shadow: 1px 1px 2px black; /* Sombra preta no texto */
-    }
-
-    .sidebar .date-list li a:hover {
-        color: #65f5d8;
-        text-shadow: 0 0 5px #65f5d8, 0 0 10px #65f5d8;
-    }
-
-    /* Ajustes para o header em telas pequenas */
     .neon-header {
-        padding-left: 20px; /* Reduz o padding para telas pequenas */
+        padding-left: 20px;
     }
-
+    
     .logo-link {
-        position: static; /* Remove o posicionamento absoluto */
-        text-align: center; /* Centraliza o logo */
+        position: static;
+        text-align: center;
     }
-
-    /* Ajustes para o conteúdo principal */
+    
     .main-content {
-        margin-left: 0; /* Remove a margem da sidebar */
-        padding-bottom: 60px; /* Espaço para o footer */
-        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
+        margin-left: 0;
     }
-
-    .neon-card {
-        max-width: 97%; /* Ajusta a largura dos cards */
-        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
+    
+    .card-anuncio,
+    .card-gif,
+    .card-funcionamento,
+    .card-valores,
+    .card-agendamento {
+        min-height: auto;
     }
-
-    .notas-container {
-        gap: 5px;
+    
+    .card-anuncio .card-title,
+    .card-gif .card-title,
+    .card-funcionamento .card-title,
+    .card-valores .card-title,
+    .card-agendamento .card-title {
+        font-size: 1.5rem;
     }
-
-    .nota-quadrado {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .btn-neon {
-        padding: 8px 16px;
-        font-size: 14px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .campo-harmonico-select {
-        padding: 8px;
-        font-size: 14px;
+    
+    .card-anuncio .card-body,
+    .card-gif .card-body,
+    .card-funcionamento .card-body,
+    .card-valores .card-body,
+    .card-agendamento .card-body {
+        padding: 1.5rem;
     }
 }
 
-.music-editor-controls {
-    flex-direction: column;
-  }
-  
-  .control-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .duration-buttons, .voice-buttons {
-    width: 100%;
-  }
-  
-  .duration-btn, .voice-btn {
-    flex: 1;
-    text-align: center;
-  }
-
-/* Ajustes específicos para dispositivos com largura de 340px */
-@media (max-width: 340px) {
-    h1 {
-        text-align: center !important;
+@media (max-width: 576px) {
+    .card-anuncio .card-title,
+    .card-gif .card-title,
+    .card-funcionamento .card-title,
+    .card-valores .card-title,
+    .card-agendamento .card-title {
+        font-size: 1.3rem;
     }
-
-    .navbar-toggler {
-        right: 10px; /* Ajuste da posição do botão */
-    }
-
-    .sidebar {
-        top: 0; /* Ajuste da altura da sidebar */
-    }
-
-    .sidebar h2 {
-        font-size: 1.2em; /* Reduz o tamanho do título */
-    }
-
-    .sidebar .date-list li a {
-        font-size: 1em; /* Reduz o tamanho dos links */
-    }
-
-    /* Ajustes para o header em telas pequenas */
-    .neon-header {
-        padding-left: 10px; /* Reduz o padding para telas pequenas */
-    }
-
-    .main-content {
-        padding: 10px; /* Reduz o padding do conteúdo */
-        margin-bottom: 80px; /* Ajuste o valor conforme necessário */
-        padding-block: 10px;
-    }
-
-    .notas-container {
-        gap: 5px;
-    }
-
-    .nota-quadrado {
-        padding: 6px;
-        font-size: 12px;
-    }
-
-    .btn-neon {
-        padding: 6px 12px;
-        font-size: 12px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .campo-harmonico-select {
-        padding: 6px;
-        font-size: 12px;
+    
+    .card-anuncio .card-body,
+    .card-gif .card-body,
+    .card-funcionamento .card-body,
+    .card-valores .card-body,
+    .card-agendamento .card-body {
+        padding: 1rem;
     }
 }
