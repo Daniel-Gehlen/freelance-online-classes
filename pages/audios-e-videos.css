@@ -1,0 +1,162 @@
+/* ================================================== */
+/* ESTILOS ESPECÍFICOS PARA PÁGINA DE ÁUDIOS/VIDEOS   */
+/* ================================================== */
+
+/* Container principal */
+.main-content {
+  padding: 20px;
+}
+
+/* Cards de seção */
+.card.neon-card {
+  background-color: rgba(13, 13, 13, 0.7);
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card.neon-card:hover {
+  border-color: var(--neon-color);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+/* Títulos das seções */
+.card-title.neon-text {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card-title.neon-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: var(--neon-color);
+}
+
+/* Textos */
+.card-text {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Cards de áudio/vídeo individuais */
+.card.neon-card .card.neon-card {
+  background-color: rgba(26, 26, 26, 0.9);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.card.neon-card .card-title.neon-text {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-bottom: 0;
+}
+
+.card.neon-card .card-title.neon-text::after {
+  display: none;
+}
+
+/* Player de áudio */
+audio {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgba(13, 13, 13, 0.7);
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+  filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(0.9);
+}
+
+/* Iframes de vídeo */
+.ratio-16x9 {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ratio-16x9 iframe {
+  filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9);
+}
+
+/* Seção de materiais didáticos */
+.card.neon-card.text-center .card-title {
+  text-align: center !important;
+}
+
+.card.neon-card.text-center .card-text {
+  margin-bottom: 1.5rem;
+}
+
+/* Botões */
+.btn-primary {
+  background-color: var(--neon-color);
+  color: #0d0d0d;
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00cc99;
+  transform: translateY(-2px);
+}
+
+/* Lista de conteúdos */
+.list-unstyled {
+  text-align: left;
+  color: #fff;
+}
+
+.list-unstyled li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.list-unstyled li::before {
+  content: "•";
+  color: var(--neon-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card-title.neon-text {
+      font-size: 1.6rem;
+  }
+  
+  .card-text {
+      font-size: 1rem;
+  }
+  
+  .card.neon-card .card-title.neon-text {
+      font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-title.neon-text {
+      font-size: 1.4rem;
+  }
+  
+  .main-content {
+      padding: 15px;
+  }
+}

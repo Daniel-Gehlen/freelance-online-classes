@@ -43,8 +43,10 @@
         <div class="logo-link">
             <img src="assets/logo.jpg" alt="Logo" class="logo-img" onerror="this.src=''; this.alt='';">
         </div>
-        <h1 class="neon-text">🎵 Aulas Online de Violão, Guitarra e Ukulele 🎵</h1>
-        <p>Aprenda no seu ritmo, com aulas personalizadas e flexíveis!</p>
+        <div class="header-content">
+            <h1 class="neon-text">🎵 Aulas Online de Violão, Guitarra e Ukulele 🎵</h1>
+            <p>Aprenda no seu ritmo, com aulas personalizadas e flexíveis!</p>
+        </div>
     </header>
 
     <!-- Navbar -->
@@ -89,14 +91,16 @@
 
     <main class="container my-5">
         <!-- Seção de Anúncio -->
-        <section class="card neon-card mb-5 card-anuncio">
+        <section class="card neon-card mb-5 welcome" style="background-image: url('assets/mic.png')">
             <div class="card-body">
-                <h2 class="card-title neon-text">🎵 Saudações Musicais</h2>
-                <p class="card-text neon-text">INSCRIÇÕES ABERTAS</p>
-                <p class="card-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100%
-                    adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem
-                    perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e
-                    comece já sua jornada musical!</p>
+                <div class="welcome-content">
+                    <h2 class="welcome-title">🎵 Saudações Musicais</h2>
+                    <p class="welcome-subtitle">INSCRIÇÕES ABERTAS</p>
+                    <p class="welcome-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100%
+                        adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem
+                        perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e
+                        comece já sua jornada musical!</p>
+                </div>
                 <audio controls class="audio-player">
                     <source src="audio/anuncio-inicio-com-fundo-musical.m4a" type="audio/mp4">
                     Seu navegador não suporta o elemento de áudio.
@@ -105,7 +109,7 @@
         </section>
 
         <!-- Card do GIF -->
-        <section class="card neon-card mb-5 card-gif">
+        <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/studio.png')">
             <div class="card-body">
                 <img src="assets/aula-online.gif" alt="Aulas Online" class="img-fluid gif-image">
                 <audio controls class="audio-player">
@@ -115,17 +119,18 @@
             </div>
         </section>
 
-        <!-- Seção de Funcionamento -->
-        <section class="card neon-card mb-5 card-funcionamento">
+        <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/neon.png')">
             <div class="card-body">
                 <h2 class="card-title neon-text">Como Funcionam as Aulas?</h2>
-                <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com
-                    <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que
-                    você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a
-                    <strong>teoria e técnica</strong> das músicas. Temos material didático pago à parte fundamental para
-                    começar
-                    (vídeos e partituras). Convide amigos para aprenderem juntos! 😉
-                </p>
+                <div class="text-container">
+                    <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com
+                        <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que
+                        você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a
+                        <strong>teoria e técnica</strong> das músicas. Temos material didático pago à parte fundamental
+                        para
+                        começar (vídeos e partituras). Convide amigos para aprenderem juntos! 😉
+                    </p>
+                </div>
                 <audio controls class="audio-player">
                     <source src="audio/explications.mp3" type="audio/mp4">
                     Seu navegador não suporta o elemento de áudio.
@@ -134,38 +139,42 @@
         </section>
 
         <!-- Seção de Valores -->
-        <section class="card neon-card mb-5 card-valores">
+        <section class="card neon-card mb-5 card-valores" style="background-image: url('assets/laptops.png')">
             <div class="card-body">
                 <h2 class="card-title neon-text">Valores da Mensalidade</h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="card-subtitle">Modalidade Anual (12 meses)</h3>
-                        <ul class="card-list">
-                            <li><strong>Aula Individual:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com desconto)
-                            </li>
-                            <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno (<strong>R$ 225/mês</strong> com
-                                desconto)</li>
-                            <li><strong>Encontros Musicais em janeiro e fevereiro incluídos 🎉</strong></li>
-                            <li><strong>Férias de duas semanas em julho e dezembro 🏖️</strong></li>
-                        </ul>
+                        <div class="modalidade-container">
+                            <h3 class="card-subtitle">Modalidade Anual (12 meses)</h3>
+                            <ul class="card-list">
+                                <li><strong>Aula Individual:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com
+                                    desconto)</li>
+                                <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno (<strong>R$ 225/mês</strong>
+                                    com desconto)</li>
+                                <li><strong>Encontros Musicais em janeiro e fevereiro incluídos 🎉</strong></li>
+                                <li><strong>Férias de duas semanas em julho e dezembro 🏖️</strong></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="card-subtitle">Modalidade Mensal</h3>
-                        <ul class="card-list">
-                            <li><strong>Aula Individual:</strong> R$ 330/mês</li>
-                            <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno</li>
-                            <li><strong>Observações:</strong></li>
-                            <li>Sem desconto de pontualidade</li>
-                            <li>Sem Encontros Musicais incluídos</li>
-                            <li>Sem mensalidade em janeiro e fevereiro</li>
-                        </ul>
+                        <div class="modalidade-container">
+                            <h3 class="card-subtitle">Modalidade Mensal</h3>
+                            <ul class="card-list">
+                                <li><strong>Aula Individual:</strong> R$ 330/mês</li>
+                                <li><strong>Aula em Dupla:</strong> R$ 275/mês por aluno</li>
+                                <li><strong>Observações:</strong></li>
+                                <li>Sem desconto de pontualidade</li>
+                                <li>Sem Encontros Musicais incluídos</li>
+                                <li>Sem mensalidade em janeiro e fevereiro</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Seção de Agendamento -->
-        <section class="card neon-card mb-5 card-agendamento">
+        <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/laptop.png')">
             <div class="card-body">
                 <h2 class="card-title neon-text">Agende sua Aula Experimental</h2>
                 <p class="card-text neon-text">🎸 Vagas limitadas! Reserve agora seu horário.</p>
