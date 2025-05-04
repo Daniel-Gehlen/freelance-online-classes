@@ -1,0 +1,626 @@
+/* ================================================== */
+/* ESTILOS AVANÇADOS PARA CONTRAPONTO MODAL           */
+/* COM FOCO EM ACESSIBILIDADE                         */
+/* ================================================== */
+
+/* Reset de estilos e base acessível */
+:root {
+  --neon-color: #00ffcc;
+  --background-dark: #1a1a1a;
+  --background-darker: #0d0d0d;
+  --text-light: #f8f9fa;
+  --text-lighter: #ffffff;
+  --text-gray: #e0e0e0;
+  --primary-font: 'Roboto', sans-serif;
+  --heading-font: 'Orbitron', sans-serif;
+  --focus-outline: 3px solid #4d90fe;
+  --focus-outline-offset: 3px;
+}
+
+/* Base de acessibilidade */
+body.dark-theme {
+  font-family: var(--primary-font);
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--background-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Títulos acessíveis */
+.neon-text {
+  font-family: var(--heading-font);
+  color: var(--text-lighter);
+  position: relative;
+}
+
+h1.neon-text {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2.neon-text {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+h3.neon-text {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Efeitos visuais com contraste adequado */
+.neon-text::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-color), transparent);
+  opacity: 0.7;
+}
+
+/* Foco acessível para todos os elementos interativos */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Header acessível */
+.neon-header {
+  background-color: var(--background-darker);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.logo-img {
+  max-height: 100px;
+  width: auto;
+  border-radius: 50%;
+  border: 2px solid var(--neon-color);
+}
+
+/* Navbar acessível */
+.neon-navbar {
+  background-color: var(--background-darker) !important;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.navbar-nav .nav-link {
+  color: var(--text-light);
+  font-family: var(--heading-font);
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--neon-color);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--neon-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  width: 70%;
+}
+
+/* Seções educacionais acessíveis */
+.educacao-harmonica {
+  background-color: var(--background-darker);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.topico {
+  margin-bottom: 2rem;
+}
+
+.topico h3 {
+  color: var(--neon-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+.topico p,
+.topico li {
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.topico ul {
+  padding-left: 1.5rem;
+}
+
+.topico li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.topico li::before {
+  content: '•';
+  color: var(--neon-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Editor de partitura acessível */
+.music-editor-container {
+  background-color: var(--background-darker);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.music-editor-controls {
+  margin-bottom: 1.5rem;
+}
+
+.control-group {
+  margin-bottom: 1rem;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--neon-color);
+  font-family: var(--heading-font);
+}
+
+.staff-container {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Botões acessíveis */
+.btn-neon {
+  background-color: var(--neon-color);
+  color: var(--background-darker);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--heading-font);
+  margin: 0.25rem;
+  min-width: 120px;
+}
+
+.btn-neon:hover,
+.btn-neon:focus {
+  background-color: var(--text-lighter);
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 255, 204, 0.3);
+}
+
+.btn-neon:active {
+  transform: translateY(0);
+}
+
+.duration-buttons,
+.voice-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.duration-btn,
+.voice-btn {
+  flex: 1 1 auto;
+}
+
+.active {
+  background-color: var(--text-lighter);
+  color: var(--background-darker);
+  box-shadow: 0 0 0 2px var(--neon-color);
+}
+
+/* Footer acessível */
+.neon-footer {
+  background-color: var(--background-darker);
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gif-container {
+  margin-bottom: 1rem;
+}
+
+.neon-footer p {
+  margin-bottom: 1rem;
+}
+
+.neon-footer a {
+  color: var(--neon-color);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.neon-footer a:hover,
+.neon-footer a:focus {
+  color: var(--text-lighter);
+  transform: scale(1.2);
+}
+
+/* Chatbot acessível */
+.chat-icon {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--neon-color);
+  color: var(--background-darker);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.chat-icon:hover,
+.chat-icon:focus {
+  transform: scale(1.1);
+}
+
+.chat-icon .tooltip {
+  position: absolute;
+  right: 70px;
+  background-color: var(--background-darker);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.chat-icon:hover .tooltip,
+.chat-icon:focus .tooltip {
+  opacity: 1;
+}
+
+.chat-modal {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 350px;
+  max-width: 90%;
+  background-color: var(--background-darker);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  border: 1px solid var(--neon-color);
+}
+
+.chat-header {
+  padding: 1rem;
+  background-color: rgba(0, 255, 204, 0.1);
+  border-bottom: 1px solid var(--neon-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.chat-header span {
+  font-family: var(--heading-font);
+  color: var(--neon-color);
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-chat:hover,
+.close-chat:focus {
+  color: var(--neon-color);
+}
+
+.chat-box {
+  padding: 1rem;
+  height: 300px;
+  overflow-y: auto;
+  background-color: var(--background-dark);
+}
+
+.input-container {
+  padding: 1rem;
+  display: flex;
+  border-top: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.input-container input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  border-radius: 0.25rem;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+.input-container button {
+  margin-left: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--neon-color);
+  color: var(--background-darker);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.input-container button:hover,
+.input-container button:focus {
+  background-color: var(--text-lighter);
+}
+
+/* Age Gate acessível */
+#age-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#age-gate-content {
+  background-color: var(--background-darker);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid var(--neon-color);
+}
+
+#age-gate h2 {
+  color: var(--neon-color);
+  margin-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+#age-gate p {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.age-btn {
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#confirm-age {
+  background-color: var(--neon-color);
+  color: var(--background-darker);
+}
+
+#deny-age {
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--text-light);
+}
+
+#confirm-age:hover,
+#confirm-age:focus {
+  background-color: var(--text-lighter);
+}
+
+#deny-age:hover,
+#deny-age:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--neon-color);
+  border-color: var(--neon-color);
+}
+
+#age-gate small {
+  display: block;
+  margin-top: 1rem;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  h1.neon-text {
+    font-size: 2rem;
+  }
+  
+  h2.neon-text {
+    font-size: 1.5rem;
+  }
+  
+  .btn-neon {
+    padding: 0.6rem 1.2rem;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1.neon-text {
+    font-size: 1.8rem;
+  }
+  
+  h2.neon-text {
+    font-size: 1.3rem;
+  }
+  
+  .educacao-harmonica {
+    padding: 1.5rem;
+  }
+  
+  .duration-buttons,
+  .voice-buttons {
+    flex-direction: column;
+  }
+  
+  .duration-btn,
+  .voice-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  h1.neon-text {
+    font-size: 1.5rem;
+  }
+  
+  h2.neon-text {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem;
+  }
+  
+  .chat-icon {
+    width: 50px;
+    height: 50px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .chat-modal {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Classes de utilidade para acessibilidade */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--neon-color);
+  color: var(--background-darker);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Animações acessíveis */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Contraste aprimorado para elementos interativos */
+button:not(.btn-neon),
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Estilos para o canvas da partitura */
+#music-staff {
+  background-color: white;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Melhorias para leitores de tela */
+[aria-hidden="true"] {
+  display: none;
+}
+
+/* Indicadores visuais para estados */
+[aria-current="page"],
+[aria-selected="true"] {
+  font-weight: bold;
+  color: var(--neon-color);
+}
+
+/* Estilos para o modal de hotmart */
+.popup-hotmart {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-hotmart-content {
+  background-color: var(--background-darker);
+  border: 2px solid var(--neon-color);
+  color: var(--text-light);
+}
+
+.popup-hotmart-close {
+  color: var(--text-light);
+}
+
+.popup-hotmart-close:hover,
+.popup-hotmart-close:focus {
+  color: var(--neon-color);
+}
