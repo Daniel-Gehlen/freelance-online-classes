@@ -22,15 +22,90 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Constants
   const LINE_SPACING = 10;
-  const NOTE_FREQUENCIES = {
-    'C3': 130.81, 'C#3': 138.59, 'D3': 146.83, 'D#3': 155.56, 'E3': 164.81, 'F3': 174.61,
-    'F#3': 185.00, 'G3': 196.00, 'G#3': 207.65, 'A3': 220.00, 'A#3': 233.08, 'B3': 246.94,
-    'C4': 261.63, 'C#4': 277.18, 'D4': 293.66, 'D#4': 311.13, 'E4': 329.63, 'F4': 349.23,
-    'F#4': 369.99, 'G4': 392.00, 'G#4': 415.30, 'A4': 440.00, 'A#4': 466.16, 'B4': 493.88,
-    'C5': 523.25, 'C#5': 554.37, 'D5': 587.33, 'D#5': 622.25, 'E5': 659.25, 'F5': 698.46,
-    'F#5': 739.99, 'G5': 783.99, 'G#5': 830.61, 'A5': 880.00, 'A#5': 932.33, 'B5': 987.77,
-    'C6': 1046.50
+
+  // Complete note mapping including enharmonic equivalents
+  const ALL_NOTES = [
+    // Octave 2
+    'C2', 'C#2', 'Db2', 'D2', 'D#2', 'Eb2', 'E2', 'F2', 'F#2', 'Gb2', 'G2', 'G#2', 'Ab2', 'A2', 'A#2', 'Bb2', 'B2',
+    // Octave 3
+    'C3', 'C#3', 'Db3', 'D3', 'D#3', 'Eb3', 'E3', 'F3', 'F#3', 'Gb3', 'G3', 'G#3', 'Ab3', 'A3', 'A#3', 'Bb3', 'B3',
+    // Octave 4
+    'C4', 'C#4', 'Db4', 'D4', 'D#4', 'Eb4', 'E4', 'F4', 'F#4', 'Gb4', 'G4', 'G#4', 'Ab4', 'A4', 'A#4', 'Bb4', 'B4',
+    // Octave 5
+    'C5', 'C#5', 'Db5', 'D5', 'D#5', 'Eb5', 'E5', 'F5', 'F#5', 'Gb5', 'G5', 'G#5', 'Ab5', 'A5', 'A#5', 'Bb5', 'B5',
+    // Octave 6
+    'C6', 'C#6', 'Db6', 'D6', 'D#6', 'Eb6', 'E6', 'F6', 'F#6', 'Gb6', 'G6', 'G#6', 'Ab6', 'A6', 'A#6', 'Bb6', 'B6',
+    // Octave 7
+    'C7'
+  ];
+
+  // Chromatic scale with sharps (for moving up)
+  const CHROMATIC_SCALE_SHARPS = [
+    'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'
+  ];
+
+  // Chromatic scale with flats (for moving down)
+  const CHROMATIC_SCALE_FLATS = [
+    'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'
+  ];
+
+  // Enharmonic equivalents mapping
+  const ENHARMONIC_EQUIVALENTS = {
+    'C#2': 'Db2', 'Db2': 'C#2', 'D#2': 'Eb2', 'Eb2': 'D#2', 'F#2': 'Gb2', 'Gb2': 'F#2',
+    'G#2': 'Ab2', 'Ab2': 'G#2', 'A#2': 'Bb2', 'Bb2': 'A#2',
+    'C#3': 'Db3', 'Db3': 'C#3', 'D#3': 'Eb3', 'Eb3': 'D#3', 'F#3': 'Gb3', 'Gb3': 'F#3',
+    'G#3': 'Ab3', 'Ab3': 'G#3', 'A#3': 'Bb3', 'Bb3': 'A#3',
+    'C#4': 'Db4', 'Db4': 'C#4', 'D#4': 'Eb4', 'Eb4': 'D#4', 'F#4': 'Gb4', 'Gb4': 'F#4',
+    'G#4': 'Ab4', 'Ab4': 'G#4', 'A#4': 'Bb4', 'Bb4': 'A#4',
+    'C#5': 'Db5', 'Db5': 'C#5', 'D#5': 'Eb5', 'Eb5': 'D#5', 'F#5': 'Gb5', 'Gb5': 'F#5',
+    'G#5': 'Ab5', 'Ab5': 'G#5', 'A#5': 'Bb5', 'Bb5': 'A#5',
+    'C#6': 'Db6', 'Db6': 'C#6', 'D#6': 'Eb6', 'Eb6': 'D#6', 'F#6': 'Gb6', 'Gb6': 'F#6',
+    'G#6': 'Ab6', 'Ab6': 'G#6', 'A#6': 'Bb6', 'Bb6': 'A#6'
   };
+
+  // Note frequencies (including both sharp and flat versions)
+  const NOTE_FREQUENCIES = {
+    'C2': 65.41, 'C#2': 69.30, 'Db2': 69.30, 'D2': 73.42, 'D#2': 77.78, 'Eb2': 77.78,
+    'E2': 82.41, 'F2': 87.31, 'F#2': 92.50, 'Gb2': 92.50, 'G2': 98.00, 'G#2': 103.83,
+    'Ab2': 103.83, 'A2': 110.00, 'A#2': 116.54, 'Bb2': 116.54, 'B2': 123.47,
+
+    'C3': 130.81, 'C#3': 138.59, 'Db3': 138.59, 'D3': 146.83, 'D#3': 155.56, 'Eb3': 155.56,
+    'E3': 164.81, 'F3': 174.61, 'F#3': 185.00, 'Gb3': 185.00, 'G3': 196.00, 'G#3': 207.65,
+    'Ab3': 207.65, 'A3': 220.00, 'A#3': 233.08, 'Bb3': 233.08, 'B3': 246.94,
+
+    'C4': 261.63, 'C#4': 277.18, 'Db4': 277.18, 'D4': 293.66, 'D#4': 311.13, 'Eb4': 311.13,
+    'E4': 329.63, 'F4': 349.23, 'F#4': 369.99, 'Gb4': 369.99, 'G4': 392.00, 'G#4': 415.30,
+    'Ab4': 415.30, 'A4': 440.00, 'A#4': 466.16, 'Bb4': 466.16, 'B4': 493.88,
+
+    'C5': 523.25, 'C#5': 554.37, 'Db5': 554.37, 'D5': 587.33, 'D#5': 622.25, 'Eb5': 622.25,
+    'E5': 659.25, 'F5': 698.46, 'F#5': 739.99, 'Gb5': 739.99, 'G5': 783.99, 'G#5': 830.61,
+    'Ab5': 830.61, 'A5': 880.00, 'A#5': 932.33, 'Bb5': 932.33, 'B5': 987.77,
+
+    'C6': 1046.50, 'C#6': 1108.73, 'Db6': 1108.73, 'D6': 1174.66, 'D#6': 1244.51, 'Eb6': 1244.51,
+    'E6': 1318.51, 'F6': 1396.91, 'F#6': 1479.98, 'Gb6': 1479.98, 'G6': 1567.98, 'G#6': 1661.22,
+    'Ab6': 1661.22, 'A6': 1760.00, 'A#6': 1864.66, 'Bb6': 1864.66, 'B6': 1975.53,
+
+    'C7': 2093.00
+  };
+
+  // Diatonic notes (without accidentals) for staff positioning
+  const DIATONIC_NOTES = [
+    'C2', 'D2', 'E2', 'F2', 'G2', 'A2', 'B2',
+    'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3',
+    'C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4',
+    'C5', 'D5', 'E5', 'F5', 'G5', 'A5', 'B5',
+    'C6', 'D6', 'E6', 'F6', 'G6', 'A6', 'B6',
+    'C7'
+  ];
+
+  // Staff note mapping - defines which notes correspond to each line/space
+  // In treble clef:
+  // - Lines from bottom to top: E4, G4, B4, D5, F5
+  // - Spaces from bottom to top: F4, A4, C5, E5
+  const STAFF_NOTES = [
+    'F5', 'E5', 'D5', 'C5', 'B4', 'A4', 'G4', 'F4', 'E4', 'D4', 'C4', 'B3', 'A3', 'G3', 'F3', 'E3', 'D3', 'C3'
+  ];
+
   const NOTE_DURATIONS = {
     'whole': 2.0,
     'half': 1.0,
@@ -60,14 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
     'z': 'C3', 'x': 'D3', 'c': 'E3', 'v': 'F3', 'b': 'G3', 'n': 'A3', 'm': 'B3',
     ',': 'C#3', '.': 'D#3', '/': 'F#3', '[': 'F#5', ']': 'G5', '\\': 'G#5'
   };
-
-  // Staff note mapping - defines which notes correspond to each line/space
-  // In treble clef:
-  // - Lines from bottom to top: E4, G4, B4, D5, F5
-  // - Spaces from bottom to top: F4, A4, C5, E5
-  const STAFF_NOTES = [
-    'F5', 'E5', 'D5', 'C5', 'B4', 'A4', 'G4', 'F4', 'E4', 'D4', 'C4', 'B3', 'A3', 'G3', 'F3', 'E3', 'D3', 'C3'
-  ];
 
   // Initialize AudioContext
   function initAudioContext() {
@@ -157,6 +224,21 @@ document.addEventListener('DOMContentLoaded', function () {
     ctx.stroke();
   }
 
+  // Draw accidental symbol next to a note
+  function drawAccidental(x, y, noteValue, color) {
+    ctx.font = '16px serif';
+    ctx.fillStyle = color;
+
+    // Check if note has an accidental
+    if (noteValue.includes('#')) {
+      // Draw sharp symbol
+      ctx.fillText('♯', x - 15, y + 5);
+    } else if (noteValue.includes('b')) {
+      // Draw flat symbol
+      ctx.fillText('♭', x - 15, y + 5);
+    }
+  }
+
   // Draw a preview note at cursor position
   function drawPreviewNote() {
     const yPos = noteValueToYPosition(currentNoteValue);
@@ -172,6 +254,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Draw a semi-transparent note
     ctx.globalAlpha = 0.5;
+
+    // Draw accidental if needed
+    if (currentNoteValue.includes('#') || currentNoteValue.includes('b')) {
+      drawAccidental(cursorPosition.x, yPos, currentNoteValue, selectedVoice === 'first' ? '#000' : '#0066cc');
+    }
 
     // Draw note head
     ctx.beginPath();
@@ -239,6 +326,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Draw ledger lines if needed
     if (y < staffTop || y > staffBottom) {
       drawLedgerLines(x, y, voiceColor);
+    }
+
+    // Draw accidental if needed
+    if (note.value.includes('#') || note.value.includes('b')) {
+      drawAccidental(x, y, note.value, voiceColor);
     }
 
     // Draw note head
@@ -423,36 +515,45 @@ document.addEventListener('DOMContentLoaded', function () {
   function noteValueToYPosition(noteValue) {
     const startY = canvas.height / 2 - LINE_SPACING * 2; // Top line of staff
 
-    // Find the index of the note in our STAFF_NOTES array
-    const noteIndex = STAFF_NOTES.indexOf(noteValue);
+    // Get the base note (without accidentals)
+    const baseNote = noteValue.replace(/#|b/, '');
 
-    if (noteIndex === -1) {
-      // If note not found in our mapping, calculate position based on octave and note
-      const noteNames = Object.keys(NOTE_FREQUENCIES);
-      const noteIdx = noteNames.indexOf(noteValue);
+    // Find the index of the base note in our STAFF_NOTES array
+    const noteIndex = STAFF_NOTES.indexOf(baseNote);
 
-      if (noteIdx === -1) return startY; // Default to top line if note not found
-
-      // Find the closest note in our STAFF_NOTES array
-      let closestNote = STAFF_NOTES[0];
-      let closestDistance = Math.abs(noteNames.indexOf(STAFF_NOTES[0]) - noteIdx);
-
-      for (const staffNote of STAFF_NOTES) {
-        const distance = Math.abs(noteNames.indexOf(staffNote) - noteIdx);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestNote = staffNote;
-        }
-      }
-
-      const closestNoteIndex = STAFF_NOTES.indexOf(closestNote);
-      const halfStepsAway = noteIdx - noteNames.indexOf(closestNote);
-
-      return startY + (closestNoteIndex * LINE_SPACING / 2) + (halfStepsAway * LINE_SPACING / 2);
+    if (noteIndex !== -1) {
+      // Each note is spaced by half a line (LINE_SPACING / 2)
+      return startY + (noteIndex * LINE_SPACING / 2);
     }
 
-    // Each note is spaced by half a line (LINE_SPACING / 2)
-    return startY + (noteIndex * LINE_SPACING / 2);
+    // If the note is not in our standard staff mapping, calculate position based on octave and note name
+    const noteName = baseNote.charAt(0);
+    const octave = parseInt(baseNote.charAt(1));
+
+    // Calculate position based on note name and octave
+    // Each octave has 7 diatonic notes (C through B)
+    // Each note is spaced by LINE_SPACING / 2
+
+    // Start with a reference note (e.g., C4 which is middle C)
+    const referenceNoteY = startY + (STAFF_NOTES.indexOf('C4') * LINE_SPACING / 2);
+
+    // Calculate the number of diatonic steps from C4
+    const noteOrder = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+    const referenceOctave = 4;
+    const referenceNoteIndex = noteOrder.indexOf('C');
+    const targetNoteIndex = noteOrder.indexOf(noteName);
+
+    if (targetNoteIndex === -1) return referenceNoteY; // Default if note name is invalid
+
+    // Calculate steps: 7 notes per octave
+    const octaveSteps = (octave - referenceOctave) * 7;
+    const noteSteps = targetNoteIndex - referenceNoteIndex;
+    const totalSteps = octaveSteps + noteSteps;
+
+    // Each diatonic step is LINE_SPACING / 2 * 2 (a whole step)
+    // But some steps are half steps (E-F, B-C), so we need to adjust
+    // For simplicity, we'll use an average step size
+    return referenceNoteY - (totalSteps * LINE_SPACING / 2);
   }
 
   // Convert Y position to note value
@@ -462,70 +563,198 @@ document.addEventListener('DOMContentLoaded', function () {
     // Calculate the index in the STAFF_NOTES array
     const noteIndex = Math.round((y - startY) / (LINE_SPACING / 2));
 
-    // Ensure index is within bounds
-    if (noteIndex < 0) {
-      return STAFF_NOTES[0]; // Return highest note if above staff
-    } else if (noteIndex >= STAFF_NOTES.length) {
-      return STAFF_NOTES[STAFF_NOTES.length - 1]; // Return lowest note if below staff
+    // Ensure index is within bounds of our standard staff notes
+    if (noteIndex >= 0 && noteIndex < STAFF_NOTES.length) {
+      return STAFF_NOTES[noteIndex];
     }
 
-    return STAFF_NOTES[noteIndex];
+    // If we're outside the standard staff range, calculate the note based on position
+    // Each LINE_SPACING/2 is one diatonic step
+    const stepsFromTopLine = Math.round((y - startY) / (LINE_SPACING / 2));
+
+    // Reference note (F5 is the top line of the treble clef)
+    const referenceNote = 'F';
+    const referenceOctave = 5;
+    const referenceIndex = 0; // Index in STAFF_NOTES
+
+    // Calculate how many diatonic steps we are from the reference note
+    const noteOrder = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
+    const referenceNoteOrderIndex = noteOrder.indexOf(referenceNote);
+
+    // Calculate the new note and octave
+    let totalSteps = stepsFromTopLine;
+    let newOctave = referenceOctave;
+    let newNoteIndex = referenceNoteOrderIndex;
+
+    // Adjust for steps up or down
+    while (totalSteps > 0) {
+      newNoteIndex--;
+      if (newNoteIndex < 0) {
+        newNoteIndex = 6; // Wrap around to B
+        newOctave--;
+      }
+      totalSteps--;
+    }
+
+    while (totalSteps < 0) {
+      newNoteIndex++;
+      if (newNoteIndex > 6) {
+        newNoteIndex = 0; // Wrap around to C
+        newOctave++;
+      }
+      totalSteps++;
+    }
+
+    // Ensure octave is within reasonable bounds (2-7)
+    newOctave = Math.max(2, Math.min(7, newOctave));
+
+    return noteOrder[newNoteIndex] + newOctave;
+  }
+
+  // Get the next note when moving up
+  function getNextNoteUp(currentNote) {
+    // Parse the current note
+    const match = currentNote.match(/([A-G])(#|b)?(\d)/);
+    if (!match) return currentNote;
+
+    const [_, noteName, accidental, octave] = match;
+
+    // First, convert to a standard form (using sharps for accidentals)
+    let standardNote = noteName;
+    if (accidental === 'b') {
+      // Convert flat to its sharp equivalent
+      const noteIndex = CHROMATIC_SCALE_FLATS.indexOf(noteName + accidental);
+      if (noteIndex !== -1) {
+        // Get the equivalent note with sharp from the sharps scale
+        standardNote = CHROMATIC_SCALE_SHARPS[(noteIndex - 1 + 12) % 12];
+      }
+    } else {
+      standardNote = noteName + (accidental || '');
+    }
+
+    // Find the index in the chromatic scale
+    const noteIndex = CHROMATIC_SCALE_SHARPS.indexOf(standardNote);
+    if (noteIndex === -1) return currentNote;
+
+    // Calculate the next note up (always using sharps when moving up)
+    let nextIndex = (noteIndex + 1) % 12;
+    let nextOctave = parseInt(octave);
+
+    // If we wrapped around to C, increment the octave
+    if (nextIndex === 0) {
+      nextOctave++;
+    }
+
+    // Ensure octave is within bounds
+    nextOctave = Math.min(7, nextOctave);
+
+    // Return the next note
+    return CHROMATIC_SCALE_SHARPS[nextIndex] + nextOctave;
+  }
+
+  // Get the next note when moving down
+  function getNextNoteDown(currentNote) {
+    // Parse the current note
+    const match = currentNote.match(/([A-G])(#|b)?(\d)/);
+    if (!match) return currentNote;
+
+    const [_, noteName, accidental, octave] = match;
+
+    // First, convert to a standard form (using flats for accidentals when moving down)
+    let standardNote = noteName;
+    if (accidental === '#') {
+      // Convert sharp to its flat equivalent
+      const noteIndex = CHROMATIC_SCALE_SHARPS.indexOf(noteName + accidental);
+      if (noteIndex !== -1) {
+        // Get the equivalent note with flat from the flats scale
+        standardNote = CHROMATIC_SCALE_FLATS[(noteIndex + 1) % 12];
+      }
+    } else {
+      standardNote = noteName + (accidental || '');
+    }
+
+    // Find the index in the chromatic scale
+    const noteIndex = CHROMATIC_SCALE_FLATS.indexOf(standardNote);
+    if (noteIndex === -1) return currentNote;
+
+    // Calculate the next note down (always using flats when moving down)
+    let nextIndex = (noteIndex - 1 + 12) % 12;
+    let nextOctave = parseInt(octave);
+
+    // If we wrapped around from C to B, decrement the octave
+    if (noteIndex === 0 && nextIndex === 11) {
+      nextOctave--;
+    }
+
+    // Ensure octave is within bounds
+    nextOctave = Math.max(2, nextOctave);
+
+    // Return the next note
+    return CHROMATIC_SCALE_FLATS[nextIndex] + nextOctave;
   }
 
   // Move selected note up or down
   function moveSelectedNote(direction, octave = false) {
+    // Get the note to move (either selected note or cursor note)
+    let noteToMove = null;
+    let isSelectedNote = false;
+
     if (selectedNoteId) {
       // Move selected note
-      const note = notes.find(n => n.id === selectedNoteId);
-      if (!note) return;
+      noteToMove = notes.find(n => n.id === selectedNoteId);
+      isSelectedNote = true;
+      if (!noteToMove) return;
+    }
 
-      const noteNames = Object.keys(NOTE_FREQUENCIES);
-      const currentIndex = noteNames.indexOf(note.value);
+    if (octave) {
+      // Move by octave (12 half steps)
+      const octaveChange = direction === 'up' ? 1 : -1;
 
-      if (currentIndex === -1) return;
+      if (isSelectedNote) {
+        const currentOctave = parseInt(noteToMove.value.match(/\d/)[0]);
+        const newOctave = Math.max(2, Math.min(7, currentOctave + octaveChange));
 
-      let newIndex;
-      if (octave) {
-        // Move by octave (12 half steps)
-        newIndex = direction === 'up' ? currentIndex + 12 : currentIndex - 12;
+        if (newOctave !== currentOctave) {
+          const noteName = noteToMove.value.replace(/\d/, '');
+          noteToMove.value = noteName + newOctave;
+          noteToMove.position.y = noteValueToYPosition(noteToMove.value);
+          playSingleNote(noteToMove.value);
+        }
       } else {
-        // Move by single step
-        newIndex = direction === 'up' ? currentIndex + 1 : currentIndex - 1;
+        const currentOctave = parseInt(currentNoteValue.match(/\d/)[0]);
+        const newOctave = Math.max(2, Math.min(7, currentOctave + octaveChange));
+
+        if (newOctave !== currentOctave) {
+          const noteName = currentNoteValue.replace(/\d/, '');
+          currentNoteValue = noteName + newOctave;
+          playSingleNote(currentNoteValue);
+        }
       }
-
-      // Clamp to valid range
-      newIndex = Math.max(0, Math.min(newIndex, noteNames.length - 1));
-
-      // Update note
-      note.value = noteNames[newIndex];
-      note.position.y = noteValueToYPosition(note.value);
-
-      // Play the note
-      playSingleNote(note.value);
     } else {
-      // Move cursor note
-      const noteNames = Object.keys(NOTE_FREQUENCIES);
-      const currentIndex = noteNames.indexOf(currentNoteValue);
+      // Move by single step with proper accidental handling
+      if (isSelectedNote) {
+        if (direction === 'up') {
+          noteToMove.value = getNextNoteUp(noteToMove.value);
+        } else {
+          noteToMove.value = getNextNoteDown(noteToMove.value);
+        }
 
-      if (currentIndex === -1) return;
+        // Update position
+        noteToMove.position.y = noteValueToYPosition(noteToMove.value);
 
-      let newIndex;
-      if (octave) {
-        // Move by octave (12 half steps)
-        newIndex = direction === 'up' ? currentIndex + 12 : currentIndex - 12;
+        // Play the note
+        playSingleNote(noteToMove.value);
       } else {
-        // Move by single step
-        newIndex = direction === 'up' ? currentIndex + 1 : currentIndex - 1;
+        // Move cursor note
+        if (direction === 'up') {
+          currentNoteValue = getNextNoteUp(currentNoteValue);
+        } else {
+          currentNoteValue = getNextNoteDown(currentNoteValue);
+        }
+
+        // Play the note
+        playSingleNote(currentNoteValue);
       }
-
-      // Clamp to valid range
-      newIndex = Math.max(0, Math.min(newIndex, noteNames.length - 1));
-
-      // Update current note value
-      currentNoteValue = noteNames[newIndex];
-
-      // Play the note
-      playSingleNote(currentNoteValue);
     }
 
     drawStaff();
@@ -850,6 +1079,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         tempCtx.stroke();
+      }
+
+      // Draw accidental if needed
+      if (note.value.includes('#') || note.value.includes('b')) {
+        tempCtx.font = '16px serif';
+        tempCtx.fillStyle = voiceColor;
+
+        if (note.value.includes('#')) {
+          tempCtx.fillText('♯', x - 15, y + 5);
+        } else if (note.value.includes('b')) {
+          tempCtx.fillText('♭', x - 15, y + 5);
+        }
       }
 
       // Draw note head
