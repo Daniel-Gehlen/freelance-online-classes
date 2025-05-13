@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', function () {
     ',': 'C#3', '.': 'D#3', '/': 'F#3', '[': 'F#5', ']': 'G5', '\\': 'G#5'
   };
 
+  // Staff note mapping - defines which notes correspond to each line/space
+  // In treble clef:
+  // - Lines from bottom to top: E4, G4, B4, D5, F5
+  // - Spaces from bottom to top: F4, A4, C5, E5
+  const STAFF_NOTES = [
+    'F5', 'E5', 'D5', 'C5', 'B4', 'A4', 'G4', 'F4', 'E4', 'D4', 'C4', 'B3', 'A3', 'G3', 'F3', 'E3', 'D3', 'C3'
+  ];
+
   // Initialize AudioContext
   function initAudioContext() {
     if (!audioContext) {
@@ -130,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
           ctx.moveTo(x - 12, ledgerY);
           ctx.lineTo(x + 12, ledgerY);
         }
-        ledgerY -= LINE_SPACING / 2;
+        ledgerY -= LINE_SPACING;
       }
     }
 
@@ -142,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
           ctx.moveTo(x - 12, ledgerY);
           ctx.lineTo(x + 12, ledgerY);
         }
-        ledgerY += LINE_SPACING / 2;
+        ledgerY += LINE_SPACING;
       }
     }
 
@@ -303,8 +311,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update current note value based on Y position
         const startY = canvas.height / 2 - LINE_SPACING * 2;
         const relativeY = y - startY;
-        const lineIndex = Math.round(relativeY / (LINE_SPACING / 2)) * (LINE_SPACING / 2);
-        const snappedY = startY + lineIndex;
+        const lineIndex = Math.round(relativeY / (LINE_SPACING / 2));
+        const snappedY = startY + lineIndex * (LINE_SPACING / 2);
         currentNoteValue = yPositionToNoteValue(snappedY);
       }
     }
@@ -413,42 +421,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Convert note value to Y position
   function noteValueToYPosition(noteValue) {
-    const startY = canvas.height / 2 - LINE_SPACING * 2;
-    const middleCY = startY + 5 * LINE_SPACING; // Middle C position
+    const startY = canvas.height / 2 - LINE_SPACING * 2; // Top line of staff
 
-    // Find the index of the note in our frequencies
-    const noteNames = Object.keys(NOTE_FREQUENCIES);
-    const noteIndex = noteNames.indexOf(noteValue);
-    const middleCIndex = noteNames.indexOf('C4');
+    // Find the index of the note in our STAFF_NOTES array
+    const noteIndex = STAFF_NOTES.indexOf(noteValue);
 
-    if (noteIndex === -1) return middleCY;
+    if (noteIndex === -1) {
+      // If note not found in our mapping, calculate position based on octave and note
+      const noteNames = Object.keys(NOTE_FREQUENCIES);
+      const noteIdx = noteNames.indexOf(noteValue);
 
-    // Calculate Y position based on half steps from middle C
-    const halfStepsFromMiddleC = noteIndex - middleCIndex;
-    return middleCY - (halfStepsFromMiddleC * (LINE_SPACING / 2));
+      if (noteIdx === -1) return startY; // Default to top line if note not found
+
+      // Find the closest note in our STAFF_NOTES array
+      let closestNote = STAFF_NOTES[0];
+      let closestDistance = Math.abs(noteNames.indexOf(STAFF_NOTES[0]) - noteIdx);
+
+      for (const staffNote of STAFF_NOTES) {
+        const distance = Math.abs(noteNames.indexOf(staffNote) - noteIdx);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestNote = staffNote;
+        }
+      }
+
+      const closestNoteIndex = STAFF_NOTES.indexOf(closestNote);
+      const halfStepsAway = noteIdx - noteNames.indexOf(closestNote);
+
+      return startY + (closestNoteIndex * LINE_SPACING / 2) + (halfStepsAway * LINE_SPACING / 2);
+    }
+
+    // Each note is spaced by half a line (LINE_SPACING / 2)
+    return startY + (noteIndex * LINE_SPACING / 2);
   }
 
   // Convert Y position to note value
   function yPositionToNoteValue(y) {
-    const startY = canvas.height / 2 - LINE_SPACING * 2;
-    const middleCY = startY + 5 * LINE_SPACING; // Middle C position
+    const startY = canvas.height / 2 - LINE_SPACING * 2; // Top line of staff
 
-    // Calculate half steps from middle C
-    const halfStepsFromMiddleC = Math.round((middleCY - y) / (LINE_SPACING / 2));
+    // Calculate the index in the STAFF_NOTES array
+    const noteIndex = Math.round((y - startY) / (LINE_SPACING / 2));
 
-    // Get all note names
-    const noteNames = Object.keys(NOTE_FREQUENCIES);
-    const middleCIndex = noteNames.indexOf('C4');
-
-    // Calculate new index
-    const newIndex = middleCIndex + halfStepsFromMiddleC;
-
-    // Ensure index is valid
-    if (newIndex < 0 || newIndex >= noteNames.length) {
-      return 'C4'; // Default to middle C if out of range
+    // Ensure index is within bounds
+    if (noteIndex < 0) {
+      return STAFF_NOTES[0]; // Return highest note if above staff
+    } else if (noteIndex >= STAFF_NOTES.length) {
+      return STAFF_NOTES[STAFF_NOTES.length - 1]; // Return lowest note if below staff
     }
 
-    return noteNames[newIndex];
+    return STAFF_NOTES[noteIndex];
   }
 
   // Move selected note up or down
@@ -812,7 +833,7 @@ document.addEventListener('DOMContentLoaded', function () {
               tempCtx.moveTo(x - 12, ledgerY);
               tempCtx.lineTo(x + 12, ledgerY);
             }
-            ledgerY -= LINE_SPACING / 2;
+            ledgerY -= LINE_SPACING;
           }
         }
 
@@ -824,7 +845,7 @@ document.addEventListener('DOMContentLoaded', function () {
               tempCtx.moveTo(x - 12, ledgerY);
               tempCtx.lineTo(x + 12, ledgerY);
             }
-            ledgerY += LINE_SPACING / 2;
+            ledgerY += LINE_SPACING;
           }
         }
 
