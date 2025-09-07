@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título Otimizado para Multiplos Serviços -->
-    <title>Aulas de Violão, Guitarra e Ukulele Online | Professor Daniel Gehlen</title>
-    <meta name="description"
-        content="Aprenda violão, guitarra ou ukulele com método personalizado! Aulas por videochamada para iniciantes e avançados. Teoria musical aplicada. Agende sua aula experimental grátis!">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Título Otimizado para Multiplos Serviços -->
+        <title>Aulas de Violão, Guitarra e Ukulele Online | Professor Daniel Gehlen</title>
+        <meta name="description" content="Aprenda violão, guitarra ou ukulele com método personalizado! Aulas por videochamada para iniciantes e avançados. Teoria musical aplicada. Agende sua aula experimental grátis!">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Z5D3DVJEB"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-0Z5D3DVJEB');
-    </script>
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0Z5D3DVJEB"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-0Z5D3DVJEB');
+        </script>
 
-    <!-- Schema Markup para Escola de Música -->
-    <script type="application/ld+json">
+        <!-- Schema Markup para Escola de Música -->
+        <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MusicSchool",
@@ -33,353 +32,459 @@
     }
     </script>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Aulas de Violão, Guitarra e Ukulele Online | Professor Daniel Gehlen">
-    <meta property="og:description"
-        content="Aprenda seu instrumento favorito em casa com aulas 100% práticas. Professor experiente com método personalizado.">
-    <meta property="og:image" content="https://daniel-gehlen.github.io/freelance-online-classes/assets/logo.jpg">
-    <meta property="og:url" content="https://daniel-gehlen.github.io/freelance-online-classes/">
-    <meta property="og:type" content="website">
+        <!-- Open Graph -->
+        <meta property="og:title" content="Aulas de Violão, Guitarra e Ukulele Online | Professor Daniel Gehlen">
+        <meta property="og:description" content="Aprenda seu instrumento favorito em casa com aulas 100% práticas. Professor experiente com método personalizado.">
+        <meta property="og:image" content="https://daniel-gehlen.github.io/freelance-online-classes/assets/logo.jpg">
+        <meta property="og:url" content="https://daniel-gehlen.github.io/freelance-online-classes/">
+        <meta property="og:type" content="website">
 
-    <!-- CSS (mantido igual) -->
-    <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
-    <link rel="stylesheet" href="popups/popup-acept-terms/age-gate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
-        rel="stylesheet">
-</head>
+        <!-- CSS (mantido igual) -->
+        <link rel="stylesheet" href="static/styles.css">
+        <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
+        <link rel="stylesheet" href="popups/popup-acept-terms/age-gate.css">
+        <link rel="stylesheet" href="carrossel/carrossel.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
 
 
-<body class="dark-theme">
+    <body class="dark-theme">
 
-    <!-- Popup de Verificação de Idade - DEVE SER O PRIMEIRO ELEMENTO -->
-    <div id="age-gate">
-        <div id="age-gate-content">
-            <h2>Aviso de Conteúdo Musical</h2>
-            <p>Este site contém material educacional sobre teoria musical. Você confirma que está ciente desta natureza
-                do conteúdo?</p>
-            <button id="confirm-age" class="age-btn">Sim, entendi</button>
-            <button id="deny-age" class="age-btn">Não, quero sair</button>
-            <small>Conteúdo educativo conforme LGPD Art. 14</small>
-        </div>
-    </div>
-    <!-- Cabeçalho Otimizado -->
-    <header class="neon-header">
-        <div class="logo-link">
-            <img src="assets/logo.jpg" alt="Aulas de Violão, Guitarra e Ukulele - Professor Daniel Gehlen"
-                class="logo-img" loading="lazy">
-        </div>
-        <div class="header-content">
-            <h1 class="neon-text">🎵 Aulas de Violão, Guitarra e Ukulele Online 🎵</h1>
-            <p>Aprenda no seu ritmo, com método personalizado para cada instrumento!</p>
-        </div>
-    </header>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
-        <div class="container-fluid">
-            <!-- Botão de toggle (menu hambúrguer) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Conteúdo do navbar -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="index.html">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="teoria-musical-wikipedia.html">Teoria Musical</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="pages/audios-e-videos.html">Áudios e Vídeos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo
-                            Harmônico</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link neon-text"
-                            href="pages/intervalos-musicais/intervalos-musicais.html">Intervalos Muiscais</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link neon-text" href="pages/contraponto-modal/contraponto-modal.html">Contraponto
-                            Modal</a>
-                    </li>
-                    </li>
-                </ul>
+        <!-- Popup de Verificação de Idade - DEVE SER O PRIMEIRO ELEMENTO -->
+        <div id="age-gate">
+            <div id="age-gate-content">
+                <h2>Aviso de Conteúdo Musical</h2>
+                <p>Este site contém material educacional sobre teoria musical. Você confirma que está ciente desta natureza
+                    do conteúdo?</p>
+                <button id="confirm-age" class="age-btn">Sim, entendi</button>
+                <button id="deny-age" class="age-btn">Não, quero sair</button>
+                <small>Conteúdo educativo conforme LGPD Art. 14</small>
             </div>
         </div>
-    </nav>
+        <!-- Cabeçalho Otimizado -->
+        <header class="neon-header">
+            <div class="logo-link">
+                <img src="assets/logo.jpg" alt="Aulas de Violão, Guitarra e Ukulele - Professor Daniel Gehlen" class="logo-img" loading="lazy">
+            </div>
+            <div class="header-content">
+                <h1 class="neon-text">🎵 Aulas de Violão, Guitarra e Ukulele Online 🎵</h1>
+                <p>Aprenda no seu ritmo, com método personalizado para cada instrumento!</p>
+            </div>
+        </header>
 
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark neon-navbar">
+            <div class="container-fluid">
+                <!-- Botão de toggle (menu hambúrguer) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <main class="container my-5">
-
-        <!-- Seção de Anúncio -->
-        <section class="card neon-card mb-5 welcome" style="background-image: url('assets/studio.png')">
-            <div class="card-body">
-                <div class="welcome-content">
-                    <h2 class="welcome-title">🎵 Saudações Musicais</h2>
-                    <p class="welcome-subtitle">INSCRIÇÕES ABERTAS</p>
-                    <p class="welcome-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100%
-                        adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem
-                        perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e
-                        comece já sua jornada musical!</p>
+                <!-- Conteúdo do navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="navbar-brand neon-text" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand neon-text" href="teoria-musical-wikipedia.html">Teoria Musical</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand neon-text" href="pages/audios-e-videos.html">Áudios e Vídeos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand neon-text" href="pages/campos-harmonicos/campos-harmonicos.html">Campo
+                                Harmônico</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link neon-text" href="pages/intervalos-musicais/intervalos-musicais.html">Intervalos Muiscais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link neon-text" href="pages/contraponto-modal/contraponto-modal.html">Contraponto
+                                Modal</a>
+                        </li>
+                        </li>
+                    </ul>
                 </div>
-                <audio controls class="audio-player">
-                    <source src="audio/anuncio-inicio-com-fundo-musical.m4a" type="audio/mp4">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
             </div>
-        </section>
+        </nav>
 
-        <!-- Seção de Instrumentos - Mantendo SEU ESTILO ORIGINAL -->
-        <section class="card neon-card mb-5 welcome" style="background-image: url('assets/mic.png')">
-            <div class="card-body">
-                <div class="welcome-content">
-                    <h2 class="welcome-title">🎶 Instrumentos que Ensino</h2>
-                    <p class="welcome-subtitle">ESCOLHA SEU FAVORITO</p>
+
+        <main class="container my-5">
+
+            <!-- Seção de Anúncio -->
+            <section class="card neon-card mb-5 welcome" style="background-image: url('assets/studio.png')">
+                <div class="card-body">
+                    <div class="welcome-content">
+                        <h2 class="welcome-title">🎵 Saudações Musicais</h2>
+                        <p class="welcome-subtitle">INSCRIÇÕES ABERTAS</p>
+                        <p class="welcome-text">Olá! 😊 Quer aprender a tocar violão, guitarra ou ukulele? As aulas são 100%
+                            adaptadas ao seu gosto musical! Horários flexíveis e online, com aulas de 1 hora por semana. Sem
+                            perdas de tempo no trânsito! 🎸 Vagas limitadas! Reserve sua aula experimental de 30min hoje e
+                            comece já sua jornada musical!</p>
+                    </div>
+                    <audio controls class="audio-player">
+                        <source src="audio/anuncio-inicio-com-fundo-musical.m4a" type="audio/mp4">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+            </section>
+
+            <!-- Seção de Instrumentos - Mantendo SEU ESTILO ORIGINAL -->
+            <section class="card neon-card mb-5 welcome" style="background-image: url('assets/mic.png')">
+                <div class="card-body">
+                    <div class="welcome-content">
+                        <h2 class="welcome-title">🎶 Instrumentos que Ensino</h2>
+                        <p class="welcome-subtitle">ESCOLHA SEU FAVORITO</p>
+                        <div class="row">
+                            <!-- Violão -->
+                            <div class="col-md-4 mb-4">
+                                <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Violão</h3>
+                                <ul class="welcome-text">
+                                    <li>Popular e clássico</li>
+                                    <li>Acordes e batidas</li>
+                                    <li>Repertório personalizado</li>
+                                </ul>
+                            </div>
+                            <!-- Guitarra -->
+                            <div class="col-md-4 mb-4">
+                                <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Guitarra</h3>
+                                <ul class="welcome-text">
+                                    <li>Rock e blues</li>
+                                    <li>Técnicas de solo</li>
+                                    <li>Improvisação</li>
+                                </ul>
+                            </div>
+                            <!-- Ukulele (usando ícone genérico) -->
+                            <div class="col-md-4 mb-4">
+                                <h3 class="welcome-text"><i class="fas fa-music welcome-text"></i> Ukulele</h3>
+                                <ul class="welcome-text">
+                                    <li>Músicas alegres</li>
+                                    <li>Rápido aprendizado</li>
+                                    <li>Para todas as idades</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="welcome-text mt-3"><strong>+ Teoria Musical aplicada a todos os instrumentos!</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Card do GIF -->
+            <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/studio.png')">
+                <div class="card-body">
+                    <img src="assets/aula-online.gif" alt="Aulas Online" class="img-fluid gif-image">
+                    <audio controls class="audio-player">
+                        <source src="audio/encontrar-horario.mp3" type="audio/mp4">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+            </section>
+
+            <!-- Seção de Método - Mantendo SEU ESTILO ORIGINAL -->
+            <section class="card neon-card mb-5 welcome" style="background-image: url('assets/studio.png')">
+                <div class="card-body">
+                    <div class="welcome-content">
+                        <h2 class="welcome-title">📚 Método Personalizado</h2>
+                        <p class="welcome-subtitle">APRENDA DO SEU JEITO</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Violão</h3>
+                                <p class="welcome-text">Do básico (cifras simples) ao avançado (fingerstyle), com repertório
+                                    escolhido por você.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Guitarra</h3>
+                                <p class="welcome-text">Desenvolva técnicas de palhetada, bending e improvisação. tracks.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h3 class="welcome-text"><i class="fas fa-music welcome-text"></i> Ukulele</h3>
+                                <p class="welcome-text">Aprenda músicas completas em poucas aulas.
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="welcome-text"><i class="fas fa-book welcome-text"></i> Teoria Musical</h3>
+                                <p class="welcome-text">Aplicada diretamente no seu instrumento, sem enrolação.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/neon.png')">
+                <div class="card-body">
+                    <h2 class="card-title neon-text">Como Funcionam as Aulas?</h2>
+                    <div class="text-container">
+                        <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com
+                            <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que
+                            você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a
+                            <strong>teoria e técnica</strong> das músicas. Temos material didático pago à parte fundamental
+                            para
+                            começar (vídeos e partituras). Convide amigos para aprenderem juntos! 😉
+                        </p>
+                    </div>
+                    <audio controls class="audio-player">
+                        <source src="audio/explications.mp3" type="audio/mp4">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+            </section>
+
+            <!-- Seção de Valores -->
+            <section class="card neon-card mb-5 card-valores" style="background-image: url('assets/laptops.png')">
+                <div class="card-body">
+                    <h2 class="card-title neon-text">Valores da Mensalidade</h2>
                     <div class="row">
-                        <!-- Violão -->
-                        <div class="col-md-4 mb-4">
-                            <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Violão</h3>
-                            <ul class="welcome-text">
-                                <li>Popular e clássico</li>
-                                <li>Acordes e batidas</li>
-                                <li>Repertório personalizado</li>
-                            </ul>
-                        </div>
-                        <!-- Guitarra -->
-                        <div class="col-md-4 mb-4">
-                            <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Guitarra</h3>
-                            <ul class="welcome-text">
-                                <li>Rock e blues</li>
-                                <li>Técnicas de solo</li>
-                                <li>Improvisação</li>
-                            </ul>
-                        </div>
-                        <!-- Ukulele (usando ícone genérico) -->
-                        <div class="col-md-4 mb-4">
-                            <h3 class="welcome-text"><i class="fas fa-music welcome-text"></i> Ukulele</h3>
-                            <ul class="welcome-text">
-                                <li>Músicas alegres</li>
-                                <li>Rápido aprendizado</li>
-                                <li>Para todas as idades</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="welcome-text mt-3"><strong>+ Teoria Musical aplicada a todos os instrumentos!</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Card do GIF -->
-        <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/studio.png')">
-            <div class="card-body">
-                <img src="assets/aula-online.gif" alt="Aulas Online" class="img-fluid gif-image">
-                <audio controls class="audio-player">
-                    <source src="audio/encontrar-horario.mp3" type="audio/mp4">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-            </div>
-        </section>
-
-        <!-- Seção de Método - Mantendo SEU ESTILO ORIGINAL -->
-        <section class="card neon-card mb-5 welcome" style="background-image: url('assets/studio.png')">
-            <div class="card-body">
-                <div class="welcome-content">
-                    <h2 class="welcome-title">📚 Método Personalizado</h2>
-                    <p class="welcome-subtitle">APRENDA DO SEU JEITO</p>
-                    <div class="row">
                         <div class="col-md-6">
-                            <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Violão</h3>
-                            <p class="welcome-text">Do básico (cifras simples) ao avançado (fingerstyle), com repertório
-                                escolhido por você.</p>
+                            <div class="modalidade-container">
+                                <h3 class="card-subtitle">Modalidade Anual (12 meses)</h3>
+                                <ul class="card-list">
+                                    <li><strong>Aula Individual/1h de duração semanal exclusiva:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com
+                                        desconto pontualidade)</li>
+                                    <li><strong>Aula em Dupla/1h de duração semanal intercalada:</strong> R$ 250/mês por aluno (<strong>R$ 200/mês</strong>
+                                        com desconto pontualidade)</li>
+                                    <li><strong>Encontros Musicais em janeiro e fevereiro incluídos com manutenção da mensalidade aos mesmos valores 🎉</strong></li>
+                                    <li><strong>Férias de duas semanas em julho e dezembro com manutenção da mensalidade aos mesmos valores 🏖️</strong></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <h3 class="welcome-text"><i class="fas fa-guitar welcome-text"></i> Guitarra</h3>
-                            <p class="welcome-text">Desenvolva técnicas de palhetada, bending e improvisação. tracks.
-                            </p>
+                            <div class="modalidade-container">
+                                <h3 class="card-subtitle">Modalidade Mensal</h3>
+                                <ul class="card-list">
+                                    <li><strong>Aula Individual/1h de duração semanal exclusiva:</strong> R$ 330/mês</li>
+                                    <li><strong>Aula em Dupla/1h de duração semanal intercalada:</strong> R$ 250/mês por aluno</li>
+                                    <li><strong>Observações:</strong></li>
+                                    <li>Sem desconto de pontualidade</li>
+                                    <li>Sem Encontros Musicais incluídos</li>
+                                    <li>Sem mensalidade em janeiro e fevereiro</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6">
-                            <h3 class="welcome-text"><i class="fas fa-music welcome-text"></i> Ukulele</h3>
-                            <p class="welcome-text">Aprenda músicas completas em poucas aulas.
-                            </p>
+                </div>
+            </section>
+
+            <!-- Seção de Agendamento -->
+            <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/laptop.png')">
+                <div class="card-body">
+                    <h2 class="card-title neon-text">Agende sua Aula Experimental</h2>
+                    <p class="card-text neon-text">🎸 Vagas limitadas! Reserve agora seu horário.</p>
+                    <div id="calendar-embed">
+                        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30Hdl55N7KMklV6JmmWTzasbOJRDh0LLvowzekOURx2EPBlIQXWvv2ElBtVYagXH_F6szTnnIL?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ícone do Robô -->
+            <div id="chat-icon" class="chat-icon">
+                <i class="fas fa-robot"></i>
+                <span class="tooltip">Tire as principais dúvidas comigo</span>
+            </div>
+
+            <!-- Modal do Chat -->
+            <div id="chat-modal" class="chat-modal">
+                <div class="chat-header">
+                    <span>Chatbot</span>
+                    <button id="close-chat" class="close-chat">&times;</button>
+                </div>
+                <div id="chat-box" class="chat-box"></div>
+                <div class="input-container">
+                    <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+
+            <!-- Seção do Carrossel de Shorts - DEVE estar no seu HTML -->
+            <div class="row">
+                <!-- Vídeo 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Importância do Estudo Gradual e Prática Musical Equilibrada</h5>
+                            <div class="video-container">
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.youtube.com/embed/h5V9VqH21iw" allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <h3 class="welcome-text"><i class="fas fa-book welcome-text"></i> Teoria Musical</h3>
-                            <p class="welcome-text">Aplicada diretamente no seu instrumento, sem enrolação.</p>
+                    </div>
+                </div>
+
+                <!-- Vídeo 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Blues</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/48-CVwMdRQg" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 3 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Groove</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/WtSTf2G4mtM" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 4 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Som Brasil</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/gfgDVt5nEec" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 5 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Groove</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/jyCEFXXOs5g" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 6 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Fusão</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/eBhtXz0xv9U" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 7 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Blues - Solo</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/vLJF5-5e768" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 8 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Ritmos Latinos</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/Hg2WDtmYFMg" allowfullscreen></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </main>
 
-        <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/neon.png')">
-            <div class="card-body">
-                <h2 class="card-title neon-text">Como Funcionam as Aulas?</h2>
-                <div class="text-container">
-                    <p class="card-text">As aulas são individuais (1 hora por semana) ou em dupla (30min cada), com
-                        <strong>horários flexíveis</strong>. O curso é <strong>personalizado</strong> com as músicas que
-                        você quer aprender. Começamos com o básico e avançamos gradualmente. Trabalhamos a
-                        <strong>teoria e técnica</strong> das músicas. Temos material didático pago à parte fundamental
-                        para
-                        começar (vídeos e partituras). Convide amigos para aprenderem juntos! 😉
-                    </p>
+
+
+        <footer class="neon-footer text-center py-3">
+            <div class="footer-content">
+                <div class="gif-container">
+                    <img src="assets/cat-on-computer.gif" alt="Gato engraçado" style="width: 150px; height: auto;">
                 </div>
-                <audio controls class="audio-player">
-                    <source src="audio/explications.mp3" type="audio/mp4">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
+                <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
+                <a href="https://www.instagram.com/dgmusicguide/" target="_blank" class="neon-text">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
-        </section>
+        </footer>
 
-        <!-- Seção de Valores -->
-        <section class="card neon-card mb-5 card-valores" style="background-image: url('assets/laptops.png')">
-            <div class="card-body">
-                <h2 class="card-title neon-text">Valores da Mensalidade</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="modalidade-container">
-                            <h3 class="card-subtitle">Modalidade Anual (12 meses)</h3>
-                            <ul class="card-list">
-                                <li><strong>Aula Individual/1h de duração semanal exclusiva:</strong> R$ 330/mês (<strong>R$ 280/mês</strong> com
-                                    desconto pontualidade)</li>
-                                <li><strong>Aula em Dupla/1h de duração semanal intercalada:</strong> R$ 250/mês por aluno (<strong>R$ 200/mês</strong>
-                                    com desconto pontualidade)</li>
-                                <li><strong>Encontros Musicais em janeiro e fevereiro incluídos com manutenção da mensalidade aos mesmos valores 🎉</strong></li>
-                                <li><strong>Férias de duas semanas em julho e dezembro com manutenção da mensalidade aos mesmos valores 🏖️</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="modalidade-container">
-                            <h3 class="card-subtitle">Modalidade Mensal</h3>
-                            <ul class="card-list">
-                                <li><strong>Aula Individual/1h de duração semanal exclusiva:</strong> R$ 330/mês</li>
-                                <li><strong>Aula em Dupla/1h de duração semanal intercalada:</strong> R$ 250/mês por aluno</li>
-                                <li><strong>Observações:</strong></li>
-                                <li>Sem desconto de pontualidade</li>
-                                <li>Sem Encontros Musicais incluídos</li>
-                                <li>Sem mensalidade em janeiro e fevereiro</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Scripts -->
+        <script src="static/script.js"></script>
+        <script src="simple-chatbot/bot.js"></script>
+        <script src="popups/popup-acept-terms/age-gate.js"></script>
+        <script>
+            // Dynamically determine the base path for scripts
+            (function () {
+                // Check if we're on GitHub Pages
+                const isGitHub = window.location.hostname.includes('github.io');
+                let scriptPath = '';
 
-        <!-- Seção de Agendamento -->
-        <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/laptop.png')">
-            <div class="card-body">
-                <h2 class="card-title neon-text">Agende sua Aula Experimental</h2>
-                <p class="card-text neon-text">🎸 Vagas limitadas! Reserve agora seu horário.</p>
-                <div id="calendar-embed">
-                    <iframe
-                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ30Hdl55N7KMklV6JmmWTzasbOJRDh0LLvowzekOURx2EPBlIQXWvv2ElBtVYagXH_F6szTnnIL?gv=true"
-                        style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ícone do Robô -->
-        <div id="chat-icon" class="chat-icon">
-            <i class="fas fa-robot"></i>
-            <span class="tooltip">Tire as principais dúvidas comigo</span>
-        </div>
-
-        <!-- Modal do Chat -->
-        <div id="chat-modal" class="chat-modal">
-            <div class="chat-header">
-                <span>Chatbot</span>
-                <button id="close-chat" class="close-chat">&times;</button>
-            </div>
-            <div id="chat-box" class="chat-box"></div>
-            <div class="input-container">
-                <input type="text" id="user-input" placeholder="Digite o número da opção (1 a 8)...">
-                <button onclick="sendMessage()">Enviar</button>
-            </div>
-        </div>
-
-
-    </main>
-
-
-
-    <footer class="neon-footer text-center py-3">
-        <div class="footer-content">
-            <div class="gif-container">
-                <img src="assets/cat-on-computer.gif" alt="Gato engraçado" style="width: 150px; height: auto;">
-            </div>
-            <p class="neon-text">&copy; 2025 Aulas de Música Online. Todos os direitos reservados.</p>
-            <a href="https://www.instagram.com/dgmusicguide/" target="_blank" class="neon-text">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="static/script.js"></script>
-    <script src="simple-chatbot/bot.js"></script>
-    <script src="popups/popup-acept-terms/age-gate.js"></script>
-    <script>
-        // Dynamically determine the base path for scripts
-        (function () {
-            // Check if we're on GitHub Pages
-            const isGitHub = window.location.hostname.includes('github.io');
-            let scriptPath = '';
-
-            if (isGitHub) {
-                // Extract repository name if on GitHub Pages
-                const pathParts = window.location.pathname.split('/').filter(p => p);
-                if (pathParts.length > 0) {
-                    scriptPath = `/${pathParts[0]}/popups/popup-hotmart/popup-module.js`;
+                if (isGitHub) {
+                    // Extract repository name if on GitHub Pages
+                    const pathParts = window.location.pathname.split('/').filter(p => p);
+                    if (pathParts.length > 0) {
+                        scriptPath = `/${pathParts[0]}/popups/popup-hotmart/popup-module.js`;
+                    } else {
+                        scriptPath = '/popups/popup-hotmart/popup-module.js';
+                    }
                 } else {
-                    scriptPath = '/popups/popup-hotmart/popup-module.js';
+                    // Local development
+                    scriptPath = 'popups/popup-hotmart/popup-module.js';
                 }
-            } else {
-                // Local development
-                scriptPath = 'popups/popup-hotmart/popup-module.js';
-            }
 
-            // Create and append the script
-            const script = document.createElement('script');
-            script.src = scriptPath;
-            script.defer = true;
-            script.onerror = function () {
-                console.error(`Failed to load popup module from: ${scriptPath}`);
-                // Fallback attempt with alternative path
-                const fallbackScript = document.createElement('script');
-                fallbackScript.src = 'popups/popup-hotmart/popup-module.js';
-                fallbackScript.defer = true;
-                document.body.appendChild(fallbackScript);
-            };
-            document.body.appendChild(script);
-        })();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-        (function () {
-            var target = document.getElementById('calendar-button');
-            window.addEventListener('load', function () {
-                calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ30Hdl55N7KMklV6JmmWTzasbOJRDh0LLvowzekOURx2EPBlIQXWvv2ElBtVYagXH_F6szTnnIL?gv=true',
-                    color: '#039BE5',
-                    label: 'Fazer uma marcação',
-                    target,
+                // Create and append the script
+                const script = document.createElement('script');
+                script.src = scriptPath;
+                script.defer = true;
+                script.onerror = function () {
+                    console.error(`Failed to load popup module from: ${scriptPath}`);
+                    // Fallback attempt with alternative path
+                    const fallbackScript = document.createElement('script');
+                    fallbackScript.src = 'popups/popup-hotmart/popup-module.js';
+                    fallbackScript.defer = true;
+                    document.body.appendChild(fallbackScript);
+                };
+                document.body.appendChild(script);
+            })();
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+        <script>
+            (function () {
+                var target = document.getElementById('calendar-button');
+                window.addEventListener('load', function () {
+                    calendar.schedulingButton.load({
+                        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ30Hdl55N7KMklV6JmmWTzasbOJRDh0LLvowzekOURx2EPBlIQXWvv2ElBtVYagXH_F6szTnnIL?gv=true',
+                        color: '#039BE5',
+                        label: 'Fazer uma marcação',
+                        target,
+                    });
                 });
-            });
-        })();
-    </script>
+            })();
+        </script>
 
-</body>
+    </body>
 
 </html>
