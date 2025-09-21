@@ -4,101 +4,100 @@
 
 /* Variáveis CSS */
 :root {
-    --neon-color: #00ffcc;
-    --neon-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
-    --dark-bg: #1a1a1a;
-    --darker-bg: #0d0d0d;
-    --text-color: #e0e0e0;
-  }
-  
-  /* Reset e Tipografia */
-  body.dark-theme {
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    line-height: 1.6;
-  }
-  
+  --neon-color: #00ffcc;
+  --neon-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+  --dark-bg: #1a1a1a;
+  --darker-bg: #0d0d0d;
+  --text-color: #e0e0e0;
+}
+
+/* Reset e Tipografia */
+body.dark-theme {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* ================================================== */
 /* ESTILOS DO CABEÇALHO - ALINHAMENTO ESQUERDA FIXO   */
 /* ================================================== */
 .neon-header {
-    background-color: var(--darker-bg);
-    padding: 20px;
-    border-bottom: 2px solid var(--neon-color);
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap; /* Impede quebra de linha */
-    align-items: center; /* Alinha verticalmente ao centro */
+  background-color: var(--darker-bg);
+  padding: 20px;
+  border-bottom: 2px solid var(--neon-color);
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap; /* Impede quebra de linha */
+  align-items: center; /* Alinha verticalmente ao centro */
 }
 
 .logo-link {
-    flex: 0 0 auto; /* Impede que o logo cresça ou diminua */
-    margin-right: 30px; /* Espaço entre logo e texto */
+  flex: 0 0 auto; /* Impede que o logo cresça ou diminua */
+  margin-right: 30px; /* Espaço entre logo e texto */
 }
 
 .header-content {
-    flex: 1 1 auto;
-    text-align: left; /* Força alinhamento à esquerda */
+  flex: 1 1 auto;
+  text-align: left; /* Força alinhamento à esquerda */
 }
 
 .neon-header h1 {
-    color: var(--neon-color);
-    text-shadow: var(--neon-shadow);
-    margin: 0 0 10px 0;
-    text-align: left;
-    font-size: 1.8rem;
-    width: 100%;
+  color: var(--neon-color);
+  text-shadow: var(--neon-shadow);
+  margin: 0 0 10px 0;
+  text-align: left;
+  font-size: 1.8rem;
+  width: 100%;
 }
 
 .neon-header p {
-    color: var(--text-color);
-    margin: 0;
-    text-align: left;
-    font-size: 1.1rem;
-    width: 100%;
+  color: var(--text-color);
+  margin: 0;
+  text-align: left;
+  font-size: 1.1rem;
+  width: 100%;
 }
 
 /* Correção extra para garantir alinhamento */
 body {
-    text-align: left;
+  text-align: left;
 }
 
- 
-  .neon-text {
-    color: var(--neon-color);
-    text-shadow: var(--neon-shadow);
-    font-size: 1.2rem;
-    margin-bottom: 1em;
-    text-align: left;
-  }
-  
-  /* Logo */
-  .logo-link {
-    display: block;
-    margin: 0 auto 1em;
-    text-align: center;
-  }
-  
-  .logo-img {
-    max-height: 100px;
-    width: auto;
-    border-radius: 50%;
-    border: 2px solid var(--neon-color);
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
-    transition: var(--transition-base);
-  }
-  
-  .logo-img:hover,
-  .logo-img:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
-  }
-  
+.neon-text {
+  color: var(--neon-color);
+  text-shadow: var(--neon-shadow);
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+/* Logo */
+.logo-link {
+  display: block;
+  margin: 0 auto 1em;
+  text-align: center;
+}
+
+.logo-img {
+  max-height: 100px;
+  width: auto;
+  border-radius: 50%;
+  border: 2px solid var(--neon-color);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+  transition: var(--transition-base);
+}
+
+.logo-img:hover,
+.logo-img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.5);
+}
+
 /* navbar.css */
 .neon-navbar {
   background-color: #0d0d0d !important;
@@ -150,474 +149,602 @@ body {
   outline: 3px solid #4d90fe;
   outline-offset: 3px;
 }
-  
-  /* Conteúdo Principal */
-  main.container {
-    padding: 20px;
-    flex: 1;
-  }
-  
-  /* Cards */
-  .card {
-    margin-bottom: 2rem;
-    border: none;
-    overflow: hidden;
-    border-radius: 15px;
-    transition: all 0.4s ease;
-    background-size: cover;
-    background-position: center;
-    min-height: 300px;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
-    position: relative;
-  }
-  
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
-    z-index: 1;
-    transition: all 0.4s ease;
-    border-radius: 15px;
-  }
-  
-  .card-body {
-    position: relative;
-    z-index: 2;
-    padding: 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    color: white;
-  }
-  
-  .card-title {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: white;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .card-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--neon-color);
-  }
-  
-  .card-text {
-    font-family: 'Roboto', sans-serif;
-    color: var(--text-color);
-    font-weight: 300;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 255, 204, 0.2);
-  }
-  
-  h3.card-subtitle {
-    font-family: 'Orbitron', sans-serif, Arial, sans-serif;
-    color: var(--text-color);
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-  }
-  
-  .card-list {
-    color: var(--text-color);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Imagens nos Cards */
-  .gif-image {
-    border-radius: 10px;
-    max-height: 300px;
-    width: auto;
-    margin: 0 auto;
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 2;
-  }
-  
-  /* Player de Áudio */
-  .audio-player {
-    width: 100%;
-    margin-top: auto;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 2;
-  }
-  
-  /* Rodapé */
-  .neon-footer {
-    background-color: var(--darker-bg);
-    border-top: 2px solid var(--neon-color);
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .gif-container img {
-    width: 150px;
-    height: auto;
-  }
-  
-  .fab.fa-instagram {
-    font-size: 34px;
-    color: #E1306C;
-  }
-  
-  .fab.fa-instagram:hover {
-    color: #ffffff;
-  }
-  
-  /* Botão de Scroll para o Topo */
-  .scroll-to-top-btn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background-color: var(--neon-color);
-    color: var(--darker-bg);
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: var(--neon-shadow);
-    transition: all 0.3s ease;
-  }
-  
-  .scroll-to-top-btn:hover {
-    background-color: #00cc99;
-    transform: scale(1.1);
-  }
-  
-  /* Estilos específicos para o iframe do calendário */
-  .card-agendamento iframe {
-    filter: 
-      invert(1)
-      hue-rotate(180deg)
-      brightness(1.1)
-      contrast(0.9);
-    background-color: transparent !important;
-  }
-  
-  /* Estilo para o iframe do Google Calendar */
-  #calendar-embed iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    background: transparent !important;
-    filter: 
-      invert(1)
-      hue-rotate(180deg)
-      brightness(1.2)
-      contrast(0.9)
-      drop-shadow(0 0 5px rgba(255, 255, 255, 0.7))
-      saturate(0.7);
-    box-shadow: 
-      0 0 10px rgba(255, 255, 255, 0.3),
-      inset 0 0 20px rgba(255, 255, 255, 0.2);
-  }
-  
-  .card-agendamento .card-body {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-  }
-  
-  .card-agendamento .card-title {
-    color: #fff !important;
-    text-shadow: 
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px #00ffcc,
-      0 0 30px #00ffcc;
-  }
-  
-  .card-agendamento .card-text {
-    color: #fff !important;
-    text-shadow: 0 0 5px #fff;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* ================================================== */
-  /* ESTILOS PARA CARD DE VALORES                       */
-  /* ================================================== */
-  .card-valores {
-    background-image: url('../assets/card-background-valores.jpg');
-  }
-  
-  .card-valores .row {
-    display: flex;
-    margin: 0 -10px;
-  }
-  
-  .card-valores .col-md-6 {
-    padding: 0 10px;
-    flex: 1;
-    min-width: 0;
-  }
-  
-  .card-valores .modalidade-container {
-    background: rgba(13, 13, 13, 0.7);
-    border-radius: 10px;
-    padding: 20px;
-    height: 100%;
-    border: 1px solid rgba(0, 255, 204, 0.3);
-  }
-  
-  .card-valores .card-subtitle {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--neon-color);
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--neon-color);
-    display: block;
-    text-shadow: var(--neon-shadow);
-  }
-  
-  .card-valores .card-list {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  
-  .card-valores .card-list li {
-    margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.5rem;
-    line-height: 1.5;
-    color: var(--text-color);
-  }
-  
-  .card-valores .card-list li:before {
-    content: "•";
-    color: var(--neon-color);
-    position: absolute;
-    left: 0;
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-  
-  .card-valores .card-list strong {
-    color: var(--neon-color);
-    font-weight: 700;
-  }
-  
-  .card-valores .modalidade-container:hover {
-    border-color: var(--neon-color);
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-  }
-  
-  /* ================================================== */
+
+/* Conteúdo Principal */
+main.container {
+  padding: 20px;
+  flex: 1;
+}
+
+/* Cards */
+.card {
+  margin-bottom: 2rem;
+  border: none;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+}
+
+.card-body {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.card-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--neon-color);
+}
+
+.card-text {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 255, 204, 0.2);
+}
+
+h3.card-subtitle {
+  font-family: 'Orbitron', sans-serif, Arial, sans-serif;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.card-list {
+  color: var(--text-color);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Imagens nos Cards */
+.gif-image {
+  border-radius: 10px;
+  max-height: 300px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Player de Áudio */
+.audio-player {
+  width: 100%;
+  margin-top: auto;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+/* Rodapé */
+.neon-footer {
+  background-color: var(--darker-bg);
+  border-top: 2px solid var(--neon-color);
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gif-container img {
+  width: 150px;
+  height: auto;
+}
+
+.fab.fa-instagram {
+  font-size: 34px;
+  color: #e1306c;
+}
+
+.fab.fa-instagram:hover {
+  color: #ffffff;
+}
+
+/* Botão de Scroll para o Topo */
+.scroll-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--neon-color);
+  color: var(--darker-bg);
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: var(--neon-shadow);
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #00cc99;
+  transform: scale(1.1);
+}
+
+/* Estilos para a seção de depoimentos */
+.card-depoimentos {
+  border: 2px solid #0ff;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
+  background-color: rgba(0, 20, 40, 0.8) !important;
+}
+
+.depoimento-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.avatar-container {
+  margin-bottom: 15px;
+}
+
+.retro-avatar {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ff00ff;
+  box-shadow: 0 0 10px #ff00ff;
+  border-radius: 50%;
+  image-rendering: pixelated;
+  background-color: #000;
+}
+
+.depoimento-content {
+  max-width: 600px;
+}
+
+.depoimento-nome {
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 5px;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.stars {
+  color: #ff0;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #ff0;
+}
+
+.depoimento-texto {
+  color: #fff;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.carousel-indicators button {
+  background-color: #0ff;
+  box-shadow: 0 0 5px #0ff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #0ff;
+}
+
+/* Estilos específicos para o iframe do calendário */
+.card-agendamento iframe {
+  filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(0.9);
+  background-color: transparent !important;
+}
+
+/* Estilo para o iframe do Google Calendar */
+#calendar-embed iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  background: transparent !important;
+  filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(0.9)
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)) saturate(0.7);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.card-agendamento .card-body {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.card-agendamento .card-title {
+  color: #fff !important;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+}
+
+.card-agendamento .card-text {
+  color: #fff !important;
+  text-shadow: 0 0 5px #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ================================================== */
+/* ESTILOS PARA CARD DE VALORES                       */
+/* ================================================== */
+.card-valores {
+  background-image: url('../assets/card-background-valores.jpg');
+}
+
+.card-valores .row {
+  display: flex;
+  margin: 0 -10px;
+}
+
+.card-valores .col-md-6 {
+  padding: 0 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-valores .modalidade-container {
+  background: rgba(13, 13, 13, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+  height: 100%;
+  border: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+.card-valores .card-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon-color);
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--neon-color);
+  display: block;
+  text-shadow: var(--neon-shadow);
+}
+
+.card-valores .card-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.card-valores .card-list li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.card-valores .card-list li:before {
+  content: '•';
+  color: var(--neon-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.card-valores .card-list strong {
+  color: var(--neon-color);
+  font-weight: 700;
+}
+
+.card-valores .modalidade-container:hover {
+  border-color: var(--neon-color);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+/* ================================================== */
 /* ESTILOS PARA CARD DE BOAS-VINDAS (WELCOME)         */
 /* ================================================== */
 .welcome .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
 .welcome .welcome-content {
-    background-color: rgba(13, 13, 13, 0.7);
-    border-radius: 10px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 800px;
-    border: 1px solid rgba(0, 255, 204, 0.3);
-    margin: 1rem 0;
+  background-color: rgba(13, 13, 13, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  margin: 1rem 0;
 }
 
 .welcome .welcome-text {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-align: center;
-    margin-bottom: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .welcome .welcome-title {
-    color: var(--neon-color);
-    text-shadow: var(--neon-shadow);
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
+  color: var(--neon-color);
+  text-shadow: var(--neon-shadow);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 .welcome .welcome-subtitle {
-    color: var(--neon-color);
-    text-shadow: var(--neon-shadow);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+  color: var(--neon-color);
+  text-shadow: var(--neon-shadow);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .welcome .audio-player {
-    margin-top: 1.5rem;
-    width: 100%;
-    max-width: 500px;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 500px;
 }
 
-    /* ================================================== */
-  /* ESTILOS PARA CARD DE ANÚNIO                       */
-  /* ================================================== */
- /* Adicione isto ao seu CSS */
+/* ================================================== */
+/* ESTILOS PARA CARD DE ANÚNIO                       */
+/* ================================================== */
+/* Adicione isto ao seu CSS */
 .card-anuncio .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  padding: 2rem;
 }
 
 .card-anuncio .text-container {
-    background-color: rgba(13, 13, 13, 0.7);
-    border-radius: 10px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 800px; /* Largura máxima para melhor leitura */
-    border: 1px solid rgba(0, 255, 204, 0.3);
-    margin: 1rem 0; /* Espaçamento vertical */
+  background-color: rgba(13, 13, 13, 0.7);
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px; /* Largura máxima para melhor leitura */
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  margin: 1rem 0; /* Espaçamento vertical */
 }
 
 .card-anuncio .card-text {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-align: center; /* Texto centralizado */
-    margin-bottom: 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center; /* Texto centralizado */
+  margin-bottom: 0;
 }
 
 .card-anuncio strong {
-    color: var(--neon-color);
-    text-shadow: var(--neon-shadow);
-    font-weight: bold;
+  color: var(--neon-color);
+  text-shadow: var(--neon-shadow);
+  font-weight: bold;
 }
 
 /* Ajuste para o player de áudio */
 .card-anuncio .audio-player {
-    margin-top: 1.5rem;
-    width: 100%;
-    max-width: 500px;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 500px;
 }
-  /* ================================================== */
-  /* RESPONSIVIDADE                                    */
-  /* ================================================== */
-  @media (max-width: 992px) {
-    .neon-header {
-      padding: 20px 15px;
-    }
-    
-    .logo-img {
-      width: 180px;
-    }
-    
-    .card-title {
-      font-size: 1.8rem;
-    }
+/* ================================================== */
+/* RESPONSIVIDADE                                    */
+/* ================================================== */
+@media (max-width: 992px) {
+  .neon-header {
+    padding: 20px 15px;
   }
-  
-  @media (max-width: 768px) {
 
-    /* Responsividade */
-@media (max-width: 768px) {
-    .neon-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .logo-link {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
+  .logo-img {
+    width: 180px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
 }
-    .card {
-      min-height: auto;
-    }
-    
-    .card-body {
-      padding: 1.5rem;
-    }
-    
-    .card-title {
-      font-size: 1.6rem;
-    }
-    
-    .card-text {
-      font-size: 1rem;
-    }
-    
-    .card-valores .row {
-      flex-direction: column;
-    }
-    
-    .card-valores .col-md-6 {
-      margin-bottom: 20px;
-    }
-    
-    .card-valores .col-md-6:last-child {
-      margin-bottom: 0;
-    }
-    
-    .card-valores .card-subtitle {
-      font-size: 1.2rem;
-    }
-    
-    .card-valores .card-list li {
-      font-size: 0.95rem;
-    }
+
+@media (max-width: 768px) {
+  /* Responsividade */
+  .neon-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  @media (max-width: 576px) {
-    .neon-header h1 {
-      font-size: 1.5rem;
-    }
-    
-    .card-body {
-      padding: 1rem;
-    }
-    
-    .card-title {
-      font-size: 1.4rem;
-    }
-    
-    .footer-content {
-      flex-direction: column;
-      gap: 10px;
-    }
+
+  .logo-link {
+    margin-right: 0;
+    margin-bottom: 15px;
   }
+  .card {
+    min-height: auto;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .card-valores .row {
+    flex-direction: column;
+  }
+
+  .card-valores .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .card-valores .col-md-6:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-valores .card-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .card-valores .card-list li {
+    font-size: 0.95rem;
+  }
+
+  .depoimento-container {
+    padding: 15px;
+  }
+
+  .retro-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .neon-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .depoimento-container {
+    padding: 10px 5px;
+  }
+
+  .retro-avatar {
+    width: 70px;
+    height: 70px;
+    border-width: 2px;
+  }
+
+  .depoimento-nome {
+    font-size: 1.1rem;
+  }
+
+  .depoimento-texto {
+    font-size: 0.9rem;
+    padding: 0 5px;
+  }
+
+  .stars {
+    font-size: 0.9rem;
+  }
+
+  .carousel-indicators {
+    bottom: -40px;
+  }
+
+  .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+}
+
+/* Ajustes para orientação paisagem em celulares */
+@media (max-height: 480px) and (orientation: landscape) {
+  .depoimento-container {
+    flex-direction: row;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .avatar-container {
+    margin-bottom: 0;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+
+  .retro-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .depoimento-content {
+    flex-grow: 1;
+  }
+}

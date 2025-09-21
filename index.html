@@ -43,7 +43,6 @@
         <link rel="stylesheet" href="static/styles.css">
         <link rel="stylesheet" href="simple-chatbot/styles/chatbot.css">
         <link rel="stylesheet" href="popups/popup-acept-terms/age-gate.css">
-        <link rel="stylesheet" href="carrossel/carrossel.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -270,6 +269,117 @@
                 </div>
             </section>
 
+            <!-- Seção de Depoimentos -->
+            <section class="card neon-card mb-5 card-depoimentos" style="background-image: url('assets/studio.png')">
+                <div class="card-body">
+                    <h2 class="card-title neon-text">🎸😊 O que dizem meus alunos</h2>
+                    <p class="card-text neon-text">Confira os depoimentos de quem já está aprendendo!</p>
+
+                    <!-- Carrossel de Depoimentos -->
+                    <div id="depoimentosCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Depoimento 1 -->
+                            <div class="carousel-item active">
+                                <div class="depoimento-container">
+                                    <div class="avatar-container">
+                                        <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Max&hair=short01&face=smile" alt="Avatar Max" class="retro-avatar">
+                                    </div>
+                                    <div class="depoimento-content">
+                                        <h4 class="depoimento-nome">Max</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="depoimento-texto">"O professor Daniel tem uma didática incrível! Em poucas aulas já consegui tocar minhas primeiras músicas no violão. Super recomendo!"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Depoimento 2 -->
+                            <div class="carousel-item">
+                                <div class="depoimento-container">
+                                    <div class="avatar-container">
+                                        <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Luna&hair=long01&face=smile" alt="Avatar Luna" class="retro-avatar">
+                                    </div>
+                                    <div class="depoimento-content">
+                                        <h4 class="depoimento-nome">Luna</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <p class="depoimento-texto">"Aprendi mais em 2 meses com o Daniel do que em 1 ano tentando sozinha. As aulas são divertidas e ele explica tudo com paciência."</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Depoimento 3 -->
+                            <div class="carousel-item">
+                                <div class="depoimento-container">
+                                    <div class="avatar-container">
+                                        <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Leo&face=smile" alt="Avatar Leo" class="retro-avatar">
+                                    </div>
+                                    <div class="depoimento-content">
+                                        <h4 class="depoimento-nome">Leo</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="depoimento-texto">"As aulas de guitarra são sensacionais! O método personalizado faz toda diferença. Finalmente consigo tocar os solos que sempre quis!"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Depoimento 4 -->
+                            <div class="carousel-item">
+                                <div class="depoimento-container">
+                                    <div class="avatar-container">
+                                        <img src="https://api.dicebear.com/7.x/pixel-art/svg?seed=Zoe&hair=long02&face=smile" alt="Avatar Zoe" class="retro-avatar">
+                                    </div>
+                                    <div class="depoimento-content">
+                                        <h4 class="depoimento-nome">Zoe</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="depoimento-texto">"Ukulele era meu sonho e com as aulas do Daniel estou realizando! As videoaulas são claras e ele sempre tira minhas dúvidas rapidamente."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Indicadores do carrossel -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#depoimentosCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+
+                        <!-- Controles do carrossel -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
             <!-- Seção de Agendamento -->
             <section class="card neon-card mb-5 card-anuncio" style="background-image: url('assets/laptop.png')">
                 <div class="card-body">
@@ -422,6 +532,20 @@
                             <div class="video-container">
                                 <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
                                     <iframe src="https://www.youtube.com/embed/HEpktab1JwI" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vídeo 10 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card neon-card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title neon-text">Aula Online - Acordes</h5>
+                            <div class="video-container">
+                                <div class="ratio" style="--bs-aspect-ratio: 177.8%;"> <!-- 9:16 proportion -->
+                                    <iframe src="https://www.youtube.com/embed/qG6rVndrc6Y" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
